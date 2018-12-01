@@ -1,6 +1,6 @@
 <h1 align="center">PBR Playground</h1>
 
-<img src="http://s.4cdn.org/image/title/105.gif">
+<img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/section-0/first.png?raw=true">
 
 Hey, welcome! 
 
@@ -10,5 +10,5 @@ This repository is also for educational purposes in the class "Special Topics in
 
 "_The cosmos is all that is, or ever was, or ever will be. Come with me_." - Carl Sagan.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2NzA5MDA1N119
+eyJoaXN0b3J5IjpbMTYzMzg3MzE0MF19
 -->
