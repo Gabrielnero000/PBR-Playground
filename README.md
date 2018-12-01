@@ -9,6 +9,9 @@ This project is the register of my Physical Based Rendering (PBR) study, experie
 This repository is also for educational purposes in the class "Special Topics in Computing" ministered by Dr. Christian Azambuja Pagot in the  Federal University of "Paraíba".
 
 "_The cosmos is all that is, or ever was, or ever will be. Come with me_." - Carl Sagan.
+
+## Structure
+This pro
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMzg3MzE0MF19
+eyJoaXN0b3J5IjpbMjEyNTI2Mzc3NiwxNjMzODczMTQwXX0=
 -->
