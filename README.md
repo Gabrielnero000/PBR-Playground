@@ -12,7 +12,9 @@ This repository is also for educational purposes in the class "Special Topics in
 
 ## Structure
 This project is subdivided in sections,   
-which are listed below. Those are in constant correction (fell free to give a feedback :D ) an 
+which are listed below. Those are in constant correction (fell free to give a feedback :D ) and new sections are added constantly.
+
+* Section 0
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ3MzgzODcyLDE2MzM4NzMxNDBdfQ==
+eyJoaXN0b3J5IjpbLTY0NTgzMTQ4OCwxNjMzODczMTQwXX0=
 -->
