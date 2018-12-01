@@ -11,7 +11,8 @@ This repository is also for educational purposes in the class "Special Topics in
 "_The cosmos is all that is, or ever was, or ever will be. Come with me_." - Carl Sagan.
 
 ## Structure
-This project is subdivided in sections 
+This project is subdivided in sections,   
+which are listed below. Those are in constant correction (fell free to give a feedback :D ) an 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxODc1NTA2MiwxNjMzODczMTQwXX0=
+eyJoaXN0b3J5IjpbODQ3MzgzODcyLDE2MzM4NzMxNDBdfQ==
 -->
