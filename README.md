@@ -18,7 +18,7 @@ which are listed below. Those are in constant correction (fell free to give a fe
 
 ---
 ## Section 0: Gallery of Experiments
-PBR is about genereate beautiful CG images, right? So here they are! The images in this section was generated during the research and development phase, using my code or existing PBR renders. I hope you appreciate it!
+PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR renders. I hope you appreciate it!
 
 <p align="center">
     <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/section-0/first.png?raw=true" alt>
@@ -27,11 +27,11 @@ PBR is about genereate beautiful CG images, right? So here they are! The images 
 
 <p align="center">
     <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/section-0/earth.png?raw=true" alt>
-    <em>The Earth with Blender Clycles to genereate it.</em>
+    <em>The Earth with Blender Clycles.</em>
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTIzNTk4NjM4LDEyODQzNTA1MzksLTE2OD
-A0ODkwMjksLTI1NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMx
-NDBdfQ==
+eyJoaXN0b3J5IjpbLTE2MjU2MzMxNDcsMTI4NDM1MDUzOSwtMT
+Y4MDQ4OTAyOSwtMjU3MDY2NTc1LDE4NTg0OTExNjgsMTYzMzg3
+MzE0MF19
 -->
