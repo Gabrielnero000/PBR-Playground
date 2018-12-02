@@ -20,9 +20,13 @@ which are listed below. Those are in constant correction (fell free to give a fe
 ## Section 0: Gallery of Experiments
 PBR is about genereate beautiful CG images, right? So here they are! The images in this section was generated during the research and development phase, using my code or existing PBR renders. I hope you appreciate it!
 
-<img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/section-0/first.png?raw=true">
+<p align="center">
+    <img src=https://github.com/Gabrielnero000/PBR-Playground/blob/master/section-0/first.png?raw=true" alt>
+    <em>My first PBR render. Used Blender Clycles to genereate it.</em>
+</p>
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjczMjYyMzMsMTI4NDM1MDUzOSwtMT
+eyJoaXN0b3J5IjpbLTEwMzE1MTA1MTEsMTI4NDM1MDUzOSwtMT
 Y4MDQ4OTAyOSwtMjU3MDY2NTc1LDE4NTg0OTExNjgsMTYzMzg3
 MzE0MF19
 -->
