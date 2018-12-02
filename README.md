@@ -18,8 +18,8 @@ which are listed below. Those are in constant correction (fell free to give a fe
 
 ---
 ## Section 0: Gallery of Experiments
-
+PBR is about genereate beautiful CG images, right? So here they are! The images in this 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NzA2NjU3NSwxODU4NDkxMTY4LDE2Mz
-M4NzMxNDBdfQ==
+eyJoaXN0b3J5IjpbLTE2ODA0ODkwMjksLTI1NzA2NjU3NSwxOD
+U4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
 -->
