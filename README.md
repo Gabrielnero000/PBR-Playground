@@ -18,8 +18,10 @@ which are listed below. Those are in constant correction (fell free to give a fe
 
 ---
 ## Section 0: Gallery of Experiments
-PBR is about genereate beautiful CG images, right? So here they are! The images in this section was generated during the research and development phase, using both m
+PBR is about genereate beautiful CG images, right? So here they are! The images in this section was generated during the research and development phase, using my code or existing PBR renders.
+
+<img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/section-0/first.png?raw=true">
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU5NzQyNTA0LC0xNjgwNDg5MDI5LC0yNT
-cwNjY1NzUsMTg1ODQ5MTE2OCwxNjMzODczMTQwXX0=
+eyJoaXN0b3J5IjpbMTI4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMj
+U3MDY2NTc1LDE4NTg0OTExNjgsMTYzMzg3MzE0MF19
 -->
