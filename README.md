@@ -17,21 +17,21 @@ which are listed below. Those are in constant correction (fell free to give a fe
 * [Gallery: Images of Experiments](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments) - Don't know what PBR can do? Check this out!
 
 ---
-## Secti: Gallery of Experiments
+## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR renders. I hope you appreciate it!
 
 <p align="center">
-    <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/section-0/first.png?raw=true" alt>
+    <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/gallery/first.png?raw=true" alt>
     <em>My first PBR render. Used Blender Clycles to genereate it.</em>
 </p>
 
 <p align="center">
-    <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/section-0/earth.png?raw=true" alt>
+    <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/gallery/earth.png?raw=true" alt>
     <em>The Earth with Blender Clycles.</em>
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA5Mzg4MDkwLC0xNjI1NjMzMTQ3LDEyOD
-QzNTA1MzksLTE2ODA0ODkwMjksLTI1NzA2NjU3NSwxODU4NDkx
-MTY4LDE2MzM4NzMxNDBdfQ==
+eyJoaXN0b3J5IjpbLTE4MjU1MDg3NjIsLTE2MjU2MzMxNDcsMT
+I4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3MDY2NTc1LDE4NTg0
+OTExNjgsMTYzMzg3MzE0MF19
 -->
