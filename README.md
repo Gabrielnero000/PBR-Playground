@@ -6,7 +6,7 @@ Hey, welcome!
 
 This project is the register of my Physical Based Rendering (PBR) study, experiences and interesting stuffs. I'm starting this repository with almost any knowledge in this area, so this will be a long way down in the PBR's world. I hope you enjoy this travel and fell free to question, comment and  add knowledge! 
 
-This repository is also for educational purposes in the class "Special Topics in Computing" ministered by Dr. Christian Azambuja Pagot in the  Federal University of "Paraíba".
+This repository is also for educational purposes in the class "Special Topics in Computing" ministered by Dr. Christian Azambuja Pagot in the  Federal University of Paraíba.
 
 "_The cosmos is all that is, or ever was, or ever will be. Come with me_." - Carl Sagan.
 
@@ -18,7 +18,7 @@ which are listed below. Those are in constant correction (fell free to give a fe
 
 ---
 ## Gallery: Images of Experiments
-PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR renders. I hope you appreciate it!
+PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
 <p align="center">
     <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/gallery/first.png?raw=true" alt>
@@ -31,7 +31,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjU1MDg3NjIsLTE2MjU2MzMxNDcsMT
-I4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3MDY2NTc1LDE4NTg0
-OTExNjgsMTYzMzg3MzE0MF19
+eyJoaXN0b3J5IjpbLTM4MjAxMjkzNywtMTgyNTUwODc2MiwtMT
+YyNTYzMzE0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcw
+NjY1NzUsMTg1ODQ5MTE2OCwxNjMzODczMTQwXX0=
 -->
