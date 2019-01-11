@@ -17,6 +17,11 @@ which are listed below. Those are in constant correction (fell free to give a fe
 * [Gallery: Images of Experiments](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments) - Don't know what PBR can do? Check this out!
 
 ---
+
+## But what is PBR?
+Since the prehistoric CRT until actual pixel-based monitors
+
+
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -31,7 +36,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4MjAxMjkzNywtMTgyNTUwODc2MiwtMT
-YyNTYzMzE0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcw
-NjY1NzUsMTg1ODQ5MTE2OCwxNjMzODczMTQwXX0=
+eyJoaXN0b3J5IjpbOTY4MjY4MjI4LC0xODI1NTA4NzYyLC0xNj
+I1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1NzA2
+NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
 -->
