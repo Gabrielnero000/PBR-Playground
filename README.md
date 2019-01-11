@@ -19,7 +19,7 @@ which are listed below. Those are in constant correction (fell free to give a fe
 ---
 
 ## But what is PBR?
-Since the prehistoric CRT until actual pixel-based monitors, generate realistic images was (and still is) the goal of 
+Since the prehistoric CRT until actual pixel-based monitors, generate realistic images was (and still is) the main goal of the Computer Graphics (CG) research.
 
 
 ## Gallery: Images of Experiments
@@ -36,7 +36,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU0NTk5NzUsLTE4MjU1MDg3NjIsLTE2Mj
-U2MzMxNDcsMTI4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3MDY2
-NTc1LDE4NTg0OTExNjgsMTYzMzg3MzE0MF19
+eyJoaXN0b3J5IjpbLTE3OTY1NDE4MTMsLTE4MjU1MDg3NjIsLT
+E2MjU2MzMxNDcsMTI4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3
+MDY2NTc1LDE4NTg0OTExNjgsMTYzMzg3MzE0MF19
 -->
