@@ -25,7 +25,7 @@ Since the prehistoric vector/CRT displays until actual pixel-based monitors with
 
 In the PBR's world the most popular techniques are **ray-based** techniques, specifically **Ray Tracing** and **Path Tracing**. Both tries to simulate the phenom of the human vision using rules from physics (that's were the "physical based" comes from).
 
-So, to understand  how those algorithms works, we need to understand how the vision works. Every eletromagnetic phenom (Wi-FI, TV and radio signal, light...) have a wavelength, wich can go from a few picometeres (Gamma rays and X rays) to even hundreds of meters (AM radio waves).
+So, to understand  how those algorithms works, we need to understand how the vision works. Every eletromagnetic phenom (Wi-FI, TV and radio signal, light...) have a wavelength, wich can go from a few picometeres (Gamma rays and X rays) to even hundreds of meters (AM radio waves). We are intrested in a particular 
 
 
 ## Gallery: Images of Experiments
@@ -42,8 +42,8 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0MjgyNDM0MywyMTI4NTkwMzg3LC0xNT
-M1NzA0MTY2LDE2ODQzMzI0NzMsLTE4MjU1MDg3NjIsLTE2MjU2
-MzMxNDcsMTI4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3MDY2NT
-c1LDE4NTg0OTExNjgsMTYzMzg3MzE0MF19
+eyJoaXN0b3J5IjpbNTE3OTIyNjE0LDIxMjg1OTAzODcsLTE1Mz
+U3MDQxNjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYz
+MzE0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcwNjY1Nz
+UsMTg1ODQ5MTE2OCwxNjMzODczMTQwXX0=
 -->
