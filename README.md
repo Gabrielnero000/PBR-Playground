@@ -19,7 +19,7 @@ which are listed below. Those are in constant correction (fell free to give a fe
 ---
 
 ## But what is PBR?
-Since the prehistoric CRT displays until actual pixel-based monitors, generate realistic images was (and still is) the main goal of the Computer Graphics (CG) research. From the efforts of lots of great professionals, today we have basically two ways to generate high quality images: rasterization-based methods and physical-based methods. The first one is the most popular method for real time rendering, specially games.
+Since the prehistoric CRT displays until actual pixel-based monitors, generate realistic images was (and still is) the main goal of the Computer Graphics (CG) research. From the efforts of lots of great professionals, today we have basically two ways to generate high quality images: rasterization-based methods and physical-based methods. The first one is the most popular method for real time rendering, specially games. Those techniques convi
 
 
 ## Gallery: Images of Experiments
@@ -36,8 +36,8 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY0Mzc3Mjc0LDE2ODQzMzI0NzMsLTE4Mj
-U1MDg3NjIsLTE2MjU2MzMxNDcsMTI4NDM1MDUzOSwtMTY4MDQ4
-OTAyOSwtMjU3MDY2NTc1LDE4NTg0OTExNjgsMTYzMzg3MzE0MF
-19
+eyJoaXN0b3J5IjpbLTg3NDQzNTA4MywxNjg0MzMyNDczLC0xOD
+I1NTA4NzYyLC0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0
+ODkwMjksLTI1NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxND
+BdfQ==
 -->
