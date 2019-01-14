@@ -23,7 +23,7 @@ Since the prehistoric CRT displays until actual pixel-based monitors, generate r
 
 **Physical Based Rendering** (**PBR**) it's able to generate images extremely realistic images (check the [gallery](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments)) and it's relativelly easy to implemment, at cost of a lot of computer processing power. 
 
-In the PBR's world the most popular techniques are **ray-based** techniques, specifically **Ray Tracing** and **Path Tracing**. Both tries to simulate the phenom of the human vision using rules 
+In the PBR's world the most popular techniques are **ray-based** techniques, specifically **Ray Tracing** and **Path Tracing**. Both tries to simulate the phenom of the human vision using rules from physics (that's were the "physical based" comes from). 
 
 
 ## Gallery: Images of Experiments
@@ -40,8 +40,8 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI5MjE2OTUzLC0xNTM1NzA0MTY2LDE2OD
-QzMzI0NzMsLTE4MjU1MDg3NjIsLTE2MjU2MzMxNDcsMTI4NDM1
-MDUzOSwtMTY4MDQ4OTAyOSwtMjU3MDY2NTc1LDE4NTg0OTExNj
-gsMTYzMzg3MzE0MF19
+eyJoaXN0b3J5IjpbMjA4NjI3MzEyOSwtMTUzNTcwNDE2NiwxNj
+g0MzMyNDczLC0xODI1NTA4NzYyLC0xNjI1NjMzMTQ3LDEyODQz
+NTA1MzksLTE2ODA0ODkwMjksLTI1NzA2NjU3NSwxODU4NDkxMT
+Y4LDE2MzM4NzMxNDBdfQ==
 -->
