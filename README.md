@@ -25,7 +25,7 @@ Since the prehistoric CRT displays until actual pixel-based monitors, generate r
 
 In the PBR's world the most popular techniques are **ray-based** techniques, specifically **Ray Tracing** and **Path Tracing**. Both tries to simulate the phenom of the human vision using rules from physics (that's were the "physical based" comes from).
 
-So, to understand  how those algorithms works, we need 
+So, to understand  how those algorithms works, we need to understand how the vision works. Every eletromagnetic phenom (Wi-FI, 
 
 
 ## Gallery: Images of Experiments
@@ -42,7 +42,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwMTk5MzM2MywtMTUzNTcwNDE2NiwxNj
+eyJoaXN0b3J5IjpbLTY1ODMzODQyMCwtMTUzNTcwNDE2NiwxNj
 g0MzMyNDczLC0xODI1NTA4NzYyLC0xNjI1NjMzMTQ3LDEyODQz
 NTA1MzksLTE2ODA0ODkwMjksLTI1NzA2NjU3NSwxODU4NDkxMT
 Y4LDE2MzM4NzMxNDBdfQ==
