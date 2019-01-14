@@ -27,7 +27,9 @@ In the PBR's world the most popular techniques are **ray-based** techniques, spe
 
 So, to understand  how those algorithms works, we need to understand how the vision works. Every **eletromagnetic** phenom is essencially a wave (Wi-FI, TV and radio signal, light...) wich haves a **wavelength**, wich can go from a few picometeres (Gamma rays and X rays) to even hundreds of meters (AM radio waves). We are intrested in a particular interval in that range: between 370 nanometers and 750 nanometers. That's the interval that we call **Visible Spectrum of Light**, i.e. the wavelenght interval that we can see.
 
-When the light rays colide with an object, that object absorbs part of the frequencies (part of the light, basically) and reflects the rest of it in some. If the reflected rays colide with our eye, they stimulate special cells (cones and rods). The interpretation by the brain of that stimulus is what we understand as **color**.
+When the light rays colide with an object, that object absorbs part of the frequencies (part of the light, basically) and reflects the rest of it as rays as well. If the reflected rays colide with our eye, they stimulate special cells (cones and rods). The interpretation by the brain of that stimulus is what we understand as **color**.
+
+Ray and Path Tracing essencially 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -43,8 +45,9 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTMzOTkzNjAsMjEyODU5MDM4NywtMT
-UzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1NTA4NzYyLC0xNjI1
-NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1NzA2Nj
-U3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
+eyJoaXN0b3J5IjpbMTk2NjUyOTUxMCwtMTYxMzM5OTM2MCwyMT
+I4NTkwMzg3LC0xNTM1NzA0MTY2LDE2ODQzMzI0NzMsLTE4MjU1
+MDg3NjIsLTE2MjU2MzMxNDcsMTI4NDM1MDUzOSwtMTY4MDQ4OT
+AyOSwtMjU3MDY2NTc1LDE4NTg0OTExNjgsMTYzMzg3MzE0MF19
+
 -->
