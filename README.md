@@ -21,7 +21,7 @@ which are listed below. Those are in constant correction (fell free to give a fe
 ## But what is PBR?
 Since the prehistoric CRT displays until actual pixel-based monitors, generate realistic images was (and still is) the main goal of the Computer Graphics (CG) research. From the efforts of lots of great professionals, today we have basically two ways to generate high quality images: **rasterization-based** methods and **physical-based** methods. The first one is the most popular method for real time rendering, specially games. Those techniques convincent results and it's computationally **fast**, but the thing is: if you look for a rasterization-generated image it's easy to know that it's an CG image. That's were physical-based techniques shines.
 
-
+**Physical Based Rendering** (**PBR**) it's able to generate images almost indistinguishable 
 
 
 ## Gallery: Images of Experiments
@@ -38,8 +38,8 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzU3MDQxNjYsMTY4NDMzMjQ3MywtMT
-gyNTUwODc2MiwtMTYyNTYzMzE0NywxMjg0MzUwNTM5LC0xNjgw
-NDg5MDI5LC0yNTcwNjY1NzUsMTg1ODQ5MTE2OCwxNjMzODczMT
-QwXX0=
+eyJoaXN0b3J5IjpbLTEyOTY2MzM5MzAsLTE1MzU3MDQxNjYsMT
+Y4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMzE0NywxMjg0
+MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUsMTg1ODQ5MT
+E2OCwxNjMzODczMTQwXX0=
 -->
