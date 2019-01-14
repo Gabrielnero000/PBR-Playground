@@ -29,7 +29,7 @@ So, to understand  how those algorithms works, we need to understand how the vis
 
 When the light rays colide with an object, that object absorbs part of the frequencies (part of the light, basically) and reflects the rest of it as rays as well. If the reflected rays colide with our eye, they stimulate special cells (cones and rods). The interpretation by the brain of that stimulus is what we understand as **color**.
 
-So, instead Ray and Path Tracing essencially trace back the light  rays from the eye, to the objects and to the light (that's were the "tracing" comes from)
+So, instead of shot infinite rays from every light source, Ray and Path Tracing essencially **trace back the light  rays** from the eye, to the objects and to the light (that's were the "tracing" comes from) using accurate physical models to achive the 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -45,7 +45,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDY2MjcxMTgsLTE2MTMzOTkzNjAsMj
+eyJoaXN0b3J5IjpbLTEyMDgzNDI1MjEsLTE2MTMzOTkzNjAsMj
 EyODU5MDM4NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1
 NTA4NzYyLC0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0OD
 kwMjksLTI1NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBd
