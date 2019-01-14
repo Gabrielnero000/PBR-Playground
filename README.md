@@ -21,7 +21,9 @@ which are listed below. Those are in constant correction (fell free to give a fe
 ## But what is PBR?
 Since the prehistoric CRT displays until actual pixel-based monitors, generate realistic images was (and still is) the main goal of the Computer Graphics (CG) research. From the efforts of lots of great professionals, today we have basically two ways to generate high quality images: **rasterization-based** methods and **physical-based** methods. The first one is the most popular method for real time rendering, specially games. Those techniques convincent results and it's computationally **fast**, but the thing is: if you look for a rasterization-generated image it's easy to know that it's an CG image. That's were physical-based techniques shines.
 
-**Physical Based Rendering** (**PBR**) it's able to generate images extremely realistic images (check the [gallery](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments)) at cost of a lot of computer processing power. In the PBR's world the most popular techniques are **ray-based** techniques, specifically **Ray Tracing** and **Path Tracing**. 
+**Physical Based Rendering** (**PBR**) it's able to generate images extremely realistic images (check the [gallery](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments)) and it's relativelly easy to implemment, at cost of a lot of computer processing power. 
+
+In the PBR's world the most popular techniques are **ray-based** techniques, specifically **Ray Tracing** and **Path Tracing**. Both tries
 
 
 ## Gallery: Images of Experiments
@@ -38,8 +40,8 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTEyODM5MCwtMTUzNTcwNDE2NiwxNj
-g0MzMyNDczLC0xODI1NTA4NzYyLC0xNjI1NjMzMTQ3LDEyODQz
-NTA1MzksLTE2ODA0ODkwMjksLTI1NzA2NjU3NSwxODU4NDkxMT
-Y4LDE2MzM4NzMxNDBdfQ==
+eyJoaXN0b3J5IjpbLTEwMzEwNzYwODQsLTE1MzU3MDQxNjYsMT
+Y4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMzE0NywxMjg0
+MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUsMTg1ODQ5MT
+E2OCwxNjMzODczMTQwXX0=
 -->
