@@ -14,7 +14,7 @@ This repository is also for educational purposes in the class "Special Topics in
 This project is subdivided in sections,   
 which are listed below. Those are in constant correction (fell free to give a feedback :D ) and new sections are added constantly.
 
-* [But What is PBR?](https://github.com/Gabrielnero000/PBR-Playground#but-what-is-pbr) - Don't know what PBR can do? Check this out!
+* [But What is PBR?](https://github.com/Gabrielnero000/PBR-Playground#but-what-is-pbr) - A (really basic) introduction of what is PBR.
 * [Gallery: Images of Experiments](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments) - Don't know what PBR can do? Check this out!
 
 ---
@@ -46,7 +46,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzgyMjY0NzEsLTE2MTMzOTkzNjAsMj
+eyJoaXN0b3J5IjpbLTE2Mzc0NzI1MjUsLTE2MTMzOTkzNjAsMj
 EyODU5MDM4NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1
 NTA4NzYyLC0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0OD
 kwMjksLTI1NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBd
