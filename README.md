@@ -37,6 +37,7 @@ Here is a basic UML calass diagram that can be used as base for our Ray Tracer. 
 
 As we can see, we have intially four classes and two abstract classes:
  * **Class Ray** - represents the most basic element in a Ray Tracer: a ray. A ray, wich is a straight line, can be expressed as $f(t) = O + tD$, were $O$ is the ray's origin, $D$ is the ray's direction an $t$ is a real number. Variating $t$ we have any point in the straight.
+ * **Class Primitive **
 
 
 ## Gallery: Images of Experiments
@@ -53,7 +54,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NzQ2NzY1OCw0MDA1OTg0Miw5MjAxNz
+eyJoaXN0b3J5IjpbMjEyNjIwMDk3OSw0MDA1OTg0Miw5MjAxNz
 c1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4
 NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1NTA4NzYyLC
 0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1
