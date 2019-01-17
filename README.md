@@ -36,7 +36,7 @@ So, instead of shot infinite rays from every light source, Ray and Path Tracing 
 Here is a basic UML calass diagram that can be used as base for our Ray Tracer. Gradually it will be expanded as we add new features, so it's important to have a robust architecture in the begining. I'll be using C++ to implementation, since we need fast computation and object-oriented features (inheritance, polymorphism, function overload, etc). I'm using the [GLM](https://glm.g-truc.net/0.9.9/index.html) library to abstract some vector representation and operations (for now). So there it is:
 
 As we can see, we have intially four classes and two abstract classes:
- * **Class Ray** - 
+ * **Class Ray** - represents the most basic element in a Ray Tracer: a ray. A ray, wich is a 
 
 
 ## Gallery: Images of Experiments
@@ -53,7 +53,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTgzMTI4NDMsNDAwNTk4NDIsOTIwMT
+eyJoaXN0b3J5IjpbLTE3NDcwNTc0NTUsNDAwNTk4NDIsOTIwMT
 c3NTM0LC0xMzg0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAz
 ODcsLTE1MzU3MDQxNjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2Mi
 wtMTYyNTYzMzE0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0y
