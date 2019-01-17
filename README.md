@@ -40,7 +40,7 @@ As we can see, we have intially four classes and two abstract classes:
  * **Class Primitive** - abstract class that represents a primitive. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent intersection routine, this method must be ``virtual``.
  * **Class Output** - used to output the image. Holds a buffer feeded during the render and transforms it to fit the PPM's format.
  * **Class Scene** - stores all primitives in the scene. Have a intersection function that just basically calls every primitive intersection function.
- * **Class Camera** - abstract class to represents the camera. A camera have an 
+ * **Class Camera** - abstract class to represents the camera. Since there is lots of camera models (orthograp
 
 
 ## Gallery: Images of Experiments
@@ -57,9 +57,9 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTQxNzU4NjcsNDAwNTk4NDIsOTIwMT
-c3NTM0LC0xMzg0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAz
-ODcsLTE1MzU3MDQxNjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2Mi
-wtMTYyNTYzMzE0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0y
-NTcwNjY1NzUsMTg1ODQ5MTE2OCwxNjMzODczMTQwXX0=
+eyJoaXN0b3J5IjpbLTEyNjQ5MzkzNCw0MDA1OTg0Miw5MjAxNz
+c1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4
+NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1NTA4NzYyLC
+0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1
+NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
 -->
