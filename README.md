@@ -37,7 +37,7 @@ So, instead of shot infinite rays from every light source, Ray and Path Tracing 
 Here is a basic UML calass diagram that can be used as base for our Ray Tracer. Gradually it will be expanded as we add new features, so it's important to have a robust architecture in the begining. I'll be using **C++** to implementation, since we need fast computation and object-oriented features (inheritance, polymorphism, function overload, etc). I'm using the [**GLM**](https://glm.g-truc.net/0.9.9/index.html) library to abstract some vector representation and operations (for now). So there it is:
 
 As we can see, we have intially four classes and two abstract classes:
- * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as <img src="https://rawgit.com/Gabrielnero000/PBR-Playground/None/svgs/6b08fd0c1a52a05ee040797dee182ff0.svg?invert_in_darkmode" align=middle width=103.545585pt height=24.6576pt/>, were <img src="https://rawgit.com/Gabrielnero000/PBR-Playground/None/svgs/9afe6a256a9817c76b579e6f5db9a578.svg?invert_in_darkmode" align=middle width=12.995565pt height=22.46574pt/> is **the ray's origin**, <img src="https://rawgit.com/Gabrielnero000/PBR-Playground/None/svgs/78ec2b7008296ce0561cf83393cb746d.svg?invert_in_darkmode" align=middle width=14.06625pt height=22.46574pt/> is the **ray's direction** an <img src="https://rawgit.com/Gabrielnero000/PBR-Playground/None/svgs/4f4f4e395762a3af4575de74c019ebb5.svg?invert_in_darkmode" align=middle width=5.9361555pt height=20.22207pt/> is a real number. Variating <img src="https://rawgit.com/Gabrielnero000/PBR-Playground/None/svgs/4f4f4e395762a3af4575de74c019ebb5.svg?invert_in_darkmode" align=middle width=5.9361555pt height=20.22207pt/> we have **any point in the straight**.
+ * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as <img alt="$f(t) = O + tD$" src="svgs/6b08fd0c1a52a05ee040797dee182ff0.png" align="middle" width="103.545585pt" height="24.6576pt"/>, were <img alt="$O$" src="svgs/9afe6a256a9817c76b579e6f5db9a578.png" align="middle" width="12.995565pt" height="22.46574pt"/> is **the ray's origin**, <img alt="$D$" src="svgs/78ec2b7008296ce0561cf83393cb746d.png" align="middle" width="14.06625pt" height="22.46574pt"/> is the **ray's direction** an <img alt="$t$" src="svgs/4f4f4e395762a3af4575de74c019ebb5.png" align="middle" width="5.9361555pt" height="20.22207pt"/> is a real number. Variating <img alt="$t$" src="svgs/4f4f4e395762a3af4575de74c019ebb5.png" align="middle" width="5.9361555pt" height="20.22207pt"/> we have **any point in the straight**.
  * **Class Primitive** - abstract class that represents a **primitive**. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent **intersection routine**, the ``intersect`` function must be ``virtual``.
  * **Class Output** - used to output the image. Holds a buffer feeded during the render and transforms it to fit the **PPM's format**.
  * **Class Scene** - stores all primitives in the scene. Have a intersection function that just basically calls every primitive intersection function.
@@ -59,11 +59,19 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/gallery/earth.png?raw=true" alt>
     <em>The Earth with Blender Clycles.</em>
 </p>
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU4ODc2NTY5LC05MTg4NzAwNDUsMjA4MT
-QzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzODQwNjc1NTYs
-LTE2MTMzOTkzNjAsMjEyODU5MDM4NywtMTUzNTcwNDE2NiwxNj
-g0MzMyNDczLC0xODI1NTA4NzYyLC0xNjI1NjMzMTQ3LDEyODQz
-NTA1MzksLTE2ODA0ODkwMjksLTI1NzA2NjU3NSwxODU4NDkxMT
-Y4LDE2MzM4NzMxNDBdfQ==
+eyJoaXN0b3J5IjpbMjA4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNz
+c1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4
+NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1NTA4NzYyLC
+0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1
+NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
+-->
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTgxMDk4NjM1MSw1NTg4NzY1NjksLTkxOD
+g3MDA0NSwyMDgxNDMxOTE2LDQwMDU5ODQyLDkyMDE3NzUzNCwt
+MTM4NDA2NzU1NiwtMTYxMzM5OTM2MCwyMTI4NTkwMzg3LC0xNT
+M1NzA0MTY2LDE2ODQzMzI0NzMsLTE4MjU1MDg3NjIsLTE2MjU2
+MzMxNDcsMTI4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3MDY2NT
+c1LDE4NTg0OTExNjgsMTYzMzg3MzE0MF19
 -->
