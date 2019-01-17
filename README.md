@@ -28,7 +28,7 @@ In the PBR's world the most popular techniques are **ray-based** techniques, spe
 
 So, to understand  how those algorithms works, we need to understand how the vision works. Every **eletromagnetic** phenom is essencially a wave (Wi-FI, TV and radio signal, light...) wich haves a **wavelength**, wich can go from a few picometeres (Gamma rays and X rays) to even hundreds of meters (AM radio waves). We are intrested in a particular interval in that range: between 370 nanometers and 750 nanometers. That's the interval that we call **Visible Spectrum of Light**, i.e. the wavelenght interval that we can see.
 
-When the light rays colide with an object, that object absorbs part of the frequencies (part of the light, basically) and reflects the rest of it as rays as well. If the reflected rays colide with our eye, they stimulate special cells (cones and rods). The interpretation by the brain of that stimulus is what we understand as **color**.
+When the light rays colide with an object, that object absorbs part of the frequencies (part of the light, basically) and reflects the rest of it as rays as well. If the reflected rays colide with our eye, they stimulate special cells (cones and rods). The interpretation by the brain of that stimulus is what we understand as **color**. With that color information our brain builds an **image** as we know.
 
 So, instead of shot infinite rays from every light source, Ray and Path Tracing essencially **trace back the  rays** from the eye, to the objects and to the light (that's were the "tracing" comes from) using accurate physical models.
 
@@ -46,9 +46,9 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MjQzMjQzMCwtMTM4NDA2NzU1NiwtMT
-YxMzM5OTM2MCwyMTI4NTkwMzg3LC0xNTM1NzA0MTY2LDE2ODQz
-MzI0NzMsLTE4MjU1MDg3NjIsLTE2MjU2MzMxNDcsMTI4NDM1MD
-UzOSwtMTY4MDQ4OTAyOSwtMjU3MDY2NTc1LDE4NTg0OTExNjgs
-MTYzMzg3MzE0MF19
+eyJoaXN0b3J5IjpbOTIwMTc3NTM0LC0xMzg0MDY3NTU2LC0xNj
+EzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3MDQxNjYsMTY4NDMz
+MjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMzE0NywxMjg0MzUwNT
+M5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUsMTg1ODQ5MTE2OCwx
+NjMzODczMTQwXX0=
 -->
