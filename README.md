@@ -33,14 +33,14 @@ When the light rays colide with an object, that object absorbs part of the frequ
 So, instead of shot infinite rays from every light source, Ray and Path Tracing essencially **trace back the  rays** from the eye, to the objects and to the light (that's were the "tracing" comes from) using accurate physical models.
 
 ## Base Architecture for a Ray Tracer
-Here is a basic UML calass diagram that can be used as base for our Ray Tracer. Gradually it will be expanded as we add new features, so it's important to have a robust architecture in the begining. I'll be using C++ to implementation, since we need fast computation and object-oriented features (inheritance, polymorphism, function overload, etc). I'm using the [GLM](https://glm.g-truc.net/0.9.9/index.html) library to abstract some vector representation and operations (for now). So there it is:
+Here is a basic UML calass diagram that can be used as base for our Ray Tracer. Gradually it will be expanded as we add new features, so it's important to have a robust architecture in the begining. I'll be using **C++** to implementation, since we need fast computation and object-oriented features (inheritance, polymorphism, function overload, etc). I'm using the [**GLM**](https://glm.g-truc.net/0.9.9/index.html) library to abstract some vector representation and operations (for now). So there it is:
 
 As we can see, we have intially four classes and two abstract classes:
  * **Class Ray** - represents the most basic element in a Ray Tracer: a ray. A ray, wich is a straight line, can be expressed as $f(t) = O + tD$, were $O$ is the ray's origin, $D$ is the ray's direction an $t$ is a real number. Variating $t$ we have any point in the straight.
- * **Class Primitive** - abstract class that represents a primitive. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent intersection routine, this method must be ``virtual``.
+ * **Class Primitive** - abstract class that represents a primitive. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent intersection routine, the ``intersect`` function must be ``virtual``.
  * **Class Output** - used to output the image. Holds a buffer feeded during the render and transforms it to fit the PPM's format.
  * **Class Scene** - stores all primitives in the scene. Have a intersection function that just basically calls every primitive intersection function.
- * **Class Camera** - abstract class to represents the camera. Since there is lots of camera models (orthograp
+ * **Class Camera** - abstract class to represents the camera. Since there is lots of camera models (orthographic, perspective, with/without lens) the routine to generate r
 
 
 ## Gallery: Images of Experiments
@@ -57,9 +57,9 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjQ5MzkzNCw0MDA1OTg0Miw5MjAxNz
-c1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4
-NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1NTA4NzYyLC
-0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1
-NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
+eyJoaXN0b3J5IjpbLTEzNjYwNjczNTQsNDAwNTk4NDIsOTIwMT
+c3NTM0LC0xMzg0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAz
+ODcsLTE1MzU3MDQxNjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2Mi
+wtMTYyNTYzMzE0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0y
+NTcwNjY1NzUsMTg1ODQ5MTE2OCwxNjMzODczMTQwXX0=
 -->
