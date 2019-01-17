@@ -32,6 +32,10 @@ When the light rays colide with an object, that object absorbs part of the frequ
 
 So, instead of shot infinite rays from every light source, Ray and Path Tracing essencially **trace back the  rays** from the eye, to the objects and to the light (that's were the "tracing" comes from) using accurate physical models.
 
+## Base Architecture for a Ray Tracer
+Here is a basic UML diagram that can 
+
+
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -46,9 +50,9 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTIwMTc3NTM0LC0xMzg0MDY3NTU2LC0xNj
-EzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3MDQxNjYsMTY4NDMz
-MjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMzE0NywxMjg0MzUwNT
-M5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUsMTg1ODQ5MTE2OCwx
-NjMzODczMTQwXX0=
+eyJoaXN0b3J5IjpbLTExMDQ5NjAyODQsOTIwMTc3NTM0LC0xMz
+g0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3
+MDQxNjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMz
+E0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUs
+MTg1ODQ5MTE2OCwxNjMzODczMTQwXX0=
 -->
