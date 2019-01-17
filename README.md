@@ -41,7 +41,9 @@ As we can see, we have intially four classes and two abstract classes:
  * **Class Output** - used to output the image. Holds a buffer feeded during the render and transforms it to fit the **PPM's format**.
  * **Class Scene** - stores all primitives in the scene. Have a intersection function that just basically calls every primitive intersection function.
  * **Class Camera** - abstract class to represents the camera. Since there is lots of camera models (orthographic, perspective, with/without lens) the routine to generate rays is variable. So the ``getRay`` function must be ``virtual`` as well.
- * **Class Render** - that's were the magic happens. The render loop is essecially two nested for loops (using output's resolution), were the rays are generate
+ * **Class Render** - that's were the magic happens. The render loop is essecially two nested for loops (using output's resolution), were the rays are shooted from the camera to the scene and getting the colision information.
+
+Looks simple, right? Well, this will be crazy as hell 
 
 
 ## Gallery: Images of Experiments
@@ -58,9 +60,9 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2NDIzNDQyNyw0MDA1OTg0Miw5MjAxNz
-c1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4
-NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1NTA4NzYyLC
-0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1
-NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
+eyJoaXN0b3J5IjpbNDA3NTg3NzMwLDQwMDU5ODQyLDkyMDE3Nz
+UzNCwtMTM4NDA2NzU1NiwtMTYxMzM5OTM2MCwyMTI4NTkwMzg3
+LC0xNTM1NzA0MTY2LDE2ODQzMzI0NzMsLTE4MjU1MDg3NjIsLT
+E2MjU2MzMxNDcsMTI4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3
+MDY2NTc1LDE4NTg0OTExNjgsMTYzMzg3MzE0MF19
 -->
