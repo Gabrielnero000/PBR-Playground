@@ -59,19 +59,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/gallery/earth.png?raw=true" alt>
     <em>The Earth with Blender Clycles.</em>
 </p>
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNz
-c1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4
-NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1NTA4NzYyLC
-0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1
-NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
--->
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2Mzc4ODI1OCwtOTE4ODcwMDQ1LDIwOD
-E0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MDY3NTU2
-LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3MDQxNjYsMT
-Y4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMzE0NywxMjg0
-MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUsMTg1ODQ5MT
-E2OCwxNjMzODczMTQwXX0=
+eyJoaXN0b3J5IjpbNTU4ODc2NTY5LC05MTg4NzAwNDUsMjA4MT
+QzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzODQwNjc1NTYs
+LTE2MTMzOTkzNjAsMjEyODU5MDM4NywtMTUzNTcwNDE2NiwxNj
+g0MzMyNDczLC0xODI1NTA4NzYyLC0xNjI1NjMzMTQ3LDEyODQz
+NTA1MzksLTE2ODA0ODkwMjksLTI1NzA2NjU3NSwxODU4NDkxMT
+Y4LDE2MzM4NzMxNDBdfQ==
 -->
