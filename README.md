@@ -35,7 +35,7 @@ So, instead of shot infinite rays from every light source, Ray and Path Tracing 
 ## Base Architecture for a Ray Tracer
 Here is a basic UML diagram that can be used as base for our Ray Tracer. Gradually it will be expanded as we add new features, so it's important to have a robust architecture in the begining. I'll be using C++ to implementation, since we need fast computation and object-oriented features (inheritance, polymorphism, function overload, etc). I'm using the [GLM](https://glm.g-truc.net/0.9.9/index.html) library to abstract some vector representation and operations (for now). So there it is:
 
-
+As we can see, we have intially four 
 
 
 ## Gallery: Images of Experiments
@@ -52,9 +52,9 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDk2NzEwMDEsOTIwMTc3NTM0LC0xMz
-g0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3
-MDQxNjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMz
-E0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUs
-MTg1ODQ5MTE2OCwxNjMzODczMTQwXX0=
+eyJoaXN0b3J5IjpbNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MD
+Y3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3MDQx
+NjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMzE0Ny
+wxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUsMTg1
+ODQ5MTE2OCwxNjMzODczMTQwXX0=
 -->
