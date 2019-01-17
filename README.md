@@ -37,7 +37,7 @@ Here is a basic UML calass diagram that can be used as base for our Ray Tracer. 
 
 As we can see, we have intially four classes and two abstract classes:
  * **Class Ray** - represents the most basic element in a Ray Tracer: a ray. A ray, wich is a straight line, can be expressed as $f(t) = O + tD$, were $O$ is the ray's origin, $D$ is the ray's direction an $t$ is a real number. Variating $t$ we have any point in the straight.
- * **Class Primitive** - abstract class that represents a primitive. A primitive is basically anything that a ray can colide with. Most common 
+ * **Class Primitive** - abstract class that represents a primitive. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent intersec
 
 
 ## Gallery: Images of Experiments
@@ -54,9 +54,9 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM3MDg3MTYsNDAwNTk4NDIsOTIwMTc3NT
-M0LC0xMzg0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcs
-LTE1MzU3MDQxNjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2MiwtMT
-YyNTYzMzE0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcw
-NjY1NzUsMTg1ODQ5MTE2OCwxNjMzODczMTQwXX0=
+eyJoaXN0b3J5IjpbLTY2ODgzODUwMCw0MDA1OTg0Miw5MjAxNz
+c1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4
+NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1NTA4NzYyLC
+0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1
+NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
 -->
