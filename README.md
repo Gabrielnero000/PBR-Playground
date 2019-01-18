@@ -36,6 +36,8 @@ So, instead of shot infinite rays from every light source, Ray and Path Tracing 
 ## Base Architecture for a Ray Tracer
 Here is a basic UML calass diagram that can be used as base for our Ray Tracer. Gradually it will be expanded as we add new features, so it's important to have a robust architecture in the begining. I'll be using **C++** to implementation, since we need fast computation and object-oriented features (inheritance, polymorphism, function overload, etc). I'm using the [**GLM**](https://glm.g-truc.net/0.9.9/index.html) library to abstract some vector representation and operations (for now). So there it is:
 
+<img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/svgs/Render-UML.png">
+
 As we can see, we have intially four classes and two abstract classes:
  * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as <img alt="$f(t) = O + tD$" src="svgs/6b08fd0c1a52a05ee040797dee182ff0.png" align="middle" width="103.545585pt" height="24.6576pt"/>, were <img alt="$O$" src="svgs/9afe6a256a9817c76b579e6f5db9a578.png" align="middle" width="12.995565pt" height="22.46574pt"/> is **the ray's origin**, <img alt="$D$" src="svgs/78ec2b7008296ce0561cf83393cb746d.png" align="middle" width="14.06625pt" height="22.46574pt"/> is the **ray's direction** an <img alt="$t$" src="svgs/4f4f4e395762a3af4575de74c019ebb5.png" align="middle" width="5.9361555pt" height="20.22207pt"/> is a real number. Variating <img alt="$t$" src="svgs/4f4f4e395762a3af4575de74c019ebb5.png" align="middle" width="5.9361555pt" height="20.22207pt"/> we have **any point in the straight**.
  * **Class Primitive** - abstract class that represents a **primitive**. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent **intersection routine**, the ``intersect`` function must be ``virtual``.
@@ -60,7 +62,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY1MTM3OTI4LDU1ODg3NjU2OSwtOTE4OD
+eyJoaXN0b3J5IjpbMjQ0Nzk3Mzc5LDU1ODg3NjU2OSwtOTE4OD
 cwMDQ1LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0x
 Mzg0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1Mz
 U3MDQxNjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYz
