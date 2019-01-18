@@ -39,7 +39,7 @@ Here is a basic UML calass diagram that can be used as base for our Ray Tracer. 
 <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/svgs/Render-UML.png">
 
 As we can see, we have intially four classes and two abstract classes:
- * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as $f(t) = O + tD$, were $O$ is **the ray's origin**, $D$ is the **ray's direction** and $t$ is a real number. Variating $t$ we have **any point in the straight**.
+ * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as *f(t) = O + tD*, were *O* is **the ray's origin**, *D* is the **ray's direction** and t is a real number. Variating *t* we have **any point in the straight**.
  * **Class Primitive** - abstract class that represents a **primitive**. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent **intersection routine**, the ``intersect`` function must be ``virtual``.
  * **Class Output** - used to output the image. Holds a buffer feeded during the render and transforms it to fit the **PPM's format**.
  * **Class Scene** - stores all primitives in the scene. Have a intersection function that just basically calls every primitive intersection function.
@@ -62,10 +62,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzMTYzNjY1Myw1NTg4NzY1NjksLTkxOD
-g3MDA0NSwyMDgxNDMxOTE2LDQwMDU5ODQyLDkyMDE3NzUzNCwt
-MTM4NDA2NzU1NiwtMTYxMzM5OTM2MCwyMTI4NTkwMzg3LC0xNT
-M1NzA0MTY2LDE2ODQzMzI0NzMsLTE4MjU1MDg3NjIsLTE2MjU2
-MzMxNDcsMTI4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3MDY2NT
-c1LDE4NTg0OTExNjgsMTYzMzg3MzE0MF19
+eyJoaXN0b3J5IjpbMTk1MTc4MjI5LDE4MzE2MzY2NTMsNTU4OD
+c2NTY5LC05MTg4NzAwNDUsMjA4MTQzMTkxNiw0MDA1OTg0Miw5
+MjAxNzc1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMjEyOD
+U5MDM4NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1NTA4
+NzYyLC0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMj
+ksLTI1NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
+
 -->
