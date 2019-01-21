@@ -5,6 +5,7 @@
 #include "render.h"
 #include "ortho_camera.h"
 #include "sphere.h"
+#include "triangle.h"
 #include "scene.h"
 
 #endif

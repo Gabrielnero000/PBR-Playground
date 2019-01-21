@@ -31,9 +31,16 @@
 
 ********************************************************************************/
 
+#include <sstream>
+#include <iomanip>
+#include <chrono>
+
 #include "output.h"
 #include "camera.h"
 #include "scene.h"
+
+#define MIN_T 0.00001f
+#define MAX_T MAXFLOAT
 
 class Render
 {

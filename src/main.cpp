@@ -22,14 +22,14 @@ int main()
 
     //-----------------------------------------------------------------------------------
 
-    Output output(resolution);
+    Output output{resolution};
 
     OrthoCamera camera{min_x, max_x, min_y, max_y,
                        up, look_at, position};
 
-    Scene scene{};
-    scene.load();
+    Scene scene;
     Render render{output, scene, camera, background_color_from, background_color_to};
+    scene.load();
 
     render.test();
     output.save();

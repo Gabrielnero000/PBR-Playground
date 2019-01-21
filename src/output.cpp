@@ -18,7 +18,7 @@ void Output::save()
           << resolution_.y << "\n255\n";
     for (int j = resolution_.y - 1; j >= 0; j--)
         for (int i = 0; i < resolution_.x; i++)
-            // Bring colors from 0.0-1.0 range to 0-255 range
+            // Bring colors from [0, 1] to [0, 255]
             // Watch out for rounding errors
             image << int(buffer_[i][j][0] * 255.99f) << " "
                   << int(buffer_[i][j][1] * 255.99f) << " "

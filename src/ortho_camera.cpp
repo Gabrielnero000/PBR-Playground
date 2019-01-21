@@ -19,10 +19,14 @@ Ray OrthoCamera::getRay(const glm::vec2 &coordinates) const
     float width = max_x_ - min_x_;
     float height = max_y_ - min_y_;
 
+    // origin.x = x_coord * WIDTH + min_x
+    // origin.x = x_coord * WIDTH + min_x
+    // origin.x = x_coord * WIDTH + min_x
     glm::vec3 origin{coordinates.x * width + min_x_,
                      coordinates.y * height + min_y_,
                      0.0f};
 
+    // Ray still in camera's space, must transform it to world space
     return Ray{onb_.basis_ * origin + position_,
-               glm::normalize(onb_.basis_ * glm::vec3{0.0f, 0.0f, -1.0f})};
+               glm::normalize(onb_.basis_ * look_at_)};
 }
