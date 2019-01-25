@@ -49,6 +49,9 @@ As we can see, we have intially four classes and two abstract classes:
 Looks simple, right? Well, this will become madness soon! :)
 
 
+## System Specs
+
+
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -62,11 +65,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MTc4MjI5LDE4MzE2MzY2NTMsNTU4OD
-c2NTY5LC05MTg4NzAwNDUsMjA4MTQzMTkxNiw0MDA1OTg0Miw5
-MjAxNzc1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMjEyOD
-U5MDM4NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1NTA4
-NzYyLC0xNjI1NjMzMTQ3LDEyODQzNTA1MzksLTE2ODA0ODkwMj
-ksLTI1NzA2NjU3NSwxODU4NDkxMTY4LDE2MzM4NzMxNDBdfQ==
-
+eyJoaXN0b3J5IjpbMTI0MjM4ODk5NiwxOTUxNzgyMjksMTgzMT
+YzNjY1Myw1NTg4NzY1NjksLTkxODg3MDA0NSwyMDgxNDMxOTE2
+LDQwMDU5ODQyLDkyMDE3NzUzNCwtMTM4NDA2NzU1NiwtMTYxMz
+M5OTM2MCwyMTI4NTkwMzg3LC0xNTM1NzA0MTY2LDE2ODQzMzI0
+NzMsLTE4MjU1MDg3NjIsLTE2MjU2MzMxNDcsMTI4NDM1MDUzOS
+wtMTY4MDQ4OTAyOSwtMjU3MDY2NTc1LDE4NTg0OTExNjgsMTYz
+Mzg3MzE0MF19
 -->
