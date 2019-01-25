@@ -50,7 +50,8 @@ Looks simple, right? Well, this will become madness soon! :)
 
 
 ## System Specs
-Diferent machines can generate diferent performance results, is necessary to have a reference system to normalize all benchmarks. That system is my actual notebook
+Diferent machines can generate diferent performance results, is necessary to have a reference system to normalize all benchmarks. That system is my actual notebook: a Dell G7 with the follow specs:
+
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -65,7 +66,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjY0MzEwOTQwLC0xMTI1ODMzMjg4LDE5NT
+eyJoaXN0b3J5IjpbLTg1NjkxNzk2LC0xMTI1ODMzMjg4LDE5NT
 E3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1
 LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MD
 Y3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3MDQx
