@@ -63,7 +63,7 @@ All experiments was done with the notebook in AC to maximize performance.
 
 ## Primitives
 ### Spheres
-### Tri
+### Triangles
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -78,7 +78,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDk5ODQ2MDYsNDA2NjU1NzgyLC0xMT
+eyJoaXN0b3J5IjpbLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMT
 I1ODMzMjg4LDE5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2
 OSwtOTE4ODcwMDQ1LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMT
 c3NTM0LC0xMzg0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAz
