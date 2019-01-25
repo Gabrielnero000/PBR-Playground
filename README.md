@@ -57,7 +57,11 @@ Diferent machines can generate diferent performance results, is necessary to hav
 
 All experiments was done with the notebook in AC to maximize performance.
 
+## Cameras
+### Orthogonal Camera
+### Perspective Camera
 
+## Primitiv
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -72,11 +76,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTA4NDY1MDAsNDA2NjU1NzgyLC0xMT
-I1ODMzMjg4LDE5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2
-OSwtOTE4ODcwMDQ1LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMT
-c3NTM0LC0xMzg0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAz
-ODcsLTE1MzU3MDQxNjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2Mi
-wtMTYyNTYzMzE0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0y
-NTcwNjY1NzVdfQ==
+eyJoaXN0b3J5IjpbOTgzNTY5OTAzLDQwNjY1NTc4MiwtMTEyNT
+gzMzI4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1Njks
+LTkxODg3MDA0NSwyMDgxNDMxOTE2LDQwMDU5ODQyLDkyMDE3Nz
+UzNCwtMTM4NDA2NzU1NiwtMTYxMzM5OTM2MCwyMTI4NTkwMzg3
+LC0xNTM1NzA0MTY2LDE2ODQzMzI0NzMsLTE4MjU1MDg3NjIsLT
+E2MjU2MzMxNDcsMTI4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3
+MDY2NTc1XX0=
 -->
