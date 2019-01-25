@@ -16,6 +16,7 @@ This project is subdivided in sections,
 which are listed below, wich are in constant grown (fell free to give a feedback :D ) and new sections are added constantly.
 
 * [But What is PBR?](https://github.com/Gabrielnero000/PBR-Playground#but-what-is-pbr) - A (really basic) introduction of what is PBR.
+* [Base Architecture for a Ray Tracer](https://github.com/Gabrielnero000/PBR-Playground#base-architecture-for-a-ray-tracer) - The first sect.
 * [Gallery: Images of Experiments](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments) - Don't know what PBR can do? Check this out!
 
 ---
@@ -78,11 +79,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMT
-I1ODMzMjg4LDE5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2
-OSwtOTE4ODcwMDQ1LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMT
-c3NTM0LC0xMzg0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAz
-ODcsLTE1MzU3MDQxNjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2Mi
-wtMTYyNTYzMzE0NywxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0y
-NTcwNjY1NzVdfQ==
+eyJoaXN0b3J5IjpbLTE5OTA3Nzc5ODksLTEyMTUzOTk3NzQsND
+A2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3ODIyOSwxODMxNjM2
+NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1LDIwODE0MzE5MTYsND
+AwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MDY3NTU2LC0xNjEzMzk5
+MzYwLDIxMjg1OTAzODcsLTE1MzU3MDQxNjYsMTY4NDMzMjQ3My
+wtMTgyNTUwODc2MiwtMTYyNTYzMzE0NywxMjg0MzUwNTM5LC0x
+NjgwNDg5MDI5XX0=
 -->
