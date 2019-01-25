@@ -50,7 +50,7 @@ Looks simple, right? Well, this will become madness soon! :)
 
 
 ## System Specs
-For benchmark purposes, is necessary to have a reference system to compare results. Diferent machines can have diferent results, so 
+Diferent machines can generate diferent performance results, is necessary to have a reference system to normalize all benchmarks. That system is my actual notebook
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -65,11 +65,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjU4MzMyODgsMTk1MTc4MjI5LDE4Mz
-E2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAwNDUsMjA4MTQzMTkx
-Niw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzODQwNjc1NTYsLTE2MT
-MzOTkzNjAsMjEyODU5MDM4NywtMTUzNTcwNDE2NiwxNjg0MzMy
-NDczLC0xODI1NTA4NzYyLC0xNjI1NjMzMTQ3LDEyODQzNTA1Mz
-ksLTE2ODA0ODkwMjksLTI1NzA2NjU3NSwxODU4NDkxMTY4LDE2
-MzM4NzMxNDBdfQ==
+eyJoaXN0b3J5IjpbMjY0MzEwOTQwLC0xMTI1ODMzMjg4LDE5NT
+E3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1
+LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MD
+Y3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3MDQx
+NjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMzE0Ny
+wxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUsMTg1
+ODQ5MTE2OF19
 -->
