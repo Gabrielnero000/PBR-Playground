@@ -17,7 +17,8 @@ which are listed below, wich are in constant grown (fell free to give a feedback
 
 * [But What is PBR?](https://github.com/Gabrielnero000/PBR-Playground#but-what-is-pbr) - A (really basic) introduction of what is PBR.
 * [Base Architecture for a Ray Tracer](https://github.com/Gabrielnero000/PBR-Playground#base-architecture-for-a-ray-tracer) - The first sketch to an object-oriented development.
-* [Cameras](https://github.com/Gabrielnero000/PBR-Playground#cameras) - Camera models to 
+* [Cameras](https://github.com/Gabrielnero000/PBR-Playground#cameras) -Camera models that creates the most different lookings.
+	* []
 * [Gallery: Images of Experiments](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments) - Don't know what PBR can do? Check this out!
 
 ---
@@ -80,11 +81,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0MTExNDM0NywtMTExMzIzNDEzNSwtNz
-I2NTc1ODcwLDY0MjY2ODI0MywtMTIxNTM5OTc3NCw0MDY2NTU3
-ODIsLTExMjU4MzMyODgsMTk1MTc4MjI5LDE4MzE2MzY2NTMsNT
-U4ODc2NTY5LC05MTg4NzAwNDUsMjA4MTQzMTkxNiw0MDA1OTg0
-Miw5MjAxNzc1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMj
-EyODU5MDM4NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1
-NTA4NzYyXX0=
+eyJoaXN0b3J5IjpbODYxNTQxMDE1LC0xMTEzMjM0MTM1LC03Mj
+Y1NzU4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4
+MiwtMTEyNTgzMzI4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1NT
+g4NzY1NjksLTkxODg3MDA0NSwyMDgxNDMxOTE2LDQwMDU5ODQy
+LDkyMDE3NzUzNCwtMTM4NDA2NzU1NiwtMTYxMzM5OTM2MCwyMT
+I4NTkwMzg3LC0xNTM1NzA0MTY2LDE2ODQzMzI0NzMsLTE4MjU1
+MDg3NjJdfQ==
 -->
