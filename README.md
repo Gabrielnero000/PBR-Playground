@@ -50,7 +50,7 @@ Looks simple, right? Well, this will become madness soon! :)
 
 
 ## System Specs
-For benchmark purposes, is necessary to haver
+For benchmark purposes, is necessary to have a reference system to compare results. Diferent machines can have diferent results, so 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -65,7 +65,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODg2ODc2MDcsMTk1MTc4MjI5LDE4Mz
+eyJoaXN0b3J5IjpbLTExMjU4MzMyODgsMTk1MTc4MjI5LDE4Mz
 E2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAwNDUsMjA4MTQzMTkx
 Niw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzODQwNjc1NTYsLTE2MT
 MzOTkzNjAsMjEyODU5MDM4NywtMTUzNTcwNDE2NiwxNjg0MzMy
