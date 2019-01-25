@@ -53,8 +53,9 @@ Looks simple, right? Well, this will become madness soon! :)
 Diferent machines can generate diferent performance results, is necessary to have a reference system to normalize all benchmarks. That system is my actual notebook: a Dell G7 with the follow specs:
 * **Processor**: i7 8750H 6 cores / 12 Threads with 2.2 ~ 4.1 Ghz clock and 9 MB cache.
 * **RAM**: 8 GB DDR4 with 2666 Mhz clock.
-* **VGA**: Nvidia GTX 1050 Ti (
+* **VGA**: Nvidia GTX 1050 Ti (not used yet).
 
+All experiments was done with the notebook in AC to maximize perfo
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -68,11 +69,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMDI5NjYxMywtMTEyNTgzMzI4OCwxOT
-UxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLTkxODg3MDA0
-NSwyMDgxNDMxOTE2LDQwMDU5ODQyLDkyMDE3NzUzNCwtMTM4ND
-A2NzU1NiwtMTYxMzM5OTM2MCwyMTI4NTkwMzg3LC0xNTM1NzA0
-MTY2LDE2ODQzMzI0NzMsLTE4MjU1MDg3NjIsLTE2MjU2MzMxND
-csMTI4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3MDY2NTc1LDE4
-NTg0OTExNjhdfQ==
+eyJoaXN0b3J5IjpbLTEzNDYzNDcwNDIsLTExMjU4MzMyODgsMT
+k1MTc4MjI5LDE4MzE2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAw
+NDUsMjA4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzOD
+QwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4NywtMTUzNTcw
+NDE2NiwxNjg0MzMyNDczLC0xODI1NTA4NzYyLC0xNjI1NjMzMT
+Q3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1NzA2NjU3NSwx
+ODU4NDkxMTY4XX0=
 -->
