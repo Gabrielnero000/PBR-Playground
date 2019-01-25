@@ -57,11 +57,7 @@ Diferent machines can generate diferent performance results, is necessary to hav
 
 All experiments was done with the notebook in AC to maximize performance.
 
-# The Render
-Soon :)
-## Primitivies
-Soon :)
-##
+
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -76,7 +72,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODUwNjc5OTUsNDA2NjU1NzgyLC0xMT
+eyJoaXN0b3J5IjpbLTIwNTA4NDY1MDAsNDA2NjU1NzgyLC0xMT
 I1ODMzMjg4LDE5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2
 OSwtOTE4ODcwMDQ1LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMT
 c3NTM0LC0xMzg0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAz
