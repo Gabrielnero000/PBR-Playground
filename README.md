@@ -55,7 +55,7 @@ Diferent machines can generate diferent performance results, is necessary to hav
 * **RAM**: 8 GB DDR4 with 2666 Mhz clock.
 * **VGA**: Nvidia GTX 1050 Ti (not used yet).
 
-All experiments was done with the notebook in AC to maximize perfo
+All experiments was done with the notebook in AC to maximize performance.
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -69,11 +69,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDYzNDcwNDIsLTExMjU4MzMyODgsMT
-k1MTc4MjI5LDE4MzE2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAw
-NDUsMjA4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzOD
-QwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4NywtMTUzNTcw
-NDE2NiwxNjg0MzMyNDczLC0xODI1NTA4NzYyLC0xNjI1NjMzMT
-Q3LDEyODQzNTA1MzksLTE2ODA0ODkwMjksLTI1NzA2NjU3NSwx
-ODU4NDkxMTY4XX0=
+eyJoaXN0b3J5IjpbNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NT
+E3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1
+LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MD
+Y3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3MDQx
+NjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMzE0Ny
+wxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUsMTg1
+ODQ5MTE2OF19
 -->
