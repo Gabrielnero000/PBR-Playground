@@ -56,6 +56,8 @@ Diferent machines can generate diferent performance results, is necessary to hav
 * **VGA**: Nvidia GTX 1050 Ti (not used yet).
 
 All experiments was done with the notebook in AC to maximize performance.
+
+## The 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -69,11 +71,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NT
-E3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1
-LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MD
-Y3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3MDQx
-NjYsMTY4NDMzMjQ3MywtMTgyNTUwODc2MiwtMTYyNTYzMzE0Ny
-wxMjg0MzUwNTM5LC0xNjgwNDg5MDI5LC0yNTcwNjY1NzUsMTg1
-ODQ5MTE2OF19
+eyJoaXN0b3J5IjpbODkxMjY1OTI1LDQwNjY1NTc4MiwtMTEyNT
+gzMzI4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1Njks
+LTkxODg3MDA0NSwyMDgxNDMxOTE2LDQwMDU5ODQyLDkyMDE3Nz
+UzNCwtMTM4NDA2NzU1NiwtMTYxMzM5OTM2MCwyMTI4NTkwMzg3
+LC0xNTM1NzA0MTY2LDE2ODQzMzI0NzMsLTE4MjU1MDg3NjIsLT
+E2MjU2MzMxNDcsMTI4NDM1MDUzOSwtMTY4MDQ4OTAyOSwtMjU3
+MDY2NTc1XX0=
 -->
