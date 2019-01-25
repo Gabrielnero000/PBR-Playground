@@ -53,6 +53,9 @@ As we can see, we have intially four classes and two abstract classes:
  * **Class Camera** - abstract class to represents the camera. Since there is lots of camera models (orthographic, perspective, with/without lens) the routine to generate rays is variable. So the ``getRay`` function must be ``virtual`` as well.
  * **Class Render** - that's were the magic happens. The render loop is essecially two nested for loops (using output's resolution), were the rays are shooted from the camera to the scene and getting the colision information.
 
+So, the Ray Tracing algorithim is:
+
+
 Looks simple, right? Well, this will become madness soon! :)
 
 
@@ -95,11 +98,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1NjgyOTA2MiwtMTExMzIzNDEzNSwtNz
-I2NTc1ODcwLDY0MjY2ODI0MywtMTIxNTM5OTc3NCw0MDY2NTU3
-ODIsLTExMjU4MzMyODgsMTk1MTc4MjI5LDE4MzE2MzY2NTMsNT
-U4ODc2NTY5LC05MTg4NzAwNDUsMjA4MTQzMTkxNiw0MDA1OTg0
-Miw5MjAxNzc1MzQsLTEzODQwNjc1NTYsLTE2MTMzOTkzNjAsMj
-EyODU5MDM4NywtMTUzNTcwNDE2NiwxNjg0MzMyNDczLC0xODI1
-NTA4NzYyXX0=
+eyJoaXN0b3J5IjpbMjEwNTIyNjMyNSwtNDU2ODI5MDYyLC0xMT
+EzMjM0MTM1LC03MjY1NzU4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5
+Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMzI4OCwxOTUxNzgyMjksMT
+gzMTYzNjY1Myw1NTg4NzY1NjksLTkxODg3MDA0NSwyMDgxNDMx
+OTE2LDQwMDU5ODQyLDkyMDE3NzUzNCwtMTM4NDA2NzU1NiwtMT
+YxMzM5OTM2MCwyMTI4NTkwMzg3LC0xNTM1NzA0MTY2LDE2ODQz
+MzI0NzNdfQ==
 -->
