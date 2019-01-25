@@ -53,7 +53,7 @@ As we can see, we have intially four classes and two abstract classes:
  * **Class Camera** - abstract class to represents the camera. Since there is lots of camera models (orthographic, perspective, with/without lens) the routine to generate rays is variable. So the ``getRay`` function must be ``virtual`` as well.
  * **Class Render** - that's were the magic happens. The render loop is essecially two nested for loops (using output's resolution), were the rays are shooted from the camera to the scene and getting the colision information.
 
-So, the Ray Tracing algorithim is basically generate rays from the camera and test if it's colide with some primitive then generate another ray from the primitive to a light source. If both colisions happen, the primitive is visible and we store . Looks simple, right? Well, this will become madness soon! :)
+So, the Ray Tracing algorithim is basically generate rays from the camera and test if it's colide with some primitive then generate another ray from the primitive to a light source. If both colisions happen, the primitive is visible and we store informations about that colision (colision point, normal, material information and so on) to calculate the final out. Looks simple, right? Well, this will become madness soon! :)
 
 
 ## System Specs
@@ -95,11 +95,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI5MzIwMjk4LC00NTY4MjkwNjIsLTExMT
-MyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLTEyMTUzOTk3
-NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3ODIyOSwxOD
-MxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1LDIwODE0MzE5
-MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MDY3NTU2LC0xNj
-EzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3MDQxNjYsMTY4NDMz
-MjQ3M119
+eyJoaXN0b3J5IjpbMTI4ODEyNDcyNCwtNDU2ODI5MDYyLC0xMT
+EzMjM0MTM1LC03MjY1NzU4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5
+Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMzI4OCwxOTUxNzgyMjksMT
+gzMTYzNjY1Myw1NTg4NzY1NjksLTkxODg3MDA0NSwyMDgxNDMx
+OTE2LDQwMDU5ODQyLDkyMDE3NzUzNCwtMTM4NDA2NzU1NiwtMT
+YxMzM5OTM2MCwyMTI4NTkwMzg3LC0xNTM1NzA0MTY2LDE2ODQz
+MzI0NzNdfQ==
 -->
