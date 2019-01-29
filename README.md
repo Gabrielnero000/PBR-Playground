@@ -46,7 +46,7 @@ Here is a basic UML calass diagram that can be used as base for our Ray Tracer. 
 <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/svgs/Render-UML.png">
 
 As we can see, we have intially four classes and two abstract classes:
- * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as *f(t) = O + tD*, were *O* is **the ray's origin**, *D* is the **ray's direction** and t is a real number. Variating *t* we have **any point in the straight**.
+ * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as $f(t) = O + tD$, were $O$ is **the ray's origin**, $D$ is the **ray's direction** and t is a real number. Variating $t$ we have **any point in the straight**.
  * **Class Primitive** - abstract class that represents a **primitive**. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent **intersection routine**, the ``intersect`` function must be ``virtual``.
  * **Class Output** - used to output the image. Holds a buffer feeded during the render and transforms it to fit the **PPM's format**.
  * **Class Scene** - stores all primitives in the scene. Have a intersection function that just basically calls every primitive intersection function.
@@ -80,7 +80,8 @@ Soon :)
 Soon :)
 
 ### Triangles
-Triangles are the most common primitive because they are used to form complex meshes and objects, so lots of efforts was (and still is) made to create algorithims that can calculate a ray-triangle intersection
+Triangles are the most common primitive because they are used to form complex meshes and objects, so lots of efforts was (and still is) made to create algorithims that can calculate a ray-triangle intersection. 
+
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -94,11 +95,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM2NzMzMTA0LDE0MTAwNTc0NDcsLTQ1Nj
-gyOTA2MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2ODI0
-MywtMTIxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgsMT
-k1MTc4MjI5LDE4MzE2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAw
-NDUsMjA4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzOD
-QwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4NywtMTUzNTcw
-NDE2Nl19
+eyJoaXN0b3J5IjpbMTYwOTg3OTI2MCwxNDEwMDU3NDQ3LC00NT
+Y4MjkwNjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2Njgy
+NDMsLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LD
+E5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcw
+MDQ1LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMz
+g0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3
+MDQxNjZdfQ==
 -->
