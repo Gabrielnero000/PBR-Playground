@@ -80,7 +80,7 @@ Soon :)
 Soon :)
 
 ### Triangles
-A triangle is a 2D primitive composed by three different points (called **vertex)** linked. Triangles are the most common primitive because they are used to form complex meshes and objects
+Triangles are the most common primitive because they are used to form complex meshes and objects, so lots of efforts was (and still is) made to create algorithims that can cal
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -94,11 +94,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDA2NzMxNjMsMTQxMDA1NzQ0NywtND
-U2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNjQyNjY4
-MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMzI4OC
-wxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLTkxODg3
-MDA0NSwyMDgxNDMxOTE2LDQwMDU5ODQyLDkyMDE3NzUzNCwtMT
-M4NDA2NzU1NiwtMTYxMzM5OTM2MCwyMTI4NTkwMzg3LC0xNTM1
-NzA0MTY2XX0=
+eyJoaXN0b3J5IjpbLTQxNTU2OTYwNywxNDEwMDU3NDQ3LC00NT
+Y4MjkwNjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2Njgy
+NDMsLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LD
+E5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcw
+MDQ1LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMz
+g0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3
+MDQxNjZdfQ==
 -->
