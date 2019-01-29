@@ -109,7 +109,9 @@ where $v_1', v_2', v_3'$ are the vertex in the 2D plane and $H'$ is the hitpoint
 $$
 \beta = \frac{b_xh_y - b_yh_x}{b_xc_y - b_yc_x}, \gamma = \frac{h_xc_y - h_yc_x}{b_xc_y - b_yc_x}
 $$
-where $b = v_3' − v_1' , c = v_21 − v_1'$ and $h = H' − v_1'$. Wall also provide a `struct` to store all precomputable values (normal and edges) to accelerate the calculation, witch cause an higher memory use (9 `floats` and 1 `int`, totalizing 40 bytes per triangle) in comparation to Möller's algorithm.
+where $b = v_3' − v_1' , c = v_21 − v_1'$ and $h = H' − v_1'$. Wall also provide a `struct` to store all precomputable values (normal and edges) to accelerate the calculation, witch cause an higher memory use (9 `floats` and 1 `int`, totalizing additional 40 bytes per triangle) in comparation to Möller's algorithm. But witch one is better? Let's find out.
+
+I've benchmarked
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -124,11 +126,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjU0NTg1OTUsOTMwNTQ1Mjg3LC0xMj
-E0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0NywtNDU2ODI5
-MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNjQyNjY4MjQzLC
-0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMzI4OCwxOTUx
-NzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLTkxODg3MDA0NS
-wyMDgxNDMxOTE2LDQwMDU5ODQyLDkyMDE3NzUzNCwtMTM4NDA2
-NzU1Nl19
+eyJoaXN0b3J5IjpbNzQ0NjMxNDYwLDkzMDU0NTI4NywtMTIxND
+Y1NzEzMiwxODU5MzE3MTIzLDE0MTAwNTc0NDcsLTQ1NjgyOTA2
+MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2ODI0MywtMT
+IxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgsMTk1MTc4
+MjI5LDE4MzE2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAwNDUsMj
+A4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzODQwNjc1
+NTZdfQ==
 -->
