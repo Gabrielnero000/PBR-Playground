@@ -85,7 +85,7 @@ As you may know, a triangle in $R^3$ is a 2D structure represented by three dist
 * *Fast, Minimum Storage Ray/Triangle Intersection* (Möller, T.; Trumbore, B.)
 * *Fast Triangle Intersection in RTRT* (Section 7.1 fo the Ingo Wald doctorate degree thesis)
 
-Both algorithims uses baricentric coordinates, witch is a way to represent a triangle and any point inside of if in terms of $
+Both algorithims uses baricentric coordinates, witch is a way to represent any point inside of a in terms of $
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -100,11 +100,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTczMzQ2OTMyLDE0MTAwNTc0NDcsLTQ1Nj
-gyOTA2MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2ODI0
-MywtMTIxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgsMT
-k1MTc4MjI5LDE4MzE2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAw
-NDUsMjA4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzOD
-QwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4NywtMTUzNTcw
-NDE2Nl19
+eyJoaXN0b3J5IjpbMTU1NDI3ODcyNCwxNDEwMDU3NDQ3LC00NT
+Y4MjkwNjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2Njgy
+NDMsLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LD
+E5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcw
+MDQ1LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMz
+g0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3
+MDQxNjZdfQ==
 -->
