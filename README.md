@@ -111,7 +111,7 @@ $$
 $$
 where $b = v_3' − v_1' , c = v_21 − v_1'$ and $h = H' − v_1'$. Wall also provide a `struct` to store all precomputable values (normal and edges) to accelerate the calculation, witch cause an higher memory use (9 `floats` and 1 `int`, totalizing additional 40 bytes per triangle) in comparation to Möller's algorithm. But witch one is better? Let's find out.
 
-In my benckmark, i've runned both algorithims in full brute force (single-thread, no C++ advanced features, no cache optimization 
+In my benckmark, i've runned both algorithims in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven cases: 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -126,7 +126,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzM3MTAyNzYsOTMwNTQ1Mjg3LC0xMj
+eyJoaXN0b3J5IjpbLTE3NDM5ODkyOTAsOTMwNTQ1Mjg3LC0xMj
 E0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0NywtNDU2ODI5
 MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNjQyNjY4MjQzLC
 0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMzI4OCwxOTUx
