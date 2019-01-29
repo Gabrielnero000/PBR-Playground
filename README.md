@@ -85,7 +85,9 @@ As you may know, a triangle in $R^3$ is a 2D structure represented by three dist
 * *Fast, Minimum Storage Ray/Triangle Intersection* (Möller, T.; Trumbore, B.)
 * *Fast Triangle Intersection in RTRT* (Section 7.1 of the Ingo Wald's doctorate degree thesis)
 
-Both algorithims uses baricentric coordinates, witch is a way to represent any point inside of a triangle in terms of $P = \alpha v_1 + \beta v_2 + \gamma v_3$ with $0 \leq \alpha, \beta, \gamma \leq 1$  and $\alpha + \beta + \gamma = 1$, to calculate the intersection. The Möller's algorithim solves the equation:
+Both algorithims uses baricentric coordinates, witch is a way to represent any point inside of a triangle in terms of $P = \alpha v_1 + \beta v_2 + \gamma v_3$ with $0 \leq \alpha, \beta, \gamma \leq 1$  and $\alpha + \beta + \gamma = 1$, to calculate the intersection. 
+
+The Möller's algorithim solves the equation:
 $$T(u,v) = (1 - \beta - \gamma)v_1 + \beta v_2 + \gamma v_3$$
 and, as $T(u,v) = O +tD$, i.e. the ray itselfs, we can rearrange the terms to the linear system:
 $$
@@ -99,7 +101,7 @@ $$
  \end{bmatrix} = O - v_1
 $$
 
-The Wald's algorithim project the triangle in a 2D
+The Wald's algorithim project the triangle in a 2D plane (the $XY$ plane, for example) to do all calculations in 2D 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -114,11 +116,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzMDM2NDMyNyw5MzA1NDUyODcsLTEyMT
-Q2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4Mjkw
-NjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLT
-EyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3
-ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1LD
-IwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MDY3
-NTU2XX0=
+eyJoaXN0b3J5IjpbMzI3NjU4NDUzLDkzMDU0NTI4NywtMTIxND
+Y1NzEzMiwxODU5MzE3MTIzLDE0MTAwNTc0NDcsLTQ1NjgyOTA2
+MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2ODI0MywtMT
+IxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgsMTk1MTc4
+MjI5LDE4MzE2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAwNDUsMj
+A4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzODQwNjc1
+NTZdfQ==
 -->
