@@ -99,7 +99,7 @@ $$
  \end{bmatrix} = O - v_1
 $$
 
-The Wald's algorithim
+The Wald's algorithim project the triangle in a 2D
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -114,11 +114,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NT
-kzMTcxMjMsMTQxMDA1NzQ0NywtNDU2ODI5MDYyLC0xMTEzMjM0
-MTM1LC03MjY1NzU4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5Nzc0LD
-QwNjY1NTc4MiwtMTEyNTgzMzI4OCwxOTUxNzgyMjksMTgzMTYz
-NjY1Myw1NTg4NzY1NjksLTkxODg3MDA0NSwyMDgxNDMxOTE2LD
-QwMDU5ODQyLDkyMDE3NzUzNCwtMTM4NDA2NzU1NiwtMTYxMzM5
-OTM2MF19
+eyJoaXN0b3J5IjpbMTMzMDM2NDMyNyw5MzA1NDUyODcsLTEyMT
+Q2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4Mjkw
+NjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLT
+EyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3
+ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1LD
+IwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MDY3
+NTU2XX0=
 -->
