@@ -87,11 +87,14 @@ As you may know, a triangle in $R^3$ is a 2D structure represented by three dist
 
 Both algorithims uses baricentric coordinates, witch is a way to represent any point inside of a triangle in terms of $P = \alpha v_1 + \beta v_2 + \gamma v_3$ with $0 \leq \alpha, \beta, \gamma \leq 1$  and $\alpha + \beta + \gamma = 1$, to calculate the intersection. The Möller algorithim solves the equation $$T(u,v) = (1 - \beta - \gamma)v_1 + \beta v_2 + \gamma v_3$$ and, as $T(u,v) = O +tD$, i.e. the ray itselfs, we can rearrange the terms to the linear system
 $$
-[-D,\space\space v_2 - v_1,\space\space v_3 - v_1]\begin{bmatrix}
-       t\\[0.3em]
-       \beta  \\[0.3em]
-       0           & \frac{5}{6} & \frac{1}{6}
-     \end{bmatrix}
+\begin
+		{bmatrix}-D,\space\space v_2 - v_1,\space\space v_3 - v_1
+\end{bmatrix}
+\begin{bmatrix}
+       t \\[0.3em]
+       \beta \\[0.3em]
+       \gamma
+ \end{bmatrix} = O - v_1
 $$
 
 ## Gallery: Images of Experiments
@@ -107,11 +110,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODkyODA3MTAsLTEyMTQ2NTcxMzIsMTg1OT
-MxNzEyMywxNDEwMDU3NDQ3LC00NTY4MjkwNjIsLTExMTMyMzQx
-MzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLTEyMTUzOTk3NzQsND
-A2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3ODIyOSwxODMxNjM2
-NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1LDIwODE0MzE5MTYsND
-AwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MDY3NTU2LC0xNjEzMzk5
-MzYwXX0=
+eyJoaXN0b3J5IjpbMTQ1MTY5NjM0OCwtMTIxNDY1NzEzMiwxOD
+U5MzE3MTIzLDE0MTAwNTc0NDcsLTQ1NjgyOTA2MiwtMTExMzIz
+NDEzNSwtNzI2NTc1ODcwLDY0MjY2ODI0MywtMTIxNTM5OTc3NC
+w0MDY2NTU3ODIsLTExMjU4MzMyODgsMTk1MTc4MjI5LDE4MzE2
+MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAwNDUsMjA4MTQzMTkxNi
+w0MDA1OTg0Miw5MjAxNzc1MzQsLTEzODQwNjc1NTYsLTE2MTMz
+OTkzNjBdfQ==
 -->
