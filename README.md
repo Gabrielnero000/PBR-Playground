@@ -105,12 +105,11 @@ The Wald's algorithim project the triangle in a 2D plane (the $XY$ plane, for ex
 $$
 H' = \alpha v_1' + \beta v_2' + \gamma v_3'
 $$
-where $v_1', v_2', v_3'$ are the vertex in the 2D plane and $H'$ is the hitpoint in the 2D plane as well.
-Rearraging the terms we have:
+where $v_1', v_2', v_3'$ are the vertex in the 2D plane and $H'$ is the hitpoint in the 2D plane as well. Rearraging the terms we have:
 $$
 \beta = \frac{b_xh_y - b_yh_x}{b_xc_y - b_yc_x}, \gamma = \frac{h_xc_y - h_yc_x}{b_xc_y - b_yc_x}
 $$
-where $b = v_3' − v1 , c = B 0 − A 0 and h = H 0 − A 0$
+where $b = v_3' − v_1' , c = v_21 − v_1'$ and $h = H' − v_1'$. 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -125,11 +124,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcxOTg2MjQ4LDkzMDU0NTI4NywtMTIxND
-Y1NzEzMiwxODU5MzE3MTIzLDE0MTAwNTc0NDcsLTQ1NjgyOTA2
-MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2ODI0MywtMT
-IxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgsMTk1MTc4
-MjI5LDE4MzE2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAwNDUsMj
-A4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzODQwNjc1
-NTZdfQ==
+eyJoaXN0b3J5IjpbMTY4OTk2ODQwOSw5MzA1NDUyODcsLTEyMT
+Q2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4Mjkw
+NjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLT
+EyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3
+ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1LD
+IwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MDY3
+NTU2XX0=
 -->
