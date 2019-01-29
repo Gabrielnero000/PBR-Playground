@@ -85,7 +85,7 @@ Triangles are the most common primitive because they are used to form complex **
 * *Fast, Minimum Storage Ray/Triangle Intersection* (Möller, T.; Trumbore, B.)
 * *Fast Triangle Intersection in RTRT* (Section 7.1 fo the Ingo Wald doctorate degree thesis)
 
-Both algorithims uses baricentric coordinates, 
+Both algorithims uses baricentric coordinates, witch is a way to represent a triangle and any point inside of if in terms of $
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -100,7 +100,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MzgxNTIzNSwxNDEwMDU3NDQ3LC00NT
+eyJoaXN0b3J5IjpbLTk3OTYwNjY0MiwxNDEwMDU3NDQ3LC00NT
 Y4MjkwNjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2Njgy
 NDMsLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LD
 E5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcw
