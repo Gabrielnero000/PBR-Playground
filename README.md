@@ -108,8 +108,9 @@ $$
 where $v_1', v_2', v_3'$ are the vertex in the 2D plane and $H'$ is the hitpoint in the 2D plane as well.
 Rearraging the terms we have:
 $$
-\beta = \frac{b_xh_y - b_yh_x}{b_xc_y - b_yc_x}, \gamma = \frac{h_xc_y - b_yh_x}{b_xc_y - b_yc_x}
-$$ 
+\beta = \frac{b_xh_y - b_yh_x}{b_xc_y - b_yc_x}, \gamma = \frac{h_xc_y - h_yc_x}{b_xc_y - b_yc_x}
+$$
+where $b = v_3' − v1 , c = B 0 − A 0 and h = H 0 − A 0$
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -124,7 +125,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ5NTk3MjUxLDkzMDU0NTI4NywtMTIxND
+eyJoaXN0b3J5IjpbNDcxOTg2MjQ4LDkzMDU0NTI4NywtMTIxND
 Y1NzEzMiwxODU5MzE3MTIzLDE0MTAwNTc0NDcsLTQ1NjgyOTA2
 MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2ODI0MywtMT
 IxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgsMTk1MTc4
