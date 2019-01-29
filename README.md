@@ -80,7 +80,7 @@ Soon :)
 Soon :)
 
 ### Triangles
-Triangles are the most common primitive. They are used to compose complex meshes and 
+A triangle is a 2D primitive Triangles are the most common primitive because they are used to form complex meshes and objects
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -94,7 +94,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyNjA3MTgzNiwxNDEwMDU3NDQ3LC00NT
+eyJoaXN0b3J5IjpbLTY1NzI5MDM0OSwxNDEwMDU3NDQ3LC00NT
 Y4MjkwNjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2Njgy
 NDMsLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LD
 E5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcw
