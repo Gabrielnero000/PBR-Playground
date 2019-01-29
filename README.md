@@ -53,7 +53,7 @@ As we can see, we have intially four classes and two abstract classes:
  * **Class Camera** - abstract class to represents the camera. Since there is lots of camera models (orthographic, perspective, with/without lens) the routine to generate rays is variable. So the ``getRay`` function must be ``virtual`` as well.
  * **Class Render** - that's were the magic happens. The render loop is essecially two nested for loops (using output's resolution), were the rays are shooted from the camera to the scene and getting the colision information.
 
-So, the Ray Tracing algorithim is basically generate rays from the camera and test if it's colide with some primitive then generate another ray from the primitive to a light source. If both colisions happen, the primitive is visible and we store informations about that colision (colision point, normal, material information and so on) to calculate the final output (today the pixel color). Looks simple, right? Well, this will become madness soon! :)
+So, the Ray Tracing algorithm is basically generate rays from the camera and test if it's colide with some primitive then generate another ray from the primitive to a light source. If both colisions happen, the primitive is visible and we store informations about that colision (colision point, normal, material information and so on) to calculate the final output (today the pixel color). Looks simple, right? Well, this will become madness soon! :)
 
 
 ## System Specs
@@ -80,12 +80,12 @@ Soon :)
 Soon :)
 
 ### Triangles
-As you may know, a triangle in $R^3$ is a 2D structure represented by three distinct points (called **vertex**) $v_1, v_2,v_3 \in R^3$. Triangles are the most common primitive because they are used to form complex **meshes** and objects, so lots of efforts was (and still is) made to create algorithims that can calculate a ray-triangle intersection. Two of those algorithims are implemented here: 
+As you may know, a triangle in $R^3$ is a 2D structure represented by three distinct points (called **vertex**) $v_1, v_2,v_3 \in R^3$. Triangles are the most common primitive because they are used to form complex **meshes** and objects, so lots of efforts was (and still is) made to create algorithms that can calculate a ray-triangle intersection. Two of those algorithms are implemented here: 
 
 * *Fast, Minimum Storage Ray/Triangle Intersection* (Möller, T.; Trumbore, B.)
 * *Fast Triangle Intersection in RTRT* (Section 7.1 of the Ingo Wald's doctorate degree thesis)
 
-Both algorithims uses baricentric coordinates, witch is a way to represent any point inside of a triangle in terms of $P = \alpha v_1 + \beta v_2 + \gamma v_3$ with $0 \leq \alpha, \beta, \gamma \leq 1$  and $\alpha + \beta + \gamma = 1$, to calculate the intersection. 
+Both algorithms uses baricentric coordinates, witch is a way to represent any point inside of a triangle in terms of $P = \alpha v_1 + \beta v_2 + \gamma v_3$ with $0 \leq \alpha, \beta, \gamma \leq 1$  and $\alpha + \beta + \gamma = 1$, to calculate the intersection. 
 
 The Möller's algorithim solves the equation:
 $$T(u,v) = (1 - \beta - \gamma)v_1 + \beta v_2 + \gamma v_3$$
@@ -101,7 +101,7 @@ $$
  \end{bmatrix} = O - v_1
 $$
 
-The Wald's algorithim project the triangle in a 2D plane (the $XY$ plane, for example) to do all calculations in 2D. So, similar to Möller algorithim, it solves
+The Wald's algorithm project the triangle in a 2D plane (the $XY$ plane, for example) to do all calculations in 2D. So, similar to Möller algorithm, it solves
 $$
 H' = \alpha v_1' + \beta v_2' + \gamma v_3'
 $$
@@ -111,7 +111,7 @@ $$
 $$
 where $b = v_3' − v_1' , c = v_21 − v_1'$ and $h = H' − v_1'$. Wall also provide a `struct` to store all precomputable values (normal and edges) to accelerate the calculation, witch cause an higher memory use (9 `floats` and 1 `int`, totalizing additional 40 bytes per triangle) in comparation to Möller's algorithm. But witch one is better? Let's find out.
 
-In my benckmark, i've runned both algorithims in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven render cases: 1, 5, 10, 50, 100, 500 and 1000 triangles. Every case was runned five times to ensure stability and constancy. Here is the results:
+In my benckmark, i've runned both algorithms in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven render cases: 1, 5, 10, 50, 100, 500 and 1000 triangles. Every case was runned five times to ensure stability and constancy. Here is the results:
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -126,11 +126,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEyMT
-Q2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4Mjkw
-NjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLT
-EyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3
-ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1LD
-IwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MDY3
-NTU2XX0=
+eyJoaXN0b3J5IjpbODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNT
+Q1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0
+NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNj
+QyNjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgz
+MzI4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLT
+kxODg3MDA0NSwyMDgxNDMxOTE2LDQwMDU5ODQyLDkyMDE3NzUz
+NF19
 -->
