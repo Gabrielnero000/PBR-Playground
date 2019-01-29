@@ -101,10 +101,11 @@ $$
  \end{bmatrix} = O - v_1
 $$
 
-The Wald's algorithim project the triangle in a 2D plane (the $XY$ plane, for example) to do all calculations in 2D. So, similar to Möller algorithim, it solves:
+The Wald's algorithim project the triangle in a 2D plane (the $XY$ plane, for example) to do all calculations in 2D. So, similar to Möller algorithim, it solves
 $$
-H' = 
+H' = \alpha v_1' + \beta v_2' + \gamma v_3'
 $$
+where $v_1', v_2', v_3'$ are the
 Doing that, it solves:
 $$
 \beta = \frac{3}{}
@@ -123,7 +124,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczODcxNDE0MSw5MzA1NDUyODcsLTEyMT
+eyJoaXN0b3J5IjpbMTU0MTA0NTA2MCw5MzA1NDUyODcsLTEyMT
 Q2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4Mjkw
 NjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLT
 EyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3
