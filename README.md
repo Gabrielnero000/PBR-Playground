@@ -80,8 +80,7 @@ Soon :)
 Soon :)
 
 ### Triangles
-Soon :)
-
+Triangles are the most commem
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -95,11 +94,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxMDA1NzQ0NywtNDU2ODI5MDYyLC0xMT
-EzMjM0MTM1LC03MjY1NzU4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5
-Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMzI4OCwxOTUxNzgyMjksMT
-gzMTYzNjY1Myw1NTg4NzY1NjksLTkxODg3MDA0NSwyMDgxNDMx
-OTE2LDQwMDU5ODQyLDkyMDE3NzUzNCwtMTM4NDA2NzU1NiwtMT
-YxMzM5OTM2MCwyMTI4NTkwMzg3LC0xNTM1NzA0MTY2LDE2ODQz
-MzI0NzNdfQ==
+eyJoaXN0b3J5IjpbNjk0MDIxMzQ2LDE0MTAwNTc0NDcsLTQ1Nj
+gyOTA2MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2ODI0
+MywtMTIxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgsMT
+k1MTc4MjI5LDE4MzE2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAw
+NDUsMjA4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzOD
+QwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4NywtMTUzNTcw
+NDE2Nl19
 -->
