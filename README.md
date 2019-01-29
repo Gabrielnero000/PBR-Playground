@@ -101,7 +101,10 @@ $$
  \end{bmatrix} = O - v_1
 $$
 
-The Wald's algorithim project the triangle in a 2D plane (the $XY$ plane, for example) to do all calculations in 2D 
+The Wald's algorithim project the triangle in a 2D plane (the $XY$ plane, for example) to do all calculations in 2D. Doing that, it solves:
+$$
+\beta = \begin
+$$ 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -116,11 +119,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzI3NjU4NDUzLDkzMDU0NTI4NywtMTIxND
-Y1NzEzMiwxODU5MzE3MTIzLDE0MTAwNTc0NDcsLTQ1NjgyOTA2
-MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2ODI0MywtMT
-IxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgsMTk1MTc4
-MjI5LDE4MzE2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAwNDUsMj
-A4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzODQwNjc1
-NTZdfQ==
+eyJoaXN0b3J5IjpbMTE0MDY0MTE1NCw5MzA1NDUyODcsLTEyMT
+Q2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4Mjkw
+NjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLT
+EyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3
+ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1LD
+IwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMzg0MDY3
+NTU2XX0=
 -->
