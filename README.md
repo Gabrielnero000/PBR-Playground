@@ -80,7 +80,7 @@ Soon :)
 Soon :)
 
 ### Triangles
-Triangles are the most commem
+Triangles are the most common primitive. They are used to compose complex meshes and 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -94,11 +94,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk0MDIxMzQ2LDE0MTAwNTc0NDcsLTQ1Nj
-gyOTA2MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2ODI0
-MywtMTIxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgsMT
-k1MTc4MjI5LDE4MzE2MzY2NTMsNTU4ODc2NTY5LC05MTg4NzAw
-NDUsMjA4MTQzMTkxNiw0MDA1OTg0Miw5MjAxNzc1MzQsLTEzOD
-QwNjc1NTYsLTE2MTMzOTkzNjAsMjEyODU5MDM4NywtMTUzNTcw
-NDE2Nl19
+eyJoaXN0b3J5IjpbMTMyNjA3MTgzNiwxNDEwMDU3NDQ3LC00NT
+Y4MjkwNjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2Njgy
+NDMsLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LD
+E5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcw
+MDQ1LDIwODE0MzE5MTYsNDAwNTk4NDIsOTIwMTc3NTM0LC0xMz
+g0MDY3NTU2LC0xNjEzMzk5MzYwLDIxMjg1OTAzODcsLTE1MzU3
+MDQxNjZdfQ==
 -->
