@@ -105,10 +105,10 @@ The Wald's algorithim project the triangle in a 2D plane (the $XY$ plane, for ex
 $$
 H' = \alpha v_1' + \beta v_2' + \gamma v_3'
 $$
-where $v_1', v_2', v_3'$ are the
-Doing that, it solves:
+where $v_1', v_2', v_3'$ are the vertex in the 2D plane and $H'$ is the hitpoint in the 2D plane as well.
+Rearraging the terms we have:
 $$
-\beta = \frac{3}{}
+\beta = \frac{b_xh_y - b_y}{}
 $$ 
 
 ## Gallery: Images of Experiments
@@ -124,7 +124,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0MTA0NTA2MCw5MzA1NDUyODcsLTEyMT
+eyJoaXN0b3J5IjpbMTYyODc4MDk4NCw5MzA1NDUyODcsLTEyMT
 Q2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4Mjkw
 NjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLT
 EyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3
