@@ -111,7 +111,9 @@ $$
 $$
 where $b = v_3' − v_1' , c = v_21 − v_1'$ and $h = H' − v_1'$. Wall also provide a `struct` to store all precomputable values (normal and edges) to accelerate the calculation, witch cause an higher memory use (9 `floats` and 1 `int`, totalizing additional 40 bytes per triangle) in comparation to Möller's algorithm. But witch one is better? Let's find out.
 
-In my benckmark, i've runned both algorithms in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven render cases: 1, 5, 10, 50, 100, 500 and 1000 triangles. Every case was runned five times to ensure stability and constancy. Here is the results:
+In my benckmark, i've runned both algorithms in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven render cases: 1, 5, 10, 50, 100, 500 and 1000 triangles. Every case was runned five times and the medium value was taken to ensure stability and constancy. Here is the results:
+
+As we can see, 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -126,11 +128,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNT
-Q1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0
-NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNj
-QyNjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgz
-MzI4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLT
-kxODg3MDA0NSwyMDgxNDMxOTE2LDQwMDU5ODQyLDkyMDE3NzUz
-NF19
+eyJoaXN0b3J5IjpbMTUzODQ3MjM0Nyw4Nzg5MzUwNDIsMTM3Nj
+YxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEy
+MywxNDEwMDU3NDQ3LC00NTY4MjkwNjIsLTExMTMyMzQxMzUsLT
+cyNjU3NTg3MCw2NDI2NjgyNDMsLTEyMTUzOTk3NzQsNDA2NjU1
+NzgyLC0xMTI1ODMzMjg4LDE5NTE3ODIyOSwxODMxNjM2NjUzLD
+U1ODg3NjU2OSwtOTE4ODcwMDQ1LDIwODE0MzE5MTYsNDAwNTk4
+NDJdfQ==
 -->
