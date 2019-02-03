@@ -113,7 +113,7 @@ where $b = v_3' − v_1' , c = v_21 − v_1'$ and $h = H' − v_1'$. Wall also p
 
 In my benckmark, i've runned both algorithms in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven render cases: 1, 5, 10, 50, 100, 500 and 1000 triangles. Every case was runned five times and the medium value was taken to ensure stability and constancy. Here is the results:
 
-As we can see, 
+As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 and 5 triangles) to almost a twice faster in most complexes cases (500 and 1000 triangles
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -128,7 +128,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzODQ3MjM0Nyw4Nzg5MzUwNDIsMTM3Nj
+eyJoaXN0b3J5IjpbLTMzNDI2MjE3Myw4Nzg5MzUwNDIsMTM3Nj
 YxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEy
 MywxNDEwMDU3NDQ3LC00NTY4MjkwNjIsLTExMTMyMzQxMzUsLT
 cyNjU3NTg3MCw2NDI2NjgyNDMsLTEyMTUzOTk3NzQsNDA2NjU1
