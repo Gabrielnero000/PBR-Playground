@@ -113,7 +113,7 @@ where $b = v_3' − v_1' , c = v_21 − v_1'$ and $h = H' − v_1'$. Wall also p
 
 In my benckmark, i've runned both algorithms in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven render cases: 1, 5, 10, 50, 100, 500 and 1000 triangles. Every case was runned five times and the medium value was taken to ensure stability and constancy. Here is the results:
 
-As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 and 5 triangles) to almost a twice faster in most complexes cases (500 and 1000 triangles) than Möller's algorithm, which definitely is a huge difference, but the memory use can be a problem depending on the system: 1000 triangles . So I'm taking Wald as default, but is good to take care that the memor
+As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 and 5 triangles) to almost a twice faster in most complexes cases (500 and 1000 triangles) than Möller's algorithm, which definitely is a huge difference, but the memory use can be a problem depending on the system: 1000 triangles 40 KB more to be rendered. So I'm taking Wald as default, but is good to be noticed that the memory can be 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -128,11 +128,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1NjEwNTY3Miw4Nzg5MzUwNDIsMTM3Nj
-YxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEy
-MywxNDEwMDU3NDQ3LC00NTY4MjkwNjIsLTExMTMyMzQxMzUsLT
-cyNjU3NTg3MCw2NDI2NjgyNDMsLTEyMTUzOTk3NzQsNDA2NjU1
-NzgyLC0xMTI1ODMzMjg4LDE5NTE3ODIyOSwxODMxNjM2NjUzLD
-U1ODg3NjU2OSwtOTE4ODcwMDQ1LDIwODE0MzE5MTYsNDAwNTk4
-NDJdfQ==
+eyJoaXN0b3J5IjpbMTQwMzQ4MjkyLDg3ODkzNTA0MiwxMzc2Nj
+E2NjQ1LDkzMDU0NTI4NywtMTIxNDY1NzEzMiwxODU5MzE3MTIz
+LDE0MTAwNTc0NDcsLTQ1NjgyOTA2MiwtMTExMzIzNDEzNSwtNz
+I2NTc1ODcwLDY0MjY2ODI0MywtMTIxNTM5OTc3NCw0MDY2NTU3
+ODIsLTExMjU4MzMyODgsMTk1MTc4MjI5LDE4MzE2MzY2NTMsNT
+U4ODc2NTY5LC05MTg4NzAwNDUsMjA4MTQzMTkxNiw0MDA1OTg0
+Ml19
 -->
