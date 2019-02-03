@@ -113,7 +113,7 @@ where $b = v_3' − v_1' , c = v_21 − v_1'$ and $h = H' − v_1'$. Wall also p
 
 In my benckmark, i've runned both algorithms in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven render cases: 1, 5, 10, 50, 100, 500 and 1000 triangles. Every case was runned five times and the medium value was taken to ensure stability and constancy. Here is the results:
 
-As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 and 5 triangles) to almost a twice faster in most complexes cases (500 and 1000 triangles
+As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 and 5 triangles) to almost a twice faster in most complexes cases (500 and 1000 triangles) than Möller's algorithm, which definitely is a huge difference. So I'm taking Wald as default, but is good to take 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -128,11 +128,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzNDI2MjE3Myw4Nzg5MzUwNDIsMTM3Nj
-YxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEy
-MywxNDEwMDU3NDQ3LC00NTY4MjkwNjIsLTExMTMyMzQxMzUsLT
-cyNjU3NTg3MCw2NDI2NjgyNDMsLTEyMTUzOTk3NzQsNDA2NjU1
-NzgyLC0xMTI1ODMzMjg4LDE5NTE3ODIyOSwxODMxNjM2NjUzLD
-U1ODg3NjU2OSwtOTE4ODcwMDQ1LDIwODE0MzE5MTYsNDAwNTk4
-NDJdfQ==
+eyJoaXN0b3J5IjpbLTE4OTk0Nzc3MzEsODc4OTM1MDQyLDEzNz
+Y2MTY2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcx
+MjMsMTQxMDA1NzQ0NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC
+03MjY1NzU4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1
+NTc4MiwtMTEyNTgzMzI4OCwxOTUxNzgyMjksMTgzMTYzNjY1My
+w1NTg4NzY1NjksLTkxODg3MDA0NSwyMDgxNDMxOTE2LDQwMDU5
+ODQyXX0=
 -->
