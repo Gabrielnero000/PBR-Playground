@@ -46,7 +46,7 @@ Here is a basic UML calass diagram that can be used as base for our Ray Tracer. 
 <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/svgs/Render-UML.png">
 
 As we can see, we have intially four classes and two abstract classes:
- * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$f(t)&space;=&space;O&space;&plus;&space;tD$" title="$f(t) = O + tD$" />, were <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$O$" title="$O$" /> is **the ray's origin**, <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$D$" title="$D$" />is the **ray's direction** and <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$t$" title="$t$" /> is a real number. Variating <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$t$" title="$t$" /> we have **any point in the straight**.
+ * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$f(t)&space;=&space;O&space;&plus;&space;tD$" title="$f(t) = O + tD$" />, were <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$O$" title="$O$" /> is **the ray's origin**, <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$D$" title="$D$" /> is the **ray's direction** and <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$t$" title="$t$" /> is a real number. Variating <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$t$" title="$t$" /> we have **any point in the straight**.
  * **Class Primitive** - abstract class that represents a **primitive**. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent **intersection routine**, the ``intersect`` function must be ``virtual``.
  * **Class Output** - used to output the image. Holds a buffer feeded during the render and transforms it to fit the **PPM's format**.
  * **Class Scene** - stores all primitives in the scene. Have a intersection function that just basically calls every primitive intersection function.
@@ -130,11 +130,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDk0MDMzNjQsLTIwODU2MDIyNzcsLT
-IwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1
-Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0Ny
-wtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNjQy
-NjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMz
-I4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLTkx
-ODg3MDA0NV19
+eyJoaXN0b3J5IjpbLTE5NTg3NTkyNTAsLTEwNDk0MDMzNjQsLT
+IwODU2MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2
+MTY2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMj
+MsMTQxMDA1NzQ0NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03
+MjY1NzU4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NT
+c4MiwtMTEyNTgzMzI4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1
+NTg4NzY1NjldfQ==
 -->
