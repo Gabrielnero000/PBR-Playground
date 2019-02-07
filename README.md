@@ -99,11 +99,13 @@ and, as <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&s
 <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$$&space;\begin&space;{bmatrix}-D,\space\space&space;v_2&space;-&space;v_1,\space\space&space;v_3&space;-&space;v_1&space;\end{bmatrix}&space;\begin{bmatrix}&space;t&space;\\[0.3em]&space;\beta&space;\\[0.3em]&space;\gamma&space;\end{bmatrix}&space;=&space;O&space;-&space;v_1&space;$$" title="$$ \begin {bmatrix}-D,\space\space v_2 - v_1,\space\space v_3 - v_1 \end{bmatrix} \begin{bmatrix} t \\[0.3em] \beta \\[0.3em] \gamma \end{bmatrix} = O - v_1 $$" />
 <p>
 
-The Wald's algorithm project the triangle in a 2D plane (the $XY$ plane, for example) to do all calculations in 2D. So, similar to Möller algorithm, it solves
-$$
-H' = \alpha v_1' + \beta v_2' + \gamma v_3'
-$$
-where $v_1', v_2', v_3'$ are the vertex in the 2D plane and $H'$ is the hitpoint in the 2D plane as well. Rearraging the terms we have:
+The Wald's algorithm project the triangle in a 2D plane (the <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$XY$" title="$XY$" /> plane, for example) to do all calculations in 2D. So, similar to Möller algorithm, it solves
+
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$$&space;H'&space;=&space;\alpha&space;v_1'&space;&plus;&space;\beta&space;v_2'&space;&plus;&space;\gamma&space;v_3'&space;$$" title="$$ H' = \alpha v_1' + \beta v_2' + \gamma v_3' $$" />
+<p>
+
+where <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$v_1',&space;v_2',&space;v_3'$" title="$v_1', v_2', v_3'$" /> are the vertex in the 2D plane and $H'$ is the hitpoint in the 2D plane as well. Rearraging the terms we have:
 $$
 \beta = \frac{b_xh_y - b_yh_x}{b_xc_y - b_yc_x}, \gamma = \frac{h_xc_y - h_yc_x}{b_xc_y - b_yc_x}
 $$
@@ -126,11 +128,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNDMxMjQsLTIwODU2MDIyNzcsLTIwOD
-U2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1Mjg3
-LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0NywtND
-U2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNjQyNjY4
-MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMzI4OC
-wxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLTkxODg3
-MDA0NV19
+eyJoaXN0b3J5IjpbLTE3NDgzOTg0MzcsLTIwODU2MDIyNzcsLT
+IwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1
+Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0Ny
+wtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNjQy
+NjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMz
+I4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLTkx
+ODg3MDA0NV19
 -->
