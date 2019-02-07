@@ -94,16 +94,10 @@ The Möller's algorithim solves the equation:
 <p>
 
 and, as <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$T(u,v)&space;=&space;O&space;&plus;tD$" title="$T(u,v) = O +tD$" />, i.e. the ray itselfs, we can rearrange the terms to the linear system:
-$$
-\begin
-		{bmatrix}-D,\space\space v_2 - v_1,\space\space v_3 - v_1
-\end{bmatrix}
-\begin{bmatrix}
-       t \\[0.3em]
-       \beta \\[0.3em]
-       \gamma
- \end{bmatrix} = O - v_1
-$$
+
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$$&space;\begin&space;{bmatrix}-D,\space\space&space;v_2&space;-&space;v_1,\space\space&space;v_3&space;-&space;v_1&space;\end{bmatrix}&space;\begin{bmatrix}&space;t&space;\\[0.3em]&space;\beta&space;\\[0.3em]&space;\gamma&space;\end{bmatrix}&space;=&space;O&space;-&space;v_1&space;$$" title="$$ \begin {bmatrix}-D,\space\space v_2 - v_1,\space\space v_3 - v_1 \end{bmatrix} \begin{bmatrix} t \\[0.3em] \beta \\[0.3em] \gamma \end{bmatrix} = O - v_1 $$" />
+<p>
 
 The Wald's algorithm project the triangle in a 2D plane (the $XY$ plane, for example) to do all calculations in 2D. So, similar to Möller algorithm, it solves
 $$
@@ -132,11 +126,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjIxOTE1MywtMjA4NTYwMjI3NywtMj
-A4NTYwMjI3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUy
-ODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC
-00NTY4MjkwNjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2
-NjgyNDMsLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMj
-g4LDE5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4
-ODcwMDQ1XX0=
+eyJoaXN0b3J5IjpbMTAzNDMxMjQsLTIwODU2MDIyNzcsLTIwOD
+U2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1Mjg3
+LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0NywtND
+U2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNjQyNjY4
+MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMzI4OC
+wxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLTkxODg3
+MDA0NV19
 -->
