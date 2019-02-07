@@ -116,8 +116,8 @@ where <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&spa
 In my benckmark, i've runned both algorithms in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven render cases: 1, 5, 10, 50, 100, 500 and 1000 triangles. Every case was runned five times and the medium value was taken to ensure stability and constancy. Here is the results:
 
 <p align="center">
-    <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/svgs/Triangle%20Intersection%20Algorithms%20Performance.svg" alt>
-    <em>My first PBR render. Used Blender Clycles to genereate it.</em>
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/utils/Triangle%20Intersection%20Algorithms%20Performance.png" alt>
+    <em>Möller vs Wald</em>
 </p>
 
 As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 and 5 triangles) to almost a twice faster in most complexes cases (500 and 1000 triangles) than Möller's algorithm, which definitely is a huge difference, but the memory use can be a problem depending on the system: 1000 triangles 40 KB more to be rendered. So I'm taking Wald as default, but is good to be noticed that the memory use can blow up.
@@ -135,11 +135,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLT
-IwODU2MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2
-MTY2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMj
-MsMTQxMDA1NzQ0NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03
-MjY1NzU4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NT
-c4MiwtMTEyNTgzMzI4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1
-NTg4NzY1NjldfQ==
+eyJoaXN0b3J5IjpbMTYxNTA3NTEyNSwtMTYyOTQzNDU2OSwtMT
+A0OTQwMzM2NCwtMjA4NTYwMjI3NywtMjA4NTYwMjI3Nyw4Nzg5
+MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NTcxMz
+IsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4MjkwNjIsLTEx
+MTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLTEyMTUzOT
+k3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3ODIyOSwx
+ODMxNjM2NjUzXX0=
 -->
