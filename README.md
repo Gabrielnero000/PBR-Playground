@@ -85,10 +85,10 @@ As you may know, a triangle in <img src="https://latex.codecogs.com/gif.latex?\i
 * *Fast, Minimum Storage Ray/Triangle Intersection* (Möller, T.; Trumbore, B.)
 * *Fast Triangle Intersection in RTRT* (Section 7.1 of the Ingo Wald's doctorate degree thesis)
 
-Both algorithms uses baricentric coordinates, witch is a way to represent any point inside of a triangle in terms of  <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$P&space;=&space;\alpha&space;v_1&space;&plus;&space;\beta&space;v_2&space;&plus;&space;\gamma&space;v_3$" title="$P = \alpha v_1 + \beta v_2 + \gamma v_3$" /> with $0 \leq \alpha, \beta, \gamma \leq 1$  and $\alpha + \beta + \gamma = 1$, to calculate the intersection. 
+Both algorithms uses baricentric coordinates, witch is a way to represent any point inside of a triangle in terms of  <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$P&space;=&space;\alpha&space;v_1&space;&plus;&space;\beta&space;v_2&space;&plus;&space;\gamma&space;v_3$" title="$P = \alpha v_1 + \beta v_2 + \gamma v_3$" /> with <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$0&space;\leq&space;\alpha,&space;\beta,&space;\gamma&space;\leq&space;1$" title="$0 \leq \alpha, \beta, \gamma \leq 1$" />  and <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$\alpha&space;&plus;&space;\beta&space;&plus;&space;\gamma&space;=&space;1$" title="$\alpha + \beta + \gamma = 1$" />, to calculate the intersection. 
 
 The Möller's algorithim solves the equation:
-$$T(u,v) = (1 - \beta - \gamma)v_1 + \beta v_2 + \gamma v_3$$
+<img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$$T(u,v)&space;=&space;(1&space;-&space;\beta&space;-&space;\gamma)v_1&space;&plus;&space;\beta&space;v_2&space;&plus;&space;\gamma&space;v_3$$" title="$$T(u,v) = (1 - \beta - \gamma)v_1 + \beta v_2 + \gamma v_3$$" />
 and, as $T(u,v) = O +tD$, i.e. the ray itselfs, we can rearrange the terms to the linear system:
 $$
 \begin
@@ -128,11 +128,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDAwMTUyMjMsLTIwODU2MDIyNzcsLT
-IwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1
-Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0Ny
-wtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNjQy
-NjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMz
-I4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLTkx
-ODg3MDA0NV19
+eyJoaXN0b3J5IjpbMjA4NjU4NzYwNywtMjA4NTYwMjI3NywtMj
+A4NTYwMjI3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUy
+ODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC
+00NTY4MjkwNjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2
+NjgyNDMsLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMj
+g4LDE5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4
+ODcwMDQ1XX0=
 -->
