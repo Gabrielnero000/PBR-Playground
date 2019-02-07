@@ -105,11 +105,13 @@ The Wald's algorithm project the triangle in a 2D plane (the <img src="https://l
 <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$$&space;H'&space;=&space;\alpha&space;v_1'&space;&plus;&space;\beta&space;v_2'&space;&plus;&space;\gamma&space;v_3'&space;$$" title="$$ H' = \alpha v_1' + \beta v_2' + \gamma v_3' $$" />
 <p>
 
-where <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$v_1',&space;v_2',&space;v_3'$" title="$v_1', v_2', v_3'$" /> are the vertex in the 2D plane and $H'$ is the hitpoint in the 2D plane as well. Rearraging the terms we have:
-$$
-\beta = \frac{b_xh_y - b_yh_x}{b_xc_y - b_yc_x}, \gamma = \frac{h_xc_y - h_yc_x}{b_xc_y - b_yc_x}
-$$
-where $b = v_3' − v_1' , c = v_21 − v_1'$ and $h = H' − v_1'$. Wall also provide a `struct` to store all precomputable values (normal and edges) to accelerate the calculation, witch cause an higher memory use (9 `floats` and 1 `int`, totalizing additional 40 bytes per triangle) in comparation to Möller's algorithm. But witch one is better? Let's find out.
+where <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$v_1',&space;v_2',&space;v_3'$" title="$v_1', v_2', v_3'$" /> are the vertex in the 2D plane and <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$H'$" title="$H'$" /> is the hitpoint in the 2D plane as well. Rearraging the terms we have:
+
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$$&space;\beta&space;=&space;\frac{b_xh_y&space;-&space;b_yh_x}{b_xc_y&space;-&space;b_yc_x},&space;\gamma&space;=&space;\frac{h_xc_y&space;-&space;h_yc_x}{b_xc_y&space;-&space;b_yc_x}&space;$$" title="$$ \beta = \frac{b_xh_y - b_yh_x}{b_xc_y - b_yc_x}, \gamma = \frac{h_xc_y - h_yc_x}{b_xc_y - b_yc_x} $$" />
+<p>
+
+where <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$b&space;=&space;v_3'&space;−&space;v_1'&space;,&space;c&space;=&space;v_21&space;−&space;v_1'$" title="$b = v_3' − v_1' , c = v_2' − v_1'$" />  and $h = H' − v_1'$. Wall also provide a `struct` to store all precomputable values (normal and edges) to accelerate the calculation, witch cause an higher memory use (9 `floats` and 1 `int`, totalizing additional 40 bytes per triangle) in comparation to Möller's algorithm. But witch one is better? Let's find out.
 
 In my benckmark, i've runned both algorithms in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven render cases: 1, 5, 10, 50, 100, 500 and 1000 triangles. Every case was runned five times and the medium value was taken to ensure stability and constancy. Here is the results:
 
@@ -128,11 +130,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDgzOTg0MzcsLTIwODU2MDIyNzcsLT
-IwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1
-Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0Ny
-wtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNjQy
-NjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4MiwtMTEyNTgzMz
-I4OCwxOTUxNzgyMjksMTgzMTYzNjY1Myw1NTg4NzY1NjksLTkx
-ODg3MDA0NV19
+eyJoaXN0b3J5IjpbMTYyMjk0NjkxMCwtMjA4NTYwMjI3NywtMj
+A4NTYwMjI3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUy
+ODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC
+00NTY4MjkwNjIsLTExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2
+NjgyNDMsLTEyMTUzOTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMj
+g4LDE5NTE3ODIyOSwxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4
+ODcwMDQ1XX0=
 -->
