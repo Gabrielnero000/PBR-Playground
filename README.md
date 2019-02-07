@@ -46,7 +46,7 @@ Here is a basic UML calass diagram that can be used as base for our Ray Tracer. 
 <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/svgs/Render-UML.png">
 
 As we can see, we have intially four classes and two abstract classes:
- * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as $f(t) = O + tD$, were $O$ is **the ray's origin**, $D$ is the **ray's direction** and t is a real number. Variating $t$ we have **any point in the straight**.
+ * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as <img src="https://latex.codecogs.com/gif.latex?$f(t)&space;=&space;O&space;&plus;&space;tD$" title="$f(t) = O + tD$" />, were $O$ is **the ray's origin**, $D$ is the **ray's direction** and t is a real number. Variating $t$ we have **any point in the straight**.
  * **Class Primitive** - abstract class that represents a **primitive**. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent **intersection routine**, the ``intersect`` function must be ``virtual``.
  * **Class Output** - used to output the image. Holds a buffer feeded during the render and transforms it to fit the **PPM's format**.
  * **Class Scene** - stores all primitives in the scene. Have a intersection function that just basically calls every primitive intersection function.
@@ -128,11 +128,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNz
-Y2MTY2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcx
-MjMsMTQxMDA1NzQ0NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC
-03MjY1NzU4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1
-NTc4MiwtMTEyNTgzMzI4OCwxOTUxNzgyMjksMTgzMTYzNjY1My
-w1NTg4NzY1NjksLTkxODg3MDA0NSwyMDgxNDMxOTE2LDQwMDU5
-ODQyXX0=
+eyJoaXN0b3J5IjpbMTIxNjc3OTk3MCwtMjA4NTYwMjI3Nyw4Nz
+g5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NTcx
+MzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4MjkwNjIsLT
+ExMTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLTEyMTUz
+OTk3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3ODIyOS
+wxODMxNjM2NjUzLDU1ODg3NjU2OSwtOTE4ODcwMDQ1LDIwODE0
+MzE5MTZdfQ==
 -->
