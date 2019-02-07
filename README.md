@@ -43,7 +43,7 @@ So, instead of shot infinite rays from every light source, Ray and Path Tracing 
 ## Base Architecture for a Ray Tracer
 Here is a basic UML calass diagram that can be used as base for our Ray Tracer. Gradually it will be expanded as we add new features, so it's important to have a robust architecture in the begining. I'll be using **C++** to implementation, since we need fast computation and object-oriented features (inheritance, polymorphism, function overload, etc). I'm using the [**GLM**](https://glm.g-truc.net/0.9.9/index.html) library to abstract some vector representation and operations (for now). So there it is:
 
-<img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/svgs/Render-UML.png">
+<img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/utils/Render-UML.png">
 
 As we can see, we have intially four classes and two abstract classes:
  * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$f(t)&space;=&space;O&space;&plus;&space;tD$" title="$f(t) = O + tD$" />, were <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$O$" title="$O$" /> is **the ray's origin**, <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$D$" title="$D$" /> is the **ray's direction** and <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$t$" title="$t$" /> is a real number. Variating <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$t$" title="$t$" /> we have **any point in the straight**.
@@ -135,11 +135,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxNTA3NTEyNSwtMTYyOTQzNDU2OSwtMT
-A0OTQwMzM2NCwtMjA4NTYwMjI3NywtMjA4NTYwMjI3Nyw4Nzg5
-MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NTcxMz
-IsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4MjkwNjIsLTEx
-MTMyMzQxMzUsLTcyNjU3NTg3MCw2NDI2NjgyNDMsLTEyMTUzOT
-k3NzQsNDA2NjU1NzgyLC0xMTI1ODMzMjg4LDE5NTE3ODIyOSwx
-ODMxNjM2NjUzXX0=
+eyJoaXN0b3J5IjpbMTA1NTA5OTIzNywxNjE1MDc1MTI1LC0xNj
+I5NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1NjAyMjc3LC0yMDg1
+NjAyMjc3LDg3ODkzNTA0MiwxMzc2NjE2NjQ1LDkzMDU0NTI4Ny
+wtMTIxNDY1NzEzMiwxODU5MzE3MTIzLDE0MTAwNTc0NDcsLTQ1
+NjgyOTA2MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2OD
+I0MywtMTIxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgs
+MTk1MTc4MjI5XX0=
 -->
