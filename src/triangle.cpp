@@ -58,7 +58,7 @@ Triangle::~Triangle()
 {
 }
 
-inline bool Triangle::intersect(const Ray &ray,
+bool Triangle::intersect(const Ray &ray,
                                 float t_min,
                                 float t_max,
                                 Record &record) const

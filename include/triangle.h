@@ -50,7 +50,7 @@ public:
            const glm::vec3 &v3);
   ~Triangle();
 
-  bool intersect(const Ray &ray,
+  inline bool intersect(const Ray &ray,
                  float t_min,
                  float t_max,
                  Record &record) const;
