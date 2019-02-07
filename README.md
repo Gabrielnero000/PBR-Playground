@@ -85,7 +85,7 @@ As you may know, a triangle in <img src="https://latex.codecogs.com/gif.latex?\i
 * *Fast, Minimum Storage Ray/Triangle Intersection* (Möller, T.; Trumbore, B.)
 * *Fast Triangle Intersection in RTRT* (Section 7.1 of the Ingo Wald's doctorate degree thesis)
 
-Both algorithms uses baricentric coordinates, witch is a way to represent any point inside of a triangle in terms of $P = \alpha v_1 + \beta v_2 + \gamma v_3$ with $0 \leq \alpha, \beta, \gamma \leq 1$  and $\alpha + \beta + \gamma = 1$, to calculate the intersection. 
+Both algorithms uses baricentric coordinates, witch is a way to represent any point inside of a triangle in terms of  <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$P&space;=&space;\alpha&space;v_1&space;&plus;&space;\beta&space;v_2&space;&plus;&space;\gamma&space;v_3$" title="$P = \alpha v_1 + \beta v_2 + \gamma v_3$" /> with $0 \leq \alpha, \beta, \gamma \leq 1$  and $\alpha + \beta + \gamma = 1$, to calculate the intersection. 
 
 The Möller's algorithim solves the equation:
 $$T(u,v) = (1 - \beta - \gamma)v_1 + \beta v_2 + \gamma v_3$$
@@ -128,7 +128,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTk1MTkyMDQsLTIwODU2MDIyNzcsLT
+eyJoaXN0b3J5IjpbLTE3MDAwMTUyMjMsLTIwODU2MDIyNzcsLT
 IwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1
 Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1NzQ0Ny
 wtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAsNjQy
