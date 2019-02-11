@@ -50,7 +50,7 @@ public:
            const glm::vec3 &v3);
   ~Triangle();
 
-  inline bool intersect(const Ray &ray,
+  bool intersect(const Ray &ray,
                  float t_min,
                  float t_max,
                  Record &record) const;
@@ -62,21 +62,19 @@ public:
 #ifdef TRIANGLE_WALD
   const int modulo[5] = {0, 1, 2, 0, 1};
 
-  struct TriAcecel
-  {
-    float normal_u;
-    float normal_v;
-    float normal_d;
-    int k;
+  float normal_u;
+  float normal_v;
+  float normal_d;
+  int k;
 
-    float edge1_nu;
-    float edge1_nv;
-    float edge1_d;
+  float edge1_nu;
+  float edge1_nv;
+  float edge1_d;
 
-    float edge2_nu;
-    float edge2_nv;
-    float edge2_d;
-  } acc;
+  float edge2_nu;
+  float edge2_nv;
+  float edge2_d;
+
 #endif
 };
 

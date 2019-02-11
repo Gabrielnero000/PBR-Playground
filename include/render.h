@@ -40,7 +40,7 @@
 #include "scene.h"
 
 #define MIN_T 0.00001f
-#define MAX_T 1000000.0f
+#define MAX_T MAXFLOAT
 class Render
 {
 public:

@@ -43,7 +43,7 @@ class Output
 public:
   Output(const glm::vec2 resolution);
   ~Output();
-  void save();
+  void save(const std::string filename);
 
   glm::vec2 resolution_;
   std::vector<std::vector<glm::vec3>> buffer_;

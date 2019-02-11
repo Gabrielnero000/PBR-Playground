@@ -20,8 +20,8 @@ Ray OrthoCamera::getRay(const glm::vec2 &coordinates) const
     float height = max_y_ - min_y_;
 
     // origin.x = x_coord * WIDTH + min_x
-    // origin.x = x_coord * WIDTH + min_x
-    // origin.x = x_coord * WIDTH + min_x
+    // origin.y = y_coord * HEIGHT + min_y
+    // origin.z = 0.0f
     glm::vec3 origin{coordinates.x * width + min_x_,
                      coordinates.y * height + min_y_,
                      0.0f};

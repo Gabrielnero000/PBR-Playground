@@ -8,11 +8,11 @@ Output::Output(const glm::vec2 resolution) : resolution_{resolution}
 
 Output::~Output() {}
 
-void Output::save()
+void Output::save(const std::string filename)
 {
     // PPM's pattern
     std::ofstream image;
-    image.open("output.ppm");
+    image.open(filename + ".ppm");
     image << "P3\n"
           << resolution_.x << " "
           << resolution_.y << "\n255\n";

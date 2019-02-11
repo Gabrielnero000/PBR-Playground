@@ -13,30 +13,30 @@ Triangle::Triangle(const glm::vec3 &v1,
 
     if (fabs(normal.x) > fabs(normal.y))
         if (fabs(normal.x) > fabs(normal.z))
-            acc.k = 0;
+            k = 0;
         else
-            acc.k = 2;
+            k = 2;
     else if (fabs(normal.y) > fabs(normal.z))
-        acc.k = 1;
+        k = 1;
     else
-        acc.k = 2;
+        k = 2;
 
-    const int u = modulo[acc.k + 1];
-    const int v = modulo[acc.k + 2];
+    const int u = modulo[k + 1];
+    const int v = modulo[k + 2];
 
-    acc.normal_u = normal[u] / normal[acc.k];
-    acc.normal_v = normal[v] / normal[acc.k];
-    acc.normal_d = glm::dot(v1_, (normal / normal[acc.k]));
+    normal_u = normal[u] / normal[k];
+    normal_v = normal[v] / normal[k];
+    normal_d = glm::dot(v1_, (normal / normal[k]));
 
     const float temp = 1.0f / (edge_2[u] * edge_1[v] - edge_2[v] * edge_1[u]);
 
-    acc.edge1_nu = edge_1[v] / temp;
-    acc.edge1_nv = -edge_1[u] / temp;
-    acc.edge1_d = (edge_1[u] * v1_[v] - edge_1[v] * v1_[u]) / temp;
+    edge1_nu = edge_1[v] / temp;
+    edge1_nv = -edge_1[u] / temp;
+    edge1_d = (edge_1[u] * v1_[v] - edge_1[v] * v1_[u]) / temp;
 
-    acc.edge2_nu = -edge_2[v] / temp;
-    acc.edge2_nv = edge_2[u] / temp;
-    acc.edge2_d = (edge_2[v] * v1_[u] - edge_2[u] * v1_[v]) / temp;
+    edge2_nu = -edge_2[v] / temp;
+    edge2_nv = edge_2[u] / temp;
+    edge2_d = (edge_2[v] * v1_[u] - edge_2[u] * v1_[v]) / temp;
 
 #endif
 }
@@ -100,16 +100,16 @@ bool Triangle::intersect(const Ray &ray,
 #else
 #ifdef TRIANGLE_WALD
 
-    const int ku = modulo[acc.k + 1];
-    const int kv = modulo[acc.k + 2];
+    const int ku = modulo[k + 1];
+    const int kv = modulo[k + 2];
 
-    const float nd = 1.0f / (ray.direction_[acc.k] +
-                             acc.normal_u * ray.direction_[ku] +
-                             acc.normal_v * ray.direction_[kv]);
+    const float nd = 1.0f / (ray.direction_[k] +
+                             normal_u * ray.direction_[ku] +
+                             normal_v * ray.direction_[kv]);
 
-    const float f = (acc.normal_d - ray.origin_[acc.k] -
-                     acc.normal_u * ray.origin_[ku] -
-                     acc.normal_v * ray.origin_[kv]) *
+    const float f = (normal_d - ray.origin_[k] -
+                     normal_u * ray.origin_[ku] -
+                     normal_v * ray.origin_[kv]) *
                     nd;
     if (f < t_min || f > t_max)
         return false;
@@ -117,12 +117,12 @@ bool Triangle::intersect(const Ray &ray,
     const float hu = (ray.origin_[ku] + f * ray.direction_[ku]);
     const float hv = (ray.origin_[kv] + f * ray.direction_[kv]);
 
-    const float beta = (hu * acc.edge2_nu + hv * acc.edge2_nv + acc.edge2_d);
+    const float beta = (hu * edge2_nu + hv * edge2_nv + edge2_d);
 
     if (beta < 0.0f)
         return false;
 
-    const float gamma = (hu * acc.edge1_nu + hv * acc.edge1_nv + acc.edge1_d);
+    const float gamma = (hu * edge1_nu + hv * edge1_nv + edge1_d);
 
     if (gamma < 0.0f)
         return false;
