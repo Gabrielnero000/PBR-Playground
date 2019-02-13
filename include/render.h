@@ -39,7 +39,7 @@
 #include "camera.h"
 #include "scene.h"
 
-#define MIN_T 0.00001f
+#define MIN_T 0.001f
 #define MAX_T FLT_MAX
 class Render
 {

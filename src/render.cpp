@@ -48,6 +48,7 @@ void Render::test()
             if (scene_.intersect(ray, MIN_T, MAX_T, record))
             {
                 // Visualize the colision based on t
+                //std::cout << record.t_ * 0.2f << std::endl;
                 output_.buffer_[x][y] = glm::vec3{record.t_ * 0.2f};
             }
             else
@@ -59,7 +60,6 @@ void Render::test()
             }
         }
     }
-
 
     // Print some usefull information
     std::clog << std::endl;

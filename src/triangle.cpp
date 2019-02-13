@@ -1,4 +1,5 @@
 #include "triangle.h"
+#include <iostream>
 
 Triangle::Triangle(const glm::vec3 &v1,
                    const glm::vec3 &v2,
@@ -59,9 +60,9 @@ Triangle::~Triangle()
 }
 
 bool Triangle::intersect(const Ray &ray,
-                                float t_min,
-                                float t_max,
-                                Record &record) const
+                         float t_min,
+                         float t_max,
+                         Record &record) const
 {
 #ifdef TRIANGLE_MOLLER
     const glm::vec3 edge_1 = v2_ - v1_;
@@ -111,7 +112,8 @@ bool Triangle::intersect(const Ray &ray,
                      normal_u * ray.origin_[ku] -
                      normal_v * ray.origin_[kv]) *
                     nd;
-    if (f < t_min || f > t_max)
+
+    if (f < t_min || f > t_max || std::isnan(f))
         return false;
 
     const float hu = (ray.origin_[ku] + f * ray.direction_[ku]);

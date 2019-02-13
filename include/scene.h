@@ -34,6 +34,8 @@
 #include "primitive.h"
 #include "sphere.h"
 #include "triangle.h"
+#include "mesh.h"
+
 
 class Scene
 {
