@@ -67,13 +67,11 @@ public:
   float normal_d;
   int k;
 
-  float edge1_nu;
-  float edge1_nv;
-  float edge1_d;
+  float B_nu;
+  float B_nv;
 
-  float edge2_nu;
-  float edge2_nv;
-  float edge2_d;
+  float C_nu;
+  float C_nv;
 
 #endif
 };

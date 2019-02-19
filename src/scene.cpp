@@ -11,11 +11,10 @@ bool Scene::intersect(const Ray &ray,
 {
     bool intersected = false;
     Record tmp_record;
-    std::size_t num_primitives = primitives_.size();
     float closest_so_far = t_max;
 
     // for each primitive
-    for (std::size_t i = 0; i < num_primitives; i++)
+    for (std::size_t i = 0; i < primitives_.size(); i++)
     {
         if (primitives_[i]->intersect(ray, t_min, closest_so_far, tmp_record))
         {
@@ -49,5 +48,5 @@ void Scene::load()
 
     // Scene 3
     primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"monkey.obj"}));
-
+    
 }

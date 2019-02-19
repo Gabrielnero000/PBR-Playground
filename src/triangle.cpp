@@ -8,9 +8,9 @@ Triangle::Triangle(const glm::vec3 &v1,
                                           v3_{v3}
 {
 #ifdef TRIANGLE_WALD
-    const glm::vec3 edge_1 = v2_ - v1_;
-    const glm::vec3 edge_2 = v3_ - v1_;
-    const glm::vec3 normal = glm::cross(edge_1, edge_2);
+    const glm::vec3 C = v2_ - v1_;
+    const glm::vec3 B = v3_ - v1_;
+    const glm::vec3 normal = glm::cross(B, C);
 
     if (fabs(normal.x) > fabs(normal.y))
         if (fabs(normal.x) > fabs(normal.z))
@@ -25,19 +25,19 @@ Triangle::Triangle(const glm::vec3 &v1,
     const int u = modulo[k + 1];
     const int v = modulo[k + 2];
 
-    normal_u = normal[u] / normal[k];
-    normal_v = normal[v] / normal[k];
-    normal_d = glm::dot(v1_, (normal / normal[k]));
+    const float normal_k = 1.0f / normal[k];
 
-    const float temp = 1.0f / (edge_2[u] * edge_1[v] - edge_2[v] * edge_1[u]);
+    normal_u = normal[u] * normal_k;
+    normal_v = normal[v] * normal_k;
+    normal_d = glm::dot(normal, v1_) * normal_k;
 
-    edge1_nu = edge_1[v] / temp;
-    edge1_nv = -edge_1[u] / temp;
-    edge1_d = (edge_1[u] * v1_[v] - edge_1[v] * v1_[u]) / temp;
+    const float temp = 1.0f / (B[u] * C[v] - B[v] * C[u]);
 
-    edge2_nu = -edge_2[v] / temp;
-    edge2_nv = edge_2[u] / temp;
-    edge2_d = (edge_2[v] * v1_[u] - edge_2[u] * v1_[v]) / temp;
+    B_nu = B[u] * temp;
+    B_nv = -B[v] * temp;
+
+    C_nu = C[v] * temp;
+    C_nv = -C[u] * temp;
 
 #endif
 }
@@ -116,15 +116,15 @@ bool Triangle::intersect(const Ray &ray,
     if (f < t_min || f > t_max || std::isnan(f))
         return false;
 
-    const float hu = (ray.origin_[ku] + f * ray.direction_[ku]);
-    const float hv = (ray.origin_[kv] + f * ray.direction_[kv]);
+    const float hu = (ray.origin_[ku] + f * ray.direction_[ku] - v1_[ku]);
+    const float hv = (ray.origin_[kv] + f * ray.direction_[kv] - v1_[kv]);
 
-    const float beta = (hu * edge2_nu + hv * edge2_nv + edge2_d);
+    const float beta = (hv * B_nu + hu * B_nv);
 
     if (beta < 0.0f)
         return false;
 
-    const float gamma = (hu * edge1_nu + hv * edge1_nv + edge1_d);
+    const float gamma = (hu * C_nu + hv * C_nv);
 
     if (gamma < 0.0f)
         return false;
