@@ -4,17 +4,17 @@ int main()
 {
 
     // Output params
-    glm::vec2 resolution = {1280, 720};
+    glm::vec2 resolution = {500, 500};
 
     //Render params
     glm::vec3 background_color_from = {1.0f, 1.0f, 1.0f}; // White
     glm::vec3 background_color_to = {0.5f, 0.7f, 1.0f};   // Ciano
 
     //Camera params - 16:9 presset
-    float min_x = -4.0f;
-    float max_x = 4.0f;
-    float min_y = -2.25f;
-    float max_y = 2.25f;
+    float min_x = -1.25f;
+    float max_x = 1.25f;
+    float min_y = -1.25f;
+    float max_y = 1.25f;
     float focal_distance = 2.0f;
 
     glm::vec3 up = {0.0f, 1.0f, 0.0f};

@@ -49,4 +49,5 @@ void Scene::load()
 
     // Scene 3
     primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"monkey.obj"}));
+
 }

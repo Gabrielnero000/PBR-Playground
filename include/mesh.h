@@ -18,7 +18,7 @@ public:
                  float t_max,
                  Record &record) const;
 
-  std::vector<const Triangle*> triangles_;
+  std::vector<Triangle*> triangles_;
 };
 
 #endif

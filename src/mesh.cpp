@@ -35,21 +35,23 @@ Mesh::Mesh(const std::string filename)
 
             case 'f':
 
-                std::cout << vertex_temp.at(5)[0] << "," << vertex_temp.at(5)[1] << "," << vertex_temp.at(5)[2] << std::endl;
-
                 for (size_t i = 0, j = 0; i < line.size(); i++)
                 {
                     if (line[i] == ' ')
                     {
-                        index[j] = line[i + 1];
+                        index[j] = i;
                         j++;
                     }
                 }
 
                 triangles_.push_back(new Triangle{
-                    vertex_temp[index[0]],
-                    vertex_temp[index[1]],
-                    vertex_temp[index[2]]});
+                    vertex_temp[std::stoi(line.substr(index[0] + 1, index[1] - index[0])) - 1],
+                    vertex_temp[std::stoi(line.substr(index[1] + 1, index[2] - index[1])) - 1],
+                    vertex_temp[std::stoi(line.substr(index[2] + 1, (line.size() - 1) - index[2])) - 1]});
+
+                /*std::cout << std::stod(line.substr(index[0] + 1, index[1] - index[0]))
+                          << ", " << std::stod(line.substr(index[1] + 1, index[2] - index[1]))
+                          << ", " << std::stof(line.substr(index[2] + 1, (line.size() - 1) - index[2])) << std::endl;*/
 
                 break;
 
@@ -70,6 +72,10 @@ bool Mesh::intersect(const Ray &ray,
                      Record &record) const
 {
     bool intersect = false;
+
+    //std::cout << "v1: " << triangles_[0]->v1_[0] << ", " << triangles_[0]->v1_[1] << ", " << triangles_[0]->v1_[2] << std::endl;
+    //std::cout << "v2: " << triangles_[0]->v2_[0] << ", " << triangles_[0]->v2_[1] << ", " << triangles_[0]->v2_[2] << std::endl;
+    //std::cout << "v3: " << triangles_[0]->v3_[0] << ", " << triangles_[0]->v3_[1] << ", " << triangles_[0]->v3_[2] << std::endl;
 
     for (size_t i = 0; i < triangles_.size(); i++)
     {
