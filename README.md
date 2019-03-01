@@ -79,7 +79,7 @@ where <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&spa
 In my benckmark, i've runned both algorithms in simplified conditions (single-thread, no C++ advanced features, no cache optimization) in seven render cases: 1, 5, 10, 50, 100, 500 and 1000 triangles. Every case was runned five times and the medium value was taken to ensure stability and constancy. Here is the results:
 
 <p align="center" style="width: 100%;">
-    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/utils/Triangle%20Intersection%20Algorithms%20Performance.png" alt width="1920">
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/utils/Triangle%20Intersection%20Algorithms%20Performance.png" alt width="1280">
     <em>Möller vs Wald</em>
 </p>
 
@@ -98,11 +98,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwODYzODI2OSwxMTA5MjY1OTQ2LC00OT
-g5Mjg1MTUsLTI0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUx
-MjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2MDIyNz
-csLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMw
-NTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1Nz
-Q0NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAs
-NjQyNjY4MjQzXX0=
+eyJoaXN0b3J5IjpbLTE4MDE4NzM2ODYsMTEwOTI2NTk0NiwtND
+k4OTI4NTE1LC0yNDAwNTkyMjUsMTA1NTA5OTIzNywxNjE1MDc1
+MTI1LC0xNjI5NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1NjAyMj
+c3LC0yMDg1NjAyMjc3LDg3ODkzNTA0MiwxMzc2NjE2NjQ1LDkz
+MDU0NTI4NywtMTIxNDY1NzEzMiwxODU5MzE3MTIzLDE0MTAwNT
+c0NDcsLTQ1NjgyOTA2MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcw
+LDY0MjY2ODI0M119
 -->
