@@ -13,7 +13,7 @@ This repository is also for educational purposes in the class "Special Topics in
 
 ## Current Features
 * Render Core
-
+	* Degrade background
 	* Ray Casting mode
 	
 * Cameras
@@ -43,6 +43,12 @@ Diferent machines can generate diferent performance results, is necessary to hav
 This section is for educational purposes. All reports of experiments are listed here and later should be removed.
 
 ### Mark I - Triangles
+
+<p align="center">
+    <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/gallery/triangle.png?raw=true" alt>
+    <em>A simple triangle rendered</em>
+</p>
+
 As you may know, a triangle in <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;\fn_phv&space;$R^3$" title="$R^3$" /> is a 2D structure represented by three distinct points (called **vertex**) <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$v_1,&space;v_2,v_3&space;\in&space;R^3$" title="$v_1, v_2,v_3 \in R^3$" />. Triangles are the most common primitive because they are used to form complex **meshes** and objects, so lots of efforts was (and still is) made to create algorithms that can calculate a ray-triangle intersection eficiently. Two of those algorithms are implemented here: 
 
 * *Fast, Minimum Storage Ray/Triangle Intersection* (Möller, T.; Trumbore, B.)
@@ -101,11 +107,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OT
-g5Mjg1MTUsLTI0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUx
-MjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2MDIyNz
-csLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMw
-NTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQxMDA1Nz
-Q0NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1NzU4NzAs
-NjQyNjY4MjQzXX0=
+eyJoaXN0b3J5IjpbLTEyNTQxNDExMjMsMTA3ODAzMDExOCwxMT
+A5MjY1OTQ2LC00OTg5Mjg1MTUsLTI0MDA1OTIyNSwxMDU1MDk5
+MjM3LDE2MTUwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNj
+QsLTIwODU2MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEz
+NzY2MTY2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMT
+cxMjMsMTQxMDA1NzQ0NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1
+LC03MjY1NzU4NzBdfQ==
 -->
