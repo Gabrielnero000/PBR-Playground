@@ -45,7 +45,7 @@ This section is for educational purposes. All reports of experiments are listed 
 ### Mark I - Triangles
 
 <p align="center">
-    <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/gallery/triangle.png?raw=true" alt>
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/triangle.png" alt>
     <em>A simple triangle rendered</em>
 </p>
 
@@ -107,11 +107,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDcyOTc0NTcsMTA3ODAzMDExOCwxMT
-A5MjY1OTQ2LC00OTg5Mjg1MTUsLTI0MDA1OTIyNSwxMDU1MDk5
-MjM3LDE2MTUwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNj
-QsLTIwODU2MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEz
-NzY2MTY2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMT
-cxMjMsMTQxMDA1NzQ0NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1
-LC03MjY1NzU4NzBdfQ==
+eyJoaXN0b3J5IjpbMTEzNTkyMTExNSwtMTQ0NzI5NzQ1NywxMD
+c4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODkyODUxNSwtMjQwMDU5
+MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNSwtMTYyOTQzNDU2OS
+wtMTA0OTQwMzM2NCwtMjA4NTYwMjI3NywtMjA4NTYwMjI3Nyw4
+Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NT
+cxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4MjkwNjIs
+LTExMTMyMzQxMzVdfQ==
 -->
