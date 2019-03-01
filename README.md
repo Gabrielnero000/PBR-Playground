@@ -5,7 +5,7 @@
 
 Hey, welcome! 
 
-This project is the register of my Physical Based Rendering (PBR) study, experiences and interesting stuffs in th. I'm starting this repository with almost any knowledge in this area, so this will be a long way down in the PBR's world. I hope you enjoy this travel and fell free to question, comment and  add knowledge! Don't miss the [gallery section](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments) to check what a PBR engine can do!
+This project is the register of my Physical Based Rendering (PBR) study, experiences and interesting stuffs in the development process of a PBR engine. I'm starting this repository with almost any knowledge in this area, so this will be a long way down in the PBR's world. I hope you enjoy this travel and fell free to question, comment and  add knowledge! Don't miss the [gallery section](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments) to check what a PBR engine can do!
 
 This repository is also for educational purposes in the class "Special Topics in Computing" ministered by Dr. Christian Azambuja Pagot in the  Federal University of Paraíba.
 
@@ -15,13 +15,17 @@ This repository is also for educational purposes in the class "Special Topics in
 This project is subdivided in sections,   
 which are listed below, wich are in constant grown (fell free to give a feedback :D ) and new sections are added constantly.
 
+* Render Core
+	* Ray Casting mode
 * Cameras
 	* Perspective Camera
 * Primitives
 	* Spheres
 	* Triangles
-* [Gallery: Images of Experiments] - Don't know what PBR can do? Check this out!
-
+	* Meshes
+* Output
+	* Images
+		* PP
 ---
 
 ## But What is PBR?
@@ -132,7 +136,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzcxNDkyNzksMTA1NTA5OTIzNywxNj
+eyJoaXN0b3J5IjpbLTEzMTQyODIxNzUsMTA1NTA5OTIzNywxNj
 E1MDc1MTI1LC0xNjI5NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1
 NjAyMjc3LC0yMDg1NjAyMjc3LDg3ODkzNTA0MiwxMzc2NjE2Nj
 Q1LDkzMDU0NTI4NywtMTIxNDY1NzEzMiwxODU5MzE3MTIzLDE0
