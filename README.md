@@ -13,7 +13,7 @@ This repository is also for educational purposes in the class "Special Topics in
 
 ## Current Features
 * Render Core
-	* Degrade background
+	* Gradient background
 	* Ray Casting mode
 	
 * Cameras
@@ -107,7 +107,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTQxNDExMjMsMTA3ODAzMDExOCwxMT
+eyJoaXN0b3J5IjpbLTE0NDcyOTc0NTcsMTA3ODAzMDExOCwxMT
 A5MjY1OTQ2LC00OTg5Mjg1MTUsLTI0MDA1OTIyNSwxMDU1MDk5
 MjM3LDE2MTUwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNj
 QsLTIwODU2MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEz
