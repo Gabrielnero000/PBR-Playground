@@ -25,19 +25,6 @@ This repository is also for educational purposes in the class "Special Topics in
 	* Images
 		* PPM
 
-## But What is PBR?
-Since the prehistoric vector/CRT displays until actual pixel-based monitors with super resolutions, generate realistic images was (and still is) the main goal of the Computer Graphics (CG) research. From the efforts of lots of great professionals, today we have basically two ways to generate high quality images: **rasterization-based** methods and **physical-based** methods. The first one is the most popular method for real time rendering, specially games. Those techniques convincent results and it's computationally **fast**, but the thing is: if you look for a rasterization-generated image it's easy to know that it's an CG image. That's were physical-based techniques shines.
-
-**Physical Based Rendering** (**PBR**) it's able to generate images extremely realistic images (check the [gallery](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments)) and it's relativelly easy to implemment, at cost of a lot of computer processing power. 
-
-In the PBR's world the most popular techniques are **ray-based** techniques, specifically **Ray Tracing** and **Path Tracing**. Both tries to simulate the phenom of the human vision using rules from physics (that's were the "physical based" comes from).
-
-So, to understand  how those algorithms works, we need to understand how the vision works. Every **eletromagnetic** phenom is essencially a wave (Wi-FI, TV and radio signal, light...) wich haves a **wavelength**, wich can go from a few picometeres (Gamma rays and X rays) to even hundreds of meters (AM radio waves). We are intrested in a particular interval in that range: between 370 nanometers and 750 nanometers. That's the interval that we call **Visible Spectrum of Light**, i.e. the wavelenght interval that we can see.
-
-When the light rays colide with an object, that object absorbs part of the frequencies (part of the light, basically) and reflects the rest of it as rays as well. If the reflected rays colide with our eye, they stimulate special cells (cones and rods). The interpretation by the brain of that stimulus is what we understand as **color**. With that color information our brain builds an **image** as we know.
-
-So, instead of shot infinite rays from every light source, Ray and Path Tracing essencially **trace back the  rays** from the eye, to the objects and to the light (that's were the "tracing" comes from) using accurate physical models.
-
 ## System Specs (for benchmark purposes)
 Diferent machines can generate diferent performance results, is necessary to have a reference system to normalize all benchmarks. That system is my actual notebook: a Dell G7 with the follow specs:
 * **Processor**: i7 8750H 6 cores / 12 Threads with 2.2 ~ 4.1 Ghz clock and 9 MB cache.
@@ -46,7 +33,9 @@ Diferent machines can generate diferent performance results, is necessary to hav
 
 ## Discussions
 
-### Triangles
+This section is for educational purposes. All reports of experiments are listed here and later should be removed.
+
+### Mark I - Triangles
 As you may know, a triangle in <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;\fn_phv&space;$R^3$" title="$R^3$" /> is a 2D structure represented by three distinct points (called **vertex**) <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$v_1,&space;v_2,v_3&space;\in&space;R^3$" title="$v_1, v_2,v_3 \in R^3$" />. Triangles are the most common primitive because they are used to form complex **meshes** and objects, so lots of efforts was (and still is) made to create algorithms that can calculate a ray-triangle intersection eficiently. Two of those algorithms are implemented here: 
 
 * *Fast, Minimum Storage Ray/Triangle Intersection* (Möller, T.; Trumbore, B.)
@@ -102,7 +91,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA5MDIxNDIxNCwxMDU1MDk5MjM3LDE2MT
+eyJoaXN0b3J5IjpbLTEyNTk4NzYyNCwxMDU1MDk5MjM3LDE2MT
 UwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2
 MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2ND
 UsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQx
