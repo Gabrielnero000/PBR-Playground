@@ -104,16 +104,17 @@ bool Triangle::intersect(const Ray &ray,
     const int ku = modulo[k + 1];
     const int kv = modulo[k + 2];
 
-    const float nd = 1.0f / (ray.direction_[k] +
+    const float nd = 1.0f / ((ray.direction_[k] +
                              normal_u * ray.direction_[ku] +
-                             normal_v * ray.direction_[kv]);
+                             normal_v * ray.direction_[kv]) + t_min); // Ensure that it's not zero
 
     const float f = (normal_d - ray.origin_[k] -
                      normal_u * ray.origin_[ku] -
                      normal_v * ray.origin_[kv]) *
                     nd;
 
-    if (f < t_min || f > t_max || std::isnan(f))
+
+    if (f < t_min || f > t_max)
         return false;
 
     const float hu = (ray.origin_[ku] + f * ray.direction_[ku] - v1_[ku]);

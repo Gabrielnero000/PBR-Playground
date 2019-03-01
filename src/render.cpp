@@ -48,7 +48,9 @@ void Render::test()
             if (scene_.intersect(ray, MIN_T, MAX_T, record))
             {
                 // Visualize the colision based on t
-                output_.buffer_[x][y] = glm::vec3{record.t_ * 0.2f};
+                output_.buffer_[x][y] = glm::vec3{(float)fabs(record.normal_[0]),
+                                                  (float)fabs(record.normal_[1]),
+                                                  (float)fabs(record.normal_[2])};
             }
             else
             {
