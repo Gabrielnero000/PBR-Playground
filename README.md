@@ -24,7 +24,6 @@ This repository is also for educational purposes in the class "Special Topics in
 * Output
 	* Images
 		* PPM
----
 
 ## But What is PBR?
 Since the prehistoric vector/CRT displays until actual pixel-based monitors with super resolutions, generate realistic images was (and still is) the main goal of the Computer Graphics (CG) research. From the efforts of lots of great professionals, today we have basically two ways to generate high quality images: **rasterization-based** methods and **physical-based** methods. The first one is the most popular method for real time rendering, specially games. Those techniques convincent results and it's computationally **fast**, but the thing is: if you look for a rasterization-generated image it's easy to know that it's an CG image. That's were physical-based techniques shines.
@@ -39,44 +38,13 @@ When the light rays colide with an object, that object absorbs part of the frequ
 
 So, instead of shot infinite rays from every light source, Ray and Path Tracing essencially **trace back the  rays** from the eye, to the objects and to the light (that's were the "tracing" comes from) using accurate physical models.
 
-## Base Architecture for a Ray Tracer
-Here is a basic UML calass diagram that can be used as base for our Ray Tracer. Gradually it will be expanded as we add new features, so it's important to have a robust architecture in the begining. I'll be using **C++** to implementation, since we need fast computation and object-oriented features (inheritance, polymorphism, function overload, etc). I'm using the [**GLM**](https://glm.g-truc.net/0.9.9/index.html) library to abstract some vector representation and operations (for now). So there it is:
-
-<img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/utils/Render-UML.png">
-
-As we can see, we have intially four classes and two abstract classes:
- * **Class Ray** - represents the most basic element in a Ray Tracer: a **ray**. A ray, wich is a straight line, can be expressed as <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$f(t)&space;=&space;O&space;&plus;&space;tD$" title="$f(t) = O + tD$" />, were <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$O$" title="$O$" /> is **the ray's origin**, <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$D$" title="$D$" /> is the **ray's direction** and <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$t$" title="$t$" /> is a real number. Variating <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$t$" title="$t$" /> we have **any point in the straight**.
- * **Class Primitive** - abstract class that represents a **primitive**. A primitive is basically anything that a ray can colide with. Most common are triangles, shperes, planes, quadrics, meshes (which just lots of triangles) and so on. Since every primitive have a diferent **intersection routine**, the ``intersect`` function must be ``virtual``.
- * **Class Output** - used to output the image. Holds a buffer feeded during the render and transforms it to fit the **PPM's format**.
- * **Class Scene** - stores all primitives in the scene. Have a intersection function that just basically calls every primitive intersection function.
- * **Class Camera** - abstract class to represents the camera. Since there is lots of camera models (orthographic, perspective, with/without lens) the routine to generate rays is variable. So the ``getRay`` function must be ``virtual`` as well.
- * **Class Render** - that's were the magic happens. The render loop is essecially two nested for loops (using output's resolution), were the rays are shooted from the camera to the scene and getting the colision information.
-
-So, the Ray Tracing algorithm is basically generate rays from the camera and test if it's colide with some primitive then generate another ray from the primitive to a light source. If both colisions happen, the primitive is visible and we store informations about that colision (colision point, normal, material information and so on) to calculate the final output (today the pixel color). Looks simple, right? Well, this will become madness soon! :)
-
-
-## System Specs
+## System Specs (for benchmark purposes)
 Diferent machines can generate diferent performance results, is necessary to have a reference system to normalize all benchmarks. That system is my actual notebook: a Dell G7 with the follow specs:
 * **Processor**: i7 8750H 6 cores / 12 Threads with 2.2 ~ 4.1 Ghz clock and 9 MB cache.
 * **RAM**: 8 GB DDR4 with 2666 Mhz clock.
 * **VGA**: Nvidia GTX 1050 Ti (not used yet).
 
-All experiments was done with the notebook in AC to maximize performance.
-
-## Cameras
-Soon :)
-
-### Orthogonal Camera
-Soon :)
-
-### Perspective Camera
-Soon :)
-
-## Primitives
-Soon :)
-
-### Spheres
-Soon :)
+## Discussions
 
 ### Triangles
 As you may know, a triangle in <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;\fn_phv&space;$R^3$" title="$R^3$" /> is a 2D structure represented by three distinct points (called **vertex**) <img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$v_1,&space;v_2,v_3&space;\in&space;R^3$" title="$v_1, v_2,v_3 \in R^3$" />. Triangles are the most common primitive because they are used to form complex **meshes** and objects, so lots of efforts was (and still is) made to create algorithms that can calculate a ray-triangle intersection eficiently. Two of those algorithms are implemented here: 
@@ -134,11 +102,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDQ3Mzg4MjEsMTA1NTA5OTIzNywxNj
-E1MDc1MTI1LC0xNjI5NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1
-NjAyMjc3LC0yMDg1NjAyMjc3LDg3ODkzNTA0MiwxMzc2NjE2Nj
-Q1LDkzMDU0NTI4NywtMTIxNDY1NzEzMiwxODU5MzE3MTIzLDE0
-MTAwNTc0NDcsLTQ1NjgyOTA2MiwtMTExMzIzNDEzNSwtNzI2NT
-c1ODcwLDY0MjY2ODI0MywtMTIxNTM5OTc3NCw0MDY2NTU3ODIs
-LTExMjU4MzMyODhdfQ==
+eyJoaXN0b3J5IjpbMjA5MDIxNDIxNCwxMDU1MDk5MjM3LDE2MT
+UwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2
+MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2ND
+UsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQx
+MDA1NzQ0NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1Nz
+U4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4Miwt
+MTEyNTgzMzI4OF19
 -->
