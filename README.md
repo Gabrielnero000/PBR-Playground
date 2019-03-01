@@ -11,11 +11,10 @@ This repository is also for educational purposes in the class "Special Topics in
 
 "_The cosmos is all that is, or ever was, or ever will be. Come with me_." - Carl Sagan.
 
-## Structure
+## Current Features
 This project is subdivided in sections,   
 which are listed below, wich are in constant grown (fell free to give a feedback :D ) and new sections are added constantly.
 
-* [But What is PBR?](https://github.com/Gabrielnero000/PBR-Playground#but-what-is-pbr) - A (really basic) introduction of what is PBR.
 * [Base Architecture for a Ray Tracer](https://github.com/Gabrielnero000/PBR-Playground#base-architecture-for-a-ray-tracer) - The first sketch to an object-oriented development.
 * [Cameras](https://github.com/Gabrielnero000/PBR-Playground#cameras) - Camera models that creates the most different lookings.
 	* [Orthogonal Camera](https://github.com/Gabrielnero000/PBR-Playground#orthogonal-camera)
@@ -135,11 +134,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1NTA5OTIzNywxNjE1MDc1MTI1LC0xNj
-I5NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1NjAyMjc3LC0yMDg1
-NjAyMjc3LDg3ODkzNTA0MiwxMzc2NjE2NjQ1LDkzMDU0NTI4Ny
-wtMTIxNDY1NzEzMiwxODU5MzE3MTIzLDE0MTAwNTc0NDcsLTQ1
-NjgyOTA2MiwtMTExMzIzNDEzNSwtNzI2NTc1ODcwLDY0MjY2OD
-I0MywtMTIxNTM5OTc3NCw0MDY2NTU3ODIsLTExMjU4MzMyODgs
-MTk1MTc4MjI5XX0=
+eyJoaXN0b3J5IjpbMTc1OTc4Mjc0OCwxMDU1MDk5MjM3LDE2MT
+UwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2
+MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2ND
+UsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQx
+MDA1NzQ0NywtNDU2ODI5MDYyLC0xMTEzMjM0MTM1LC03MjY1Nz
+U4NzAsNjQyNjY4MjQzLC0xMjE1Mzk5Nzc0LDQwNjY1NTc4Miwt
+MTEyNTgzMzI4OF19
 -->
