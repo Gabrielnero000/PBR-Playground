@@ -12,9 +12,6 @@ This repository is also for educational purposes in the class "Special Topics in
 "_The cosmos is all that is, or ever was, or ever will be. Come with me_." - Carl Sagan.
 
 ## Current Features
-This project is subdivided in sections,   
-which are listed below, wich are in constant grown (fell free to give a feedback :D ) and new sections are added constantly.
-
 * Render Core
 	* Ray Casting mode
 * Cameras
@@ -23,9 +20,10 @@ which are listed below, wich are in constant grown (fell free to give a feedback
 	* Spheres
 	* Triangles
 	* Meshes
+		* OBJ files
 * Output
 	* Images
-		* PP
+		* PPM
 ---
 
 ## But What is PBR?
@@ -136,7 +134,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTQyODIxNzUsMTA1NTA5OTIzNywxNj
+eyJoaXN0b3J5IjpbLTE0NDQ3Mzg4MjEsMTA1NTA5OTIzNywxNj
 E1MDc1MTI1LC0xNjI5NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1
 NjAyMjc3LC0yMDg1NjAyMjc3LDg3ODkzNTA0MiwxMzc2NjE2Nj
 Q1LDkzMDU0NTI4NywtMTIxNDY1NzEzMiwxODU5MzE3MTIzLDE0
