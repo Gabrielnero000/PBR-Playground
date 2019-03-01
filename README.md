@@ -15,13 +15,11 @@ This repository is also for educational purposes in the class "Special Topics in
 This project is subdivided in sections,   
 which are listed below, wich are in constant grown (fell free to give a feedback :D ) and new sections are added constantly.
 
-* [Base Architecture for a Ray Tracer](https://github.com/Gabrielnero000/PBR-Playground#base-architecture-for-a-ray-tracer) - The first sketch to an object-oriented development.
-* [Cameras](https://github.com/Gabrielnero000/PBR-Playground#cameras) - Camera models that creates the most different lookings.
-	* [Orthogonal Camera](https://github.com/Gabrielnero000/PBR-Playground#orthogonal-camera)
-	* [Perspective Camera](https://github.com/Gabrielnero000/PBR-Playground#perspective-camera)
-* [Primitives](https://github.com/Gabrielnero000/PBR-Playground#primitives) - Basic objects that can be rendered.
-	* [Spheres](https://github.com/Gabrielnero000/PBR-Playground#spheres)
-	* [Triangles](https://github.com/Gabrielnero000/PBR-Playground#triangles)
+* Cameras
+	* Perspective Camera
+* Primitives
+	* Spheres
+	* Triangles
 * [Gallery: Images of Experiments](https://github.com/Gabrielnero000/PBR-Playground#gallery-images-of-experiments) - Don't know what PBR can do? Check this out!
 
 ---
@@ -134,7 +132,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1OTc4Mjc0OCwxMDU1MDk5MjM3LDE2MT
+eyJoaXN0b3J5IjpbMjEwNTM1NzUxNCwxMDU1MDk5MjM3LDE2MT
 UwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2
 MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2ND
 UsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQx
