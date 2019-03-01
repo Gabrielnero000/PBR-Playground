@@ -13,16 +13,21 @@ This repository is also for educational purposes in the class "Special Topics in
 
 ## Current Features
 * Render Core
+
 	* Ray Casting mode
+	
 * Cameras
+
 	* Perspective Camera
+	
 * Primitives
 	* Spheres
 	* Triangles
 		* *Fast, Minimum Storage Ray/Triangle Intersection* (Möller, T.; Trumbore, B.)
-		* 
+		* *Fast Triangle Intersection in RTRT* (Section 7.1 of the Ingo Wald's doctorate degree thesis)
 	* Meshes
 		* OBJ files
+
 * Output
 	* Images
 		* PPM
@@ -93,7 +98,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1NjM2NTU1NywxMDU1MDk5MjM3LDE2MT
+eyJoaXN0b3J5IjpbLTI0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MT
 UwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2
 MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MTY2ND
 UsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMsMTQx
