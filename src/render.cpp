@@ -39,8 +39,8 @@ void Render::test()
         for (std::size_t x = 0; x < output_.resolution_.x; x++)
         {
             // u, v coordinates to the camera
-            float u = float(x) / float(output_.resolution_.x);
-            float v = float(y) / float(output_.resolution_.y);
+            float u = (float(x) + 0.5f) / float(output_.resolution_.x);
+            float v = (float(y) + 0.5f) / float(output_.resolution_.y);
 
             Ray ray{camera_.getRay(glm::vec2{u, v})};
 
@@ -48,9 +48,7 @@ void Render::test()
             if (scene_.intersect(ray, MIN_T, MAX_T, record))
             {
                 // Visualize the colision based on t
-                output_.buffer_[x][y] = glm::vec3{(float)fabs(record.normal_[0]),
-                                                  (float)fabs(record.normal_[1]),
-                                                  (float)fabs(record.normal_[2])};
+                output_.buffer_[x][y] = glm::vec3{record.t_ * 0.2f};
             }
             else
             {
