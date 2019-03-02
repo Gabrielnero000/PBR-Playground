@@ -102,7 +102,7 @@ That makes possible to generate the perspective distortion (closer objects looks
 
 ### Mark III - Meshes
 
-Meshes are just lots of triangles agrouped to form 
+Meshes are just lots of triangles agrouped to form a complex object. So the ray-mesh intersection breaks into ray-triangles intersections. Is good to be noticed that only the CLOSEST HIT matters, to gu
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -117,7 +117,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5MDE3NjEwNCwxMTM1OTIxMTE1LC0xND
+eyJoaXN0b3J5IjpbLTUwMjMzNjY1NCwxMTM1OTIxMTE1LC0xND
 Q3Mjk3NDU3LDEwNzgwMzAxMTgsMTEwOTI2NTk0NiwtNDk4OTI4
 NTE1LC0yNDAwNTkyMjUsMTA1NTA5OTIzNywxNjE1MDc1MTI1LC
 0xNjI5NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1NjAyMjc3LC0y
