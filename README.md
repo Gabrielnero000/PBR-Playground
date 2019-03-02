@@ -94,9 +94,19 @@ As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 
 ### Mark II - Cameras
 Two basic camera models are the orthograpic camera and the perspective (pinhole) camera. A orthograpic camera have the same direction in all samples but the origin of each sample is in a projection plane.
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/triangle.png" alt>
+    <em>Four spheres rendered with a orthog</em>
+</p>
+
 It's util if the desired effect is a 2.5D view, but as it cannot provide the perspective distortion effect, have a limited use. 
 
 A perspective camera have the same origin for all samples but the direction changes: is the vector from the origin to a point in the projection plane.
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/triangle.png" alt>
+    <em>A simple triangle rendered</em>
+</p>
 
 That makes possible to generate the perspective distortion (closer objects looks bigger). Both models can be generalized to be used in arbitrary positions.
 
@@ -104,7 +114,17 @@ That makes possible to generate the perspective distortion (closer objects looks
 
 Meshes are just lots of triangles agrouped to form a complex object. So the ray-mesh intersection breaks into ray-triangles intersections. Is good to be noticed that only the CLOSEST HIT matters, to ensure a correct culling. To visualize each triangle that forms the object we can show the normal as a color:
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/triangle.png" alt>
+    <em>A simple triangle rendered</em>
+</p>
+
 Combine a mesh intersection routine with a arbitrary perspective camera, and we have a basic object viewer:
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/triangle.png" alt>
+    <em>A simple triangle rendered</em>
+</p>
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -119,11 +139,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTA3NzgwNTEwLC0xNzA0MTQyODcxLDExMz
-U5MjExMTUsLTE0NDcyOTc0NTcsMTA3ODAzMDExOCwxMTA5MjY1
-OTQ2LC00OTg5Mjg1MTUsLTI0MDA1OTIyNSwxMDU1MDk5MjM3LD
-E2MTUwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIw
-ODU2MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MT
-Y2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMs
-MTQxMDA1NzQ0N119
+eyJoaXN0b3J5IjpbLTE1ODkwMjY2NTMsLTE3MDQxNDI4NzEsMT
+EzNTkyMTExNSwtMTQ0NzI5NzQ1NywxMDc4MDMwMTE4LDExMDky
+NjU5NDYsLTQ5ODkyODUxNSwtMjQwMDU5MjI1LDEwNTUwOTkyMz
+csMTYxNTA3NTEyNSwtMTYyOTQzNDU2OSwtMTA0OTQwMzM2NCwt
+MjA4NTYwMjI3NywtMjA4NTYwMjI3Nyw4Nzg5MzUwNDIsMTM3Nj
+YxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEy
+MywxNDEwMDU3NDQ3XX0=
 -->
