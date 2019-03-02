@@ -92,6 +92,7 @@ In my benckmark, i've runned both algorithms in simplified conditions (single-th
 As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 and 5 triangles) to almost a twice faster in most complexes cases (500 and 1000 triangles) than Möller's algorithm, which definitely is a huge difference, but the memory use can be a problem depending on the system: 1000 triangles 40 KB more to be rendered. So I'm taking Wald as default, but is good to be noticed that the memory use can blow up.
 
 ### Mark II - Cameras
+Two basic camera models are the orthograpic camera and the perspective (pinhole) camera. A orthograpic camera have the 
 ### Mark III - Meshes
 
 ## Gallery: Images of Experiments
@@ -107,11 +108,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNTkyMTExNSwtMTQ0NzI5NzQ1NywxMD
-c4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODkyODUxNSwtMjQwMDU5
-MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNSwtMTYyOTQzNDU2OS
-wtMTA0OTQwMzM2NCwtMjA4NTYwMjI3NywtMjA4NTYwMjI3Nyw4
-Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NT
-cxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3LC00NTY4MjkwNjIs
-LTExMTMyMzQxMzVdfQ==
+eyJoaXN0b3J5IjpbLTE3NTAzMTcwNDQsMTEzNTkyMTExNSwtMT
+Q0NzI5NzQ1NywxMDc4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODky
+ODUxNSwtMjQwMDU5MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNS
+wtMTYyOTQzNDU2OSwtMTA0OTQwMzM2NCwtMjA4NTYwMjI3Nywt
+MjA4NTYwMjI3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1ND
+UyODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3
+LC00NTY4MjkwNjJdfQ==
 -->
