@@ -99,7 +99,10 @@ It's util if the desired effect is a 2.5D view, but as it cannot provide the per
 A perspective camera have the same origin for all samples but the direction changes: is the vector from the origin to a point in the projection plane.
 
 That makes possible to generate the perspective distortion (closer objects looks bigger). Both models can be generalized to be used in arbitrary positions.
+
 ### Mark III - Meshes
+
+Meshes are just lots of triangles agrouped to form 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -114,11 +117,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Nzg2MzAyNTUsMTEzNTkyMTExNSwtMT
-Q0NzI5NzQ1NywxMDc4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODky
-ODUxNSwtMjQwMDU5MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNS
-wtMTYyOTQzNDU2OSwtMTA0OTQwMzM2NCwtMjA4NTYwMjI3Nywt
-MjA4NTYwMjI3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1ND
-UyODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3
-LC00NTY4MjkwNjJdfQ==
+eyJoaXN0b3J5IjpbLTc5MDE3NjEwNCwxMTM1OTIxMTE1LC0xND
+Q3Mjk3NDU3LDEwNzgwMzAxMTgsMTEwOTI2NTk0NiwtNDk4OTI4
+NTE1LC0yNDAwNTkyMjUsMTA1NTA5OTIzNywxNjE1MDc1MTI1LC
+0xNjI5NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1NjAyMjc3LC0y
+MDg1NjAyMjc3LDg3ODkzNTA0MiwxMzc2NjE2NjQ1LDkzMDU0NT
+I4NywtMTIxNDY1NzEzMiwxODU5MzE3MTIzLDE0MTAwNTc0NDcs
+LTQ1NjgyOTA2Ml19
 -->
