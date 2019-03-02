@@ -94,7 +94,11 @@ As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 
 ### Mark II - Cameras
 Two basic camera models are the orthograpic camera and the perspective (pinhole) camera. A orthograpic camera have the same direction in all samples but the origin of each sample is in a projection plane.
 
-It's util if the desired effect is a 2.5D view, but as it cannot provide the perspective distortion effect, have a limited use. A perspective camera have the same origin for all samples but the direction changes: is the vector from the origin 
+It's util if the desired effect is a 2.5D view, but as it cannot provide the perspective distortion effect, have a limited use. 
+
+A perspective camera have the same origin for all samples but the direction changes: is the vector from the origin to a point in the projection plane.
+
+That makes possible to generate the perspective distortion ()
 ### Mark III - Meshes
 
 ## Gallery: Images of Experiments
@@ -110,7 +114,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxNjc3MTU3OCwxMTM1OTIxMTE1LC0xND
+eyJoaXN0b3J5IjpbMTE0MzA1ODAxNSwxMTM1OTIxMTE1LC0xND
 Q3Mjk3NDU3LDEwNzgwMzAxMTgsMTEwOTI2NTk0NiwtNDk4OTI4
 NTE1LC0yNDAwNTkyMjUsMTA1NTA5OTIzNywxNjE1MDc1MTI1LC
 0xNjI5NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1NjAyMjc3LC0y
