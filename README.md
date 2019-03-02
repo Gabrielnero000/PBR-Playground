@@ -17,8 +17,8 @@ This repository is also for educational purposes in the class "Special Topics in
 	* Ray Casting mode
 	
 * Cameras
-
-	* Perspective Camera
+	* Orthograpic Camera
+	* Perspective (pinhole) Camera
 	
 * Primitives
 	* Spheres
@@ -119,11 +119,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDQxNDI4NzEsMTEzNTkyMTExNSwtMT
-Q0NzI5NzQ1NywxMDc4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODky
-ODUxNSwtMjQwMDU5MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNS
-wtMTYyOTQzNDU2OSwtMTA0OTQwMzM2NCwtMjA4NTYwMjI3Nywt
-MjA4NTYwMjI3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1ND
-UyODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3
-LC00NTY4MjkwNjJdfQ==
+eyJoaXN0b3J5IjpbOTA3NzgwNTEwLC0xNzA0MTQyODcxLDExMz
+U5MjExMTUsLTE0NDcyOTc0NTcsMTA3ODAzMDExOCwxMTA5MjY1
+OTQ2LC00OTg5Mjg1MTUsLTI0MDA1OTIyNSwxMDU1MDk5MjM3LD
+E2MTUwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIw
+ODU2MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MT
+Y2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMs
+MTQxMDA1NzQ0N119
 -->
