@@ -95,8 +95,8 @@ As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 
 Two basic camera models are the orthograpic camera and the perspective (pinhole) camera. A orthograpic camera have the same direction in all samples but the origin of each sample is in a projection plane.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/triangle.png" alt>
-    <em>Four spheres rendered with a orthog</em>
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/ortho.png" alt>
+    <em>Four spheres rendered with a orthograpic camera (darker means closer)</em>
 </p>
 
 It's util if the desired effect is a 2.5D view, but as it cannot provide the perspective distortion effect, have a limited use. 
@@ -104,8 +104,8 @@ It's util if the desired effect is a 2.5D view, but as it cannot provide the per
 A perspective camera have the same origin for all samples but the direction changes: is the vector from the origin to a point in the projection plane.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/triangle.png" alt>
-    <em>A simple triangle rendered</em>
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/perspective.png" alt>
+    <em>Four spheres rendered with a pinhole camera (darker means closer)</em>
 </p>
 
 That makes possible to generate the perspective distortion (closer objects looks bigger). Both models can be generalized to be used in arbitrary positions.
@@ -115,8 +115,8 @@ That makes possible to generate the perspective distortion (closer objects looks
 Meshes are just lots of triangles agrouped to form a complex object. So the ray-mesh intersection breaks into ray-triangles intersections. Is good to be noticed that only the CLOSEST HIT matters, to ensure a correct culling. To visualize each triangle that forms the object we can show the normal as a color:
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/triangle.png" alt>
-    <em>A simple triangle rendered</em>
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/mesh.png" alt>
+    <em>Monke</em>
 </p>
 
 Combine a mesh intersection routine with a arbitrary perspective camera, and we have a basic object viewer:
@@ -139,11 +139,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODkwMjY2NTMsLTE3MDQxNDI4NzEsMT
-EzNTkyMTExNSwtMTQ0NzI5NzQ1NywxMDc4MDMwMTE4LDExMDky
-NjU5NDYsLTQ5ODkyODUxNSwtMjQwMDU5MjI1LDEwNTUwOTkyMz
-csMTYxNTA3NTEyNSwtMTYyOTQzNDU2OSwtMTA0OTQwMzM2NCwt
-MjA4NTYwMjI3NywtMjA4NTYwMjI3Nyw4Nzg5MzUwNDIsMTM3Nj
-YxNjY0NSw5MzA1NDUyODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEy
-MywxNDEwMDU3NDQ3XX0=
+eyJoaXN0b3J5IjpbLTU5NjI4NTUwNCwtMTcwNDE0Mjg3MSwxMT
+M1OTIxMTE1LC0xNDQ3Mjk3NDU3LDEwNzgwMzAxMTgsMTEwOTI2
+NTk0NiwtNDk4OTI4NTE1LC0yNDAwNTkyMjUsMTA1NTA5OTIzNy
+wxNjE1MDc1MTI1LC0xNjI5NDM0NTY5LC0xMDQ5NDAzMzY0LC0y
+MDg1NjAyMjc3LC0yMDg1NjAyMjc3LDg3ODkzNTA0MiwxMzc2Nj
+E2NjQ1LDkzMDU0NTI4NywtMTIxNDY1NzEzMiwxODU5MzE3MTIz
+LDE0MTAwNTc0NDddfQ==
 -->
