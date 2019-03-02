@@ -116,14 +116,14 @@ Meshes are just lots of triangles agrouped to form a complex object. So the ray-
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/mesh.png" alt>
-    <em>Monke</em>
+    <em>Monkey with normals</em>
 </p>
 
 Combine a mesh intersection routine with a arbitrary perspective camera, and we have a basic object viewer:
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/triangle.png" alt>
-    <em>A simple triangle rendered</em>
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/perspective_mesh.png" alt>
+    <em>Monkey with normals and arbitrary position camera</em>
 </p>
 
 ## Gallery: Images of Experiments
@@ -139,11 +139,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5NjI4NTUwNCwtMTcwNDE0Mjg3MSwxMT
-M1OTIxMTE1LC0xNDQ3Mjk3NDU3LDEwNzgwMzAxMTgsMTEwOTI2
-NTk0NiwtNDk4OTI4NTE1LC0yNDAwNTkyMjUsMTA1NTA5OTIzNy
-wxNjE1MDc1MTI1LC0xNjI5NDM0NTY5LC0xMDQ5NDAzMzY0LC0y
-MDg1NjAyMjc3LC0yMDg1NjAyMjc3LDg3ODkzNTA0MiwxMzc2Nj
-E2NjQ1LDkzMDU0NTI4NywtMTIxNDY1NzEzMiwxODU5MzE3MTIz
-LDE0MTAwNTc0NDddfQ==
+eyJoaXN0b3J5IjpbOTIxMDA0NzQ5LC0xNzA0MTQyODcxLDExMz
+U5MjExMTUsLTE0NDcyOTc0NTcsMTA3ODAzMDExOCwxMTA5MjY1
+OTQ2LC00OTg5Mjg1MTUsLTI0MDA1OTIyNSwxMDU1MDk5MjM3LD
+E2MTUwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIw
+ODU2MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MT
+Y2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMs
+MTQxMDA1NzQ0N119
 -->
