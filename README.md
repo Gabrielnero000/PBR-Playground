@@ -17,8 +17,8 @@ This repository is also for educational purposes in the class "Special Topics in
 	* Ray Casting mode
 	
 * Cameras
-
-	* Perspective Camera
+	* Orthograpic Camera
+	* Perspective (pinhole) Camera
 	
 * Primitives
 	* Spheres
@@ -94,9 +94,19 @@ As we can see, the Wald's algorithm can be 50% faster in the simplests cases (1 
 ### Mark II - Cameras
 Two basic camera models are the orthograpic camera and the perspective (pinhole) camera. A orthograpic camera have the same direction in all samples but the origin of each sample is in a projection plane.
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/ortho.png" alt>
+    <em>Four spheres rendered with a orthograpic camera (darker means closer)</em>
+</p>
+
 It's util if the desired effect is a 2.5D view, but as it cannot provide the perspective distortion effect, have a limited use. 
 
 A perspective camera have the same origin for all samples but the direction changes: is the vector from the origin to a point in the projection plane.
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/perspective.png" alt>
+    <em>Four spheres rendered with a pinhole camera (darker means closer)</em>
+</p>
 
 That makes possible to generate the perspective distortion (closer objects looks bigger). Both models can be generalized to be used in arbitrary positions.
 
@@ -104,7 +114,17 @@ That makes possible to generate the perspective distortion (closer objects looks
 
 Meshes are just lots of triangles agrouped to form a complex object. So the ray-mesh intersection breaks into ray-triangles intersections. Is good to be noticed that only the CLOSEST HIT matters, to ensure a correct culling. To visualize each triangle that forms the object we can show the normal as a color:
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/mesh.png" alt>
+    <em>Monkey with normals</em>
+</p>
+
 Combine a mesh intersection routine with a arbitrary perspective camera, and we have a basic object viewer:
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Gabrielnero000/PBR-Playground/master/gallery/perspective_mesh.png" alt>
+    <em>Monkey with normals and arbitrary position camera</em>
+</p>
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -119,11 +139,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDQxNDI4NzEsMTEzNTkyMTExNSwtMT
-Q0NzI5NzQ1NywxMDc4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODky
-ODUxNSwtMjQwMDU5MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNS
-wtMTYyOTQzNDU2OSwtMTA0OTQwMzM2NCwtMjA4NTYwMjI3Nywt
-MjA4NTYwMjI3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1ND
-UyODcsLTEyMTQ2NTcxMzIsMTg1OTMxNzEyMywxNDEwMDU3NDQ3
-LC00NTY4MjkwNjJdfQ==
+eyJoaXN0b3J5IjpbOTIxMDA0NzQ5LC0xNzA0MTQyODcxLDExMz
+U5MjExMTUsLTE0NDcyOTc0NTcsMTA3ODAzMDExOCwxMTA5MjY1
+OTQ2LC00OTg5Mjg1MTUsLTI0MDA1OTIyNSwxMDU1MDk5MjM3LD
+E2MTUwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIw
+ODU2MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MT
+Y2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMs
+MTQxMDA1NzQ0N119
 -->
