@@ -50,12 +50,15 @@ public:
          Camera &camera,
          glm::vec3 &background_color_from,
          glm::vec3 &background_color_to,
-         const int samples);
+         const int samples,
+         const int ray_depth);
   ~Render();
   void integrate();
   void test();
 
 private:
+  glm::vec3 Color(Record &record, int depth);
+
   glm::vec3 Color(const Ray &r, Record &record);
   Output &output_;
   Scene &scene_;
@@ -63,6 +66,7 @@ private:
   glm::vec3 background_color_from_;
   glm::vec3 background_color_to_;
   int samples_;
+  int ray_depth_;
 };
 
 #endif

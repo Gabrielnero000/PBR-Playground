@@ -5,14 +5,21 @@ Render::Render(Output &output,
                Camera &camera,
                glm::vec3 &background_color_from,
                glm::vec3 &background_color_to,
-               const int samples) : output_{output},
-                                    scene_{scene},
-                                    camera_{camera},
-                                    background_color_from_{background_color_from},
-                                    background_color_to_{background_color_to},
-                                    samples_{samples} {};
+               const int samples,
+               const int ray_depth) : output_{output},
+                                      scene_{scene},
+                                      camera_{camera},
+                                      background_color_from_{background_color_from},
+                                      background_color_to_{background_color_to},
+                                      samples_{samples},
+                                      ray_depth_{ray_depth} {};
 
 Render::~Render() {}
+
+glm::vec3 Color(Record &record, int depth)
+{
+
+}
 
 void Render::integrate()
 {
@@ -50,7 +57,7 @@ void Render::integrate()
                 if (scene_.intersect(ray, MIN_T, MAX_T, record))
                 {
                     // Visualize the colision based on t
-                    output_.buffer_[x][y] = glm::vec3{fabs(record.normal_.x), fabs(record.normal_.y), fabs(record.normal_.z)};
+                    output_.buffer_[x][y] += glm::vec3{fabs(record.normal_.x), fabs(record.normal_.y), fabs(record.normal_.z)};
                 }
                 else
                 {

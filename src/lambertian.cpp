@@ -8,23 +8,18 @@ Lambertian::~Lambertian() {}
 
 glm::vec3 Lambertian::directionGenerator() const
 {
-    glm::vec3 vec;
-
-    do
-    {
-        vec = 2.0f * glm::vec3{drand48(), drand48(), drand48()} - glm::vec3{1, 1, 1};
-    } while (glm::length(vec) >= 1.0f);
-
-    return vec;
+    const float theta = acos(1.0f - (float)drand48());
+    const float phi = 2.0f * M_PI * (float)drand48();
+    return onb_.inverse_ * glm::vec3{(float)sin(theta) * cos(phi),
+                                     sin(theta) * sin(phi),
+                                     cos(theta)};
 }
 
-bool Lambertian::BRDF(const Ray &r_in,
-                      const Record &record,
-                      glm::vec3 &attenuation,
-                      Ray &r_out) const
+Ray Lambertian::scatter(const Ray &r_in,
+                        const Record &record,
+                        glm::vec3 &attenuation)
 {
-    const glm::vec3 target = record.point_ + record.normal_ + directionGenerator();
-    r_out = Ray(record.point_, target - record.point_);
+    onb_.setFromV(record.normal_);
     attenuation = albedo_;
-    return true;
+    return Ray(record.point_, directionGenerator());
 }

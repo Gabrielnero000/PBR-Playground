@@ -6,13 +6,13 @@ int main()
 
     //feenableexcept(FE_INVALID);
     // Output params
-    glm::vec2 resolution = {512, 512};
+    glm::vec2 resolution = {720, 720};
 
     //Render params
     glm::vec3 background_color_from = {1.0f, 1.0f, 1.0f}; // White
     glm::vec3 background_color_to = {0.5f, 0.7f, 1.0f};   // Ciano
 
-    int samples = 1;
+    int samples = 8;
 
     //Camera params - 1:1 presset
     float min_x = -1.0f;

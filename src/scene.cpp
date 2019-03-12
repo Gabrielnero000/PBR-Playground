@@ -30,14 +30,14 @@ bool Scene::intersect(const Ray &ray,
 // Just for some tests
 void Scene::load()
 {
-    // Scene 1
+    // Scene 1 - Spheres
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 0.0f, 0.0f}, 0.2f}));
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{-0.5f, 0.0f, -1.0f}, 0.2f}));
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, -0.5f, -2.0f}, 0.2f}));
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 0.5f, -3.0f}, 0.2f}));
+    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 0.0f, 0.0f}, 0.2f}));
+    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{-0.5f, 0.0f, -1.0f}, 0.2f}));
+    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, -0.5f, -2.0f}, 0.2f}));
+    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 0.5f, -3.0f}, 0.2f}));
 
-    // Scene 2
+    // Scene 2 - Triangles
 
     /*for (int i = 1; i <= 2; i++)
     {
@@ -46,10 +46,12 @@ void Scene::load()
                                                                          glm::vec3{0.0f, 1.0f, -1.0f}}));
     }*/
 
-    // Scene 3
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"monkey.obj"}));
+    // Scene 3 - Suzzy
+    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"monkey.obj"}));
 
-    // Scene 4
-    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 1.0f, -1.0f}, 0.2f}));
-    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"box.obj"}));
+    // Scene 4 - Box with sphere
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, -0.8f, 0.0f}, 0.2f}));
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 1.0f, 0.0f}, 0.2f}));
+
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"box.obj"}));
 }
