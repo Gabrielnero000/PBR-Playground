@@ -38,7 +38,7 @@
 
 ********************************************************************************/
 
-#define TRIANGLE_WALD
+#define TRIANGLE_FAST
 
 #include "primitive.h"
 
@@ -58,8 +58,9 @@ public:
   const glm::vec3 v1_;
   const glm::vec3 v2_;
   const glm::vec3 v3_;
+  const glm::vec3 normal_;
 
-#ifdef TRIANGLE_WALD
+#ifdef TRIANGLE_FAST
   const int modulo[5] = {0, 1, 2, 0, 1};
 
   float normal_u;

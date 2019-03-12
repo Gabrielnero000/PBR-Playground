@@ -39,14 +39,17 @@ void Scene::load()
 
     // Scene 2
 
-    /*for (int i = 1; i <= 1; i++)
+    /*for (int i = 1; i <= 2; i++)
     {
-        primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{glm::vec3{0.0f, 0.0f, 0.0f},
-                                                                         glm::vec3{1.0f, 0.0f, 0.0f},
-                                                                         glm::vec3{0.0f, 0.1f, -1.0f}}));
+        primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{glm::vec3{0.0f, 0.0f, -1.0f},
+                                                                         glm::vec3{1.0f, 0.0f, -1.0f},
+                                                                         glm::vec3{0.0f, 1.0f, -1.0f}}));
     }*/
 
     // Scene 3
-    // primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"monkey.obj"}));
-    
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"monkey.obj"}));
+
+    // Scene 4
+    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 1.0f, -1.0f}, 0.2f}));
+    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"box.obj"}));
 }

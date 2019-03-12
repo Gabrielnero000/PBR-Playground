@@ -5,19 +5,19 @@ Triangle::Triangle(const glm::vec3 &v1,
                    const glm::vec3 &v2,
                    const glm::vec3 &v3) : v1_{v1},
                                           v2_{v2},
-                                          v3_{v3}
+                                          v3_{v3},
+                                          normal_{glm::normalize(glm::cross(v3 - v1, v2 - v1))}
 {
-#ifdef TRIANGLE_WALD
+#ifdef TRIANGLE_FAST
     const glm::vec3 C = v2_ - v1_;
     const glm::vec3 B = v3_ - v1_;
-    const glm::vec3 normal = glm::cross(B, C);
 
-    if (fabs(normal.x) > fabs(normal.y))
-        if (fabs(normal.x) > fabs(normal.z))
+    if (fabs(normal_.x) > fabs(normal_.y))
+        if (fabs(normal_.x) > fabs(normal_.z))
             k = 0;
         else
             k = 2;
-    else if (fabs(normal.y) > fabs(normal.z))
+    else if (fabs(normal_.y) > fabs(normal_.z))
         k = 1;
     else
         k = 2;
@@ -25,11 +25,11 @@ Triangle::Triangle(const glm::vec3 &v1,
     const int u = modulo[k + 1];
     const int v = modulo[k + 2];
 
-    const float normal_k = 1.0f / normal[k];
+    const float normal_k = 1.0f / normal_[k];
 
-    normal_u = normal[u] * normal_k;
-    normal_v = normal[v] * normal_k;
-    normal_d = glm::dot(normal, v1_) * normal_k;
+    normal_u = normal_[u] * normal_k;
+    normal_v = normal_[v] * normal_k;
+    normal_d = glm::dot(normal_, v1_) * normal_k;
 
     const float temp = 1.0f / (B[u] * C[v] - B[v] * C[u]);
 
@@ -64,7 +64,7 @@ bool Triangle::intersect(const Ray &ray,
                          float t_max,
                          Record &record) const
 {
-#ifdef TRIANGLE_MOLLER
+#ifdef TRIANGLE_SMALL
     const glm::vec3 edge_1 = v2_ - v1_;
     const glm::vec3 edge_2 = v3_ - v1_;
 
@@ -94,25 +94,25 @@ bool Triangle::intersect(const Ray &ray,
 
     record.t_ = glm::dot(edge_2, q_vec) * det;
     record.point_ = ray.evaluate(record.t_);
-    record.normal_ = glm::normalize(glm::cross(edge_1, edge_2));
+    record.normal_ = normal_;
 
     return true;
 
 #else
-#ifdef TRIANGLE_WALD
+#ifdef TRIANGLE_FAST
 
-    const int ku = modulo[k + 1];
-    const int kv = modulo[k + 2];
+#define ku modulo[k + 1]
+#define kv modulo[k + 2]
 
     const float nd = 1.0f / ((ray.direction_[k] +
-                             normal_u * ray.direction_[ku] +
-                             normal_v * ray.direction_[kv]) + t_min); // Ensure that it's not zero
+                              normal_u * ray.direction_[ku] +
+                              normal_v * ray.direction_[kv]) +
+                             t_min); // Ensure that it's not zero
 
     const float f = (normal_d - ray.origin_[k] -
                      normal_u * ray.origin_[ku] -
                      normal_v * ray.origin_[kv]) *
                     nd;
-
 
     if (f < t_min || f > t_max)
         return false;
@@ -135,7 +135,7 @@ bool Triangle::intersect(const Ray &ray,
 
     record.t_ = f;
     record.point_ = ray.evaluate(record.t_);
-    record.normal_ = glm::normalize(glm::cross(v2_ - v1_, v3_ - v1_));
+    record.normal_ = normal_;
 
     return true;
 #endif

@@ -22,12 +22,14 @@
 ********************************************************************************/
 
 #include <glm/glm.hpp>
+#include "material.h"
 
 struct Record
 {
-    float t_;
-    glm::vec3 point_;
-    glm::vec3 normal_;
+  float t_;
+  glm::vec3 point_;
+  glm::vec3 normal_;
+  //Material *material;
 };
 
 #endif

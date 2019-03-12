@@ -37,4 +37,6 @@ void ONB::setBasisMatrix()
     basis_[0] = u_;
     basis_[1] = v_;
     basis_[2] = w_;
+
+    inverse_ = glm::transpose(basis_);
 }

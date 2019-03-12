@@ -4,24 +4,26 @@
 int main()
 {
 
-    // feenableexcept(FE_INVALID);
+    //feenableexcept(FE_INVALID);
     // Output params
-    glm::vec2 resolution = {1280, 720};
+    glm::vec2 resolution = {512, 512};
 
     //Render params
     glm::vec3 background_color_from = {1.0f, 1.0f, 1.0f}; // White
     glm::vec3 background_color_to = {0.5f, 0.7f, 1.0f};   // Ciano
 
-    //Camera params - 16:9 presset
-    float min_x = -2.0f;
-    float max_x = 2.0f;
-    float min_y = -1.125f;
-    float max_y = 1.125f;
+    int samples = 1;
+
+    //Camera params - 1:1 presset
+    float min_x = -1.0f;
+    float max_x = 1.0f;
+    float min_y = -1.0f;
+    float max_y = 1.0f;
     float focal_distance = 2.0f;
 
     glm::vec3 up = {0.0f, 1.0f, 0.0f};
     glm::vec3 look_at = {0.0f, 0.0f, -1.0f};
-    glm::vec3 position = {0.0f, 0.0f, 2.0f};
+    glm::vec3 position = {0.0f, 0.0f, 3.0f};
 
     //-----------------------------------------------------------------------------------
 
@@ -31,9 +33,10 @@ int main()
                          up, look_at, position};
 
     Scene scene;
-    Render render{output, scene, camera, background_color_from, background_color_to};
+    Render render{output, scene, camera, background_color_from, background_color_to, samples};
     scene.load();
-    render.test();
+
+    render.integrate();
     output.save("output");
 
     return EXIT_SUCCESS;

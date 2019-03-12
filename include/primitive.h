@@ -39,11 +39,14 @@
 #include <memory>
 #include "ray.h"
 #include "record.h"
+#include "material.h"
 
 class Primitive
 {
 public:
   typedef std::unique_ptr<Primitive> PrimitiveUniquePtr;
+  //Material *material;
+
   Primitive();
   virtual ~Primitive();
   virtual bool intersect(const Ray &ray,

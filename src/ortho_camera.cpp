@@ -27,6 +27,6 @@ Ray OrthoCamera::getRay(const glm::vec2 &coordinates) const
                      0.0f};
 
     // Ray still in camera's space, must transform it to world space
-    return Ray{onb_.basis_ * origin + position_,
-               glm::normalize(onb_.basis_ * look_at_)};
+    return Ray{onb_.inverse_ * origin + position_,
+               glm::normalize(onb_.inverse_ * look_at_)};
 }

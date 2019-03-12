@@ -62,6 +62,7 @@ public:
                  const glm::vec3 &w);
 
   glm::mat3x3 basis_;
+  glm::mat3x3 inverse_;
 
   glm::vec3 u_ = {1.0f, 0.0f, 0.0f};
   glm::vec3 v_ = {0.0f, 1.0f, 0.0f};
