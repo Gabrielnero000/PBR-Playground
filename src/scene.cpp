@@ -49,9 +49,13 @@ void Scene::load()
     // Scene 3 - Suzzy
     //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"monkey.obj"}));
 
-    // Scene 4 - Box with sphere
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, -0.8f, 0.0f}, 0.2f}));
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 1.0f, 0.0f}, 0.2f}));
+    // Scene 4 - Sphere and plane
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 0.0f, -1.0f}, 0.5f}));
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, -100.5f, -1.0f}, 100.0f}));
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"box.obj"}));
+    // Scene 5 - Box with sphere
+    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, -0.8f, 0.0f}, 0.2f}));
+    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 1.0f, 0.0f}, 0.2f}));
+
+    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"box.obj"}));
 }

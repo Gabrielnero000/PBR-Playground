@@ -29,7 +29,7 @@ struct Record
   float t_;
   glm::vec3 point_;
   glm::vec3 normal_;
-  //Material *material;
+  //Material &material_;
 };
 
 #endif

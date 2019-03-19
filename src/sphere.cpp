@@ -39,7 +39,7 @@ bool Sphere::intersect(const Ray &ray,
         {
             record.t_ = x1;
             record.point_ = ray.evaluate(x1);
-            record.normal_ = (record.point_ - center_) / radius_;
+            record.normal_ = glm::normalize((record.point_ - center_) / radius_);
             return true;
         }
         // Same as x1
@@ -48,7 +48,7 @@ bool Sphere::intersect(const Ray &ray,
         {
             record.t_ = x2;
             record.point_ = ray.evaluate(x1);
-            record.normal_ = (record.point_ - center_) / radius_;
+            record.normal_ = glm::normalize((record.point_ - center_) / radius_);
             return true;
         }
     }

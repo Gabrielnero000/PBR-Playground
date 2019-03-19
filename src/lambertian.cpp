@@ -2,24 +2,21 @@
 
 Lambertian::Lambertian(glm::vec3 &emmiter,
                        glm::vec3 &albedo) : Material::Material{emmiter},
-                                            albedo_{albedo} {}
+                                            albedo_{albedo * (float)(1.0f / M_PI)} {}
 
 Lambertian::~Lambertian() {}
 
 glm::vec3 Lambertian::directionGenerator() const
 {
-    const float theta = acos(1.0f - (float)drand48());
-    const float phi = 2.0f * M_PI * (float)drand48();
-    return onb_.inverse_ * glm::vec3{(float)sin(theta) * cos(phi),
-                                     sin(theta) * sin(phi),
-                                     cos(theta)};
+    glm::vec3 p;
+    do
+    {
+        p = 2.0f * glm::vec3{drand48(), drand48(), drand48()} - 1.0f;
+    } while (p[0] * p[0] + p[1] * p[1] + p[2] * p[2] > 1.0f);
+    return p;
 }
 
-Ray Lambertian::scatter(const Ray &r_in,
-                        const Record &record,
-                        glm::vec3 &attenuation)
+glm::vec3 Lambertian::BRDF(const glm::vec3 &w_in, const glm::vec3 &w_out) const
 {
-    onb_.setFromV(record.normal_);
-    attenuation = albedo_;
-    return Ray(record.point_, directionGenerator());
+    return albedo_;
 }

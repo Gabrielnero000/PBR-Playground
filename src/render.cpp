@@ -16,15 +16,43 @@ Render::Render(Output &output,
 
 Render::~Render() {}
 
-glm::vec3 Color(Record &record, int depth)
+glm::vec3 Render::Color(const Ray &ray, Record &record, int depth)
 {
+    glm::vec3 emmiter{0.0f, 0.0f, 0.0f};
+    glm::vec3 albedo{0.8f, 0.8f, 0.8f};
 
+    const float PI = M_PI;
+
+    if (depth < ray_depth_)
+    {
+        if (scene_.intersect(ray, MIN_T, MAX_T, record))
+        {
+            ONB onb;
+            onb.setFromV(record.normal_);
+            Lambertian material(emmiter, albedo);
+
+            glm::vec3 w_in = glm::normalize(-ray.direction_);
+            glm::vec3 w_out = glm::normalize(material.directionGenerator() * onb.inverse_);
+
+            Ray next_ray = Ray(record.point_ , w_out);
+
+            return material.emmiter_ + (2.0f * PI * material.BRDF(w_in, w_out) * Color(next_ray, record, ++depth) * glm::dot(record.normal_, w_out));
+            //glm::vec3 target = record.point_ + record.normal_ + glm::normalize(randomUnit());
+            //return Color(Ray(record.point_, target - record.point_), record, ++depth) * 0.5f;
+        }
+        else
+        {
+            glm::vec3 unit = (glm::normalize(ray.direction_));
+            float t = 0.5 * (unit.y + 1.0f);
+            return (1.0f - t) * background_color_from_ + t * background_color_to_;
+        }
+    }
 }
 
 void Render::integrate()
 {
     Record record;
-    const float samples = 1.0f / samples_;
+    const float inv_samples = 1.0f / samples_;
 
     // Measure time
     auto start = std::chrono::high_resolution_clock::now();
@@ -43,7 +71,6 @@ void Render::integrate()
         // for each pixel
         for (std::size_t x = 0; x < output_.resolution_.x; x++)
         {
-
             // for each sample
             for (int i = 0; i < samples_; i++)
             {
@@ -53,21 +80,9 @@ void Render::integrate()
 
                 Ray ray{camera_.getRay(glm::vec2{u, v})};
 
-                // Test camera's ray to each primitive
-                if (scene_.intersect(ray, MIN_T, MAX_T, record))
-                {
-                    // Visualize the colision based on t
-                    output_.buffer_[x][y] += glm::vec3{fabs(record.normal_.x), fabs(record.normal_.y), fabs(record.normal_.z)};
-                }
-                else
-                {
-                    // Make a gradient effect
-                    glm::vec3 unit = (glm::normalize(ray.direction_));
-                    float t = 0.5 * (unit.y + 1.0f);
-                    output_.buffer_[x][y] = (1.0f - t) * background_color_from_ + t * background_color_to_;
-                }
+                output_.buffer_[x][y] += Color(ray, record, 0);
             }
-            output_.buffer_[x][y] *= samples;
+            output_.buffer_[x][y] *= inv_samples;
         }
     }
 

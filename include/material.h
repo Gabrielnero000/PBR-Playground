@@ -11,12 +11,9 @@ public:
   Material(const glm::vec3 &emmiter);
   ~Material();
   virtual glm::vec3 directionGenerator() const = 0;
-  virtual Ray scatter(const Ray &r_in,
-                      Record &record,
-                      glm::vec3 &attenuation) const = 0;
+  virtual glm::vec3 BRDF(const glm::vec3 &w_in, const glm::vec3 &w_out) const = 0;
 
   glm::vec3 emmiter_;
-  ONB onb_;
 };
 
 #endif

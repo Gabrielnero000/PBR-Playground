@@ -10,9 +10,7 @@ public:
   ~Lambertian();
 
   virtual glm::vec3 directionGenerator() const;
-  virtual Ray scatter(const Ray &r_in,
-                      const Record &record,
-                      glm::vec3 &attenuation);
+  virtual glm::vec3 BRDF(const glm::vec3 &w_in, const glm::vec3 &w_out) const;
 
   glm::vec3 albedo_;
 };

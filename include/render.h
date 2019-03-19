@@ -39,8 +39,10 @@
 #include "camera.h"
 #include "scene.h"
 #include "material.h"
+#include "lambertian.h"
+#include "onb.h"
 
-#define MIN_T 0.0000001f
+#define MIN_T 0.0001f
 #define MAX_T 1000.0f
 class Render
 {
@@ -57,9 +59,8 @@ public:
   void test();
 
 private:
-  glm::vec3 Color(Record &record, int depth);
+  glm::vec3 Color(const Ray &ray, Record &record, int depth);
 
-  glm::vec3 Color(const Ray &r, Record &record);
   Output &output_;
   Scene &scene_;
   Camera &camera_;
