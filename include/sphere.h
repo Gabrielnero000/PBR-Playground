@@ -39,7 +39,8 @@
 class Sphere : public Primitive
 {
 public:
-  Sphere(const glm::vec3 &center,
+  Sphere(MaterialUniquePtr material,
+         const glm::vec3 &center,
          const float radius);
 
   ~Sphere();

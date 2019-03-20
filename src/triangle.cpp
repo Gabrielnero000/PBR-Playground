@@ -1,9 +1,11 @@
 #include "triangle.h"
 #include <iostream>
 
-Triangle::Triangle(const glm::vec3 &v1,
+Triangle::Triangle(MaterialUniquePtr material,
+                   const glm::vec3 &v1,
                    const glm::vec3 &v2,
-                   const glm::vec3 &v3) : v1_{v1},
+                   const glm::vec3 &v3) : Primitive::Primitive(std::move(material)),
+                                          v1_{v1},
                                           v2_{v2},
                                           v3_{v3},
                                           normal_{glm::normalize(glm::cross(v3 - v1, v2 - v1))}

@@ -35,7 +35,8 @@
 #include "sphere.h"
 #include "triangle.h"
 #include "mesh.h"
-
+#include "material.h"
+#include "lambertian.h"
 
 class Scene
 {

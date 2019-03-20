@@ -18,10 +18,7 @@ Render::~Render() {}
 
 glm::vec3 Render::Color(const Ray &ray, Record &record, int depth)
 {
-    glm::vec3 emmiter{0.0f, 0.0f, 0.0f};
-    glm::vec3 albedo{0.8f, 0.8f, 0.8f};
-
-    const float PI = M_PI;
+    glm::vec3 L_o{0.0f, 0.0f, 0.0f};
 
     if (depth < ray_depth_)
     {
@@ -29,24 +26,43 @@ glm::vec3 Render::Color(const Ray &ray, Record &record, int depth)
         {
             ONB onb;
             onb.setFromV(record.normal_);
-            Lambertian material(emmiter, albedo);
 
             glm::vec3 w_in = glm::normalize(-ray.direction_);
-            glm::vec3 w_out = glm::normalize(material.directionGenerator() * onb.inverse_);
+            glm::vec3 w_out = glm::normalize(scene_.primitives_[record.index_]->material_->directionGenerator() * onb.inverse_);
 
-            Ray next_ray = Ray(record.point_ , w_out);
+            Ray next_ray = Ray(record.point_, w_out);
 
-            return material.emmiter_ + (2.0f * PI * material.BRDF(w_in, w_out) * Color(next_ray, record, ++depth) * glm::dot(record.normal_, w_out));
-            //glm::vec3 target = record.point_ + record.normal_ + glm::normalize(randomUnit());
-            //return Color(Ray(record.point_, target - record.point_), record, ++depth) * 0.5f;
+            L_o = scene_.primitives_[record.index_]->material_->emmiter_ +
+                  (2.0f * (float)(M_PI) * scene_.primitives_[record.index_]->material_->BRDF(w_in, w_out) *
+                   Color(next_ray, record, ++depth) *
+                   glm::dot(record.normal_, w_out));
+
+            // Clamp
+            if (L_o[0] < 0.0f)
+                L_o[0] = 0.0f;
+            if (L_o[0] > 1.0f)
+                L_o[0] = 1.0f;
+
+            if (L_o[1] < 0.0f)
+                L_o[1] = 0.0f;
+
+            if (L_o[1] > 1.0f)
+                L_o[1] = 1.0f;
+
+            if (L_o[2] < 0.0f)
+                L_o[2] = 0.0f;
+            if (L_o[2] > 1.0f)
+                L_o[2] = 1.0f;
         }
         else
         {
             glm::vec3 unit = (glm::normalize(ray.direction_));
             float t = 0.5 * (unit.y + 1.0f);
-            return (1.0f - t) * background_color_from_ + t * background_color_to_;
+            L_o = (1.0f - t) * background_color_from_ + t * background_color_to_;
         }
     }
+
+    return L_o;
 }
 
 void Render::integrate()

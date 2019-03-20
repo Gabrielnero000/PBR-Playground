@@ -10,7 +10,10 @@
 class Mesh : public Primitive
 {
 public:
-  Mesh(const std::string filename);
+  typedef std::unique_ptr<Triangle> TriangleUniquePtr;
+
+  Mesh(MaterialUniquePtr material,
+       const std::string filename);
   ~Mesh();
 
   bool intersect(const Ray &ray,
@@ -18,7 +21,7 @@ public:
                  float t_max,
                  Record &record) const;
 
-  std::vector<Triangle*> triangles_;
+  std::vector<TriangleUniquePtr> triangles_;
 };
 
 #endif

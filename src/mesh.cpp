@@ -1,6 +1,7 @@
 #include "mesh.h"
 
-Mesh::Mesh(const std::string filename)
+Mesh::Mesh(MaterialUniquePtr material,
+           const std::string filename) : Primitive::Primitive(std::move(material))
 {
 
     std::vector<glm::vec3> vertex_temp;
@@ -17,6 +18,7 @@ Mesh::Mesh(const std::string filename)
             switch (line[0])
             {
             case 'v':
+            {
                 for (size_t i = 0, j = 0; i < line.size(); i++)
                 {
                     if (line[i] == ' ')
@@ -30,11 +32,11 @@ Mesh::Mesh(const std::string filename)
                     std::stof(line.substr(index[0] + 1, index[1] - index[0])),
                     std::stof(line.substr(index[1] + 1, index[2] - index[1])),
                     std::stof(line.substr(index[2] + 1, (line.size() - 1) - index[2]))});
-
-                break;
+            }
+            break;
 
             case 'f':
-
+            {
                 for (size_t i = 0, j = 0; i < line.size(); i++)
                 {
                     if (line[i] == ' ')
@@ -44,12 +46,13 @@ Mesh::Mesh(const std::string filename)
                     }
                 }
 
-                triangles_.push_back(new Triangle{
-                    vertex_temp[std::stoi(line.substr(index[0] + 1, index[1] - index[0])) - 1],
-                    vertex_temp[std::stoi(line.substr(index[1] + 1, index[2] - index[1])) - 1],
-                    vertex_temp[std::stoi(line.substr(index[2] + 1, (line.size() - 1) - index[2])) - 1]});
+                glm::vec3 v_1 = vertex_temp[std::stoi(line.substr(index[0] + 1, index[1] - index[0])) - 1];
+                glm::vec3 v_2 = vertex_temp[std::stoi(line.substr(index[0] + 1, index[1] - index[0])) - 1];
+                glm::vec3 v_3 = vertex_temp[std::stoi(line.substr(index[2] + 1, (line.size() - 1) - index[2])) - 1];
 
-                break;
+                triangles_.push_back(TriangleUniquePtr(new Triangle{NULL, v_1, v_2, v_3}));
+            }
+            break;
 
             default:
                 break;
@@ -58,13 +61,7 @@ Mesh::Mesh(const std::string filename)
     }
 }
 
-Mesh::~Mesh()
-{
-    for (size_t i = 0; i < triangles_.size(); i++)
-    {
-        delete triangles_[i];
-    }
-}
+Mesh::~Mesh() {}
 
 bool Mesh::intersect(const Ray &ray,
                      float t_min,

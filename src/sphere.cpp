@@ -1,7 +1,9 @@
 #include "sphere.h"
 
-Sphere::Sphere(const glm::vec3 &center,
-               const float radius) : center_{center},
+Sphere::Sphere(MaterialUniquePtr material,
+               const glm::vec3 &center,
+               const float radius) : Primitive::Primitive(std::move(material)),
+                                     center_{center},
                                      radius_{radius} {}
 
 Sphere::~Sphere() {}

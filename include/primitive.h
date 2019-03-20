@@ -45,14 +45,16 @@ class Primitive
 {
 public:
   typedef std::unique_ptr<Primitive> PrimitiveUniquePtr;
-  //Material *material;
+  typedef std::unique_ptr<Material> MaterialUniquePtr;
 
-  Primitive();
+  MaterialUniquePtr material_;
+
+  Primitive(MaterialUniquePtr material);
   virtual ~Primitive();
   virtual bool intersect(const Ray &ray,
-                                float t_min,
-                                float t_max,
-                                Record &record) const = 0;
+                         float t_min,
+                         float t_max,
+                         Record &record) const = 0;
 };
 
 #endif

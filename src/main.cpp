@@ -12,8 +12,8 @@ int main()
     glm::vec3 background_color_from = {1.0f, 1.0f, 1.0f}; // White
     glm::vec3 background_color_to = {0.5f, 0.7f, 1.0f};   // Ciano
 
-    int samples = 100;
-    int depth = 100;
+    int samples = 1;
+    int depth = 5;
 
     //Camera params - 1:1 presset
     float min_x = -1.0f;

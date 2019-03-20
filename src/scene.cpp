@@ -21,6 +21,7 @@ bool Scene::intersect(const Ray &ray,
             intersected = true;             // has intersection
             record = tmp_record;            // update intersection's record
             closest_so_far = tmp_record.t_; // update t_max
+            record.index_ = i;              // the primitive index
         }
     }
 
@@ -47,11 +48,19 @@ void Scene::load()
     }*/
 
     // Scene 3 - Suzzy
-    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{"monkey.obj"}));
+    glm::vec3 emmiter{0.0f, 0.0f, 0.0f};
+    glm::vec3 albedo{0.8f, 0.8f, 0.8f};
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{Primitive::MaterialUniquePtr(new Lambertian(emmiter, albedo)), "monkey.obj"}));
 
     // Scene 4 - Sphere and plane
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 0.0f, -1.0f}, 0.5f}));
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, -100.5f, -1.0f}, 100.0f}));
+    /*glm::vec3 emmiter{0.0f, 0.0f, 0.0f};
+    glm::vec3 albedo{0.8f, 0.8f, 0.8f};
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter, albedo)),
+                                                                   glm::vec3{0.0f, 0.0f, -1.0f},
+                                                                   0.5f}));
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter, albedo)),
+                                                                   glm::vec3{0.0f, -100.5f, -1.0f},
+                                                                   100.0f}));*/
 
     // Scene 5 - Box with sphere
     //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, -0.8f, 0.0f}, 0.2f}));
