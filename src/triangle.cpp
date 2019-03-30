@@ -8,9 +8,10 @@ Triangle::Triangle(MaterialUniquePtr material,
                                           v1_{v1},
                                           v2_{v2},
                                           v3_{v3},
-                                          normal_{glm::normalize(glm::cross(v3 - v1, v2 - v1))}
+                                          normal_{-glm::normalize(glm::cross(v3 - v1, v2 - v1))}
 {
 #ifdef TRIANGLE_FAST
+
     const glm::vec3 C = v2_ - v1_;
     const glm::vec3 B = v3_ - v1_;
 

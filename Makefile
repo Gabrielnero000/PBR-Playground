@@ -12,7 +12,9 @@ SOURCES = $(shell find $(SRC_PATH) -name '*.$(SRC_EXT)' | sort -k 1nr | cut -f2-
 OBJECTS = $(SOURCES:$(SRC_PATH)/%.$(SRC_EXT)=$(BUILD_PATH)/%.o)
 DEPS = $(OBJECTS:.o=.d)
 
-COMPILE_FLAGS = -std=c++11 -Wall -Wextra -g -O3
+COMPILE_FLAGS = -std=c++11 -Wall -Wextra -g -fopenmp -O3
+LINK_FLAGS = -fopenmp
+
 INCLUDES = -I include/ -I /usr/local/include
 
 .PHONY: default_target
@@ -45,7 +47,7 @@ all: $(BIN_PATH)/$(BIN_NAME)
 
 $(BIN_PATH)/$(BIN_NAME): $(OBJECTS)
 	@echo "Linking: $@"
-	$(CXX) $(OBJECTS) -o $@
+	$(CXX) $(LINK_FLAGS) $(OBJECTS) -o $@
 
 -include $(DEPS)
 

@@ -4,15 +4,17 @@
 int main()
 {
 
-    //feenableexcept(FE_INVALID);
+    // feenableexcept(FE_INVALID);
     // Output params
     glm::vec2 resolution = {512, 512};
 
     //Render params
     glm::vec3 background_color_from = {1.0f, 1.0f, 1.0f}; // White
     glm::vec3 background_color_to = {0.5f, 0.7f, 1.0f};   // Ciano
+    //glm::vec3 background_color_from = {0.0001f, 0.0001f, 0.0001f};
+    //glm::vec3 background_color_to = {0.0001f, 0.0001f, 0.0001f};
 
-    int samples = 1;
+    int samples = 4000;
     int depth = 5;
 
     //Camera params - 1:1 presset

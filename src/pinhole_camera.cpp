@@ -26,6 +26,6 @@ Ray PinholeCamera::getRay(const glm::vec2 &coordinates) const
                         -focal_distance_};
 
     // Ray still in camera's space, must transform it to world space
-    return Ray{onb_.inverse_ * position_,
-               glm::normalize(onb_.inverse_ * direction)};
+    return Ray{onb_.basis_ * position_,
+               glm::normalize(onb_.basis_ * direction)};
 }

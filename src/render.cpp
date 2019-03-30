@@ -27,66 +27,52 @@ glm::vec3 Render::Color(const Ray &ray, Record &record, int depth)
             ONB onb;
             onb.setFromV(record.normal_);
 
-            glm::vec3 w_in = glm::normalize(-ray.direction_);
+            glm::vec3 w_in = glm::normalize(ray.direction_);
             glm::vec3 w_out = glm::normalize(scene_.primitives_[record.index_]->material_->directionGenerator() * onb.inverse_);
 
-            Ray next_ray = Ray(record.point_, w_out);
+            Ray next_ray = Ray(record.point_ + (record.normal_ * 0.001f), w_out);
 
-            L_o = scene_.primitives_[record.index_]->material_->emmiter_ +
-                  (2.0f * (float)(M_PI) * scene_.primitives_[record.index_]->material_->BRDF(w_in, w_out) *
-                   Color(next_ray, record, ++depth) *
-                   glm::dot(record.normal_, w_out));
-
-            // Clamp
-            if (L_o[0] < 0.0f)
-                L_o[0] = 0.0f;
-            if (L_o[0] > 1.0f)
-                L_o[0] = 1.0f;
-
-            if (L_o[1] < 0.0f)
-                L_o[1] = 0.0f;
-
-            if (L_o[1] > 1.0f)
-                L_o[1] = 1.0f;
-
-            if (L_o[2] < 0.0f)
-                L_o[2] = 0.0f;
-            if (L_o[2] > 1.0f)
-                L_o[2] = 1.0f;
+            return scene_.primitives_[record.index_]->material_->emmiter_ +
+                   2.0f * (float)M_PI *
+                       scene_.primitives_[record.index_]->material_->BRDF(w_in, w_out) *
+                       Color(next_ray, record, depth + 1) *
+                       (float)fabs(glm::dot(next_ray.direction_, record.normal_));
         }
         else
         {
             glm::vec3 unit = (glm::normalize(ray.direction_));
             float t = 0.5 * (unit.y + 1.0f);
-            L_o = (1.0f - t) * background_color_from_ + t * background_color_to_;
+            return (1.0f - t) * background_color_from_ + t * background_color_to_;
         }
     }
-
     return L_o;
 }
 
 void Render::integrate()
 {
-    Record record;
     const float inv_samples = 1.0f / samples_;
 
     // Measure time
     auto start = std::chrono::high_resolution_clock::now();
-    for (std::size_t y = 0; y < output_.resolution_.y; y++)
+#pragma omp parallel for
+    for (int y = 0; y < (int)output_.resolution_.y; y++)
     {
         // Print the render progress
-        std::stringstream progress_stream;
+        /*std::stringstream progress_stream;
         progress_stream << "\r  progress .........................: "
                         << std::fixed << std::setw(6)
                         << std::setprecision(2)
+                        //<< "Thread ID: " << omp_get_thread_num() << " "
                         << 100.0 * y / (output_.resolution_.y - 1)
                         << "%";
 
-        std::clog << progress_stream.str();
+        std::clog << progress_stream.str();*/
+        Record record;
 
         // for each pixel
-        for (std::size_t x = 0; x < output_.resolution_.x; x++)
+        for (int x = 0; x < (int)output_.resolution_.x; x++)
         {
+
             // for each sample
             for (int i = 0; i < samples_; i++)
             {
@@ -101,9 +87,8 @@ void Render::integrate()
             output_.buffer_[x][y] *= inv_samples;
         }
     }
-
     // Print some usefull information
-    std::clog << std::endl;
+    //std::clog << std::endl;
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish - start;
     std::cout << "Elapsed time: " << elapsed.count() << " s" << std::endl;

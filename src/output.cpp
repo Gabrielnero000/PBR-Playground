@@ -1,5 +1,4 @@
 #include "output.h"
-#include <fenv.h>
 
 Output::Output(const glm::vec2 resolution) : resolution_{resolution}
 {
@@ -14,7 +13,6 @@ Output::~Output() {}
 
 void Output::save(const std::string filename)
 {
-    feenableexcept(FE_INVALID);
     // PPM's pattern
     std::ofstream image;
     image.open(filename + ".ppm");
@@ -24,7 +22,24 @@ void Output::save(const std::string filename)
     for (int j = resolution_.y - 1; j >= 0; j--)
         for (int i = 0; i < resolution_.x; i++)
         {
-            //buffer_[i][j] = glm::vec3(sqrt(buffer_[i][j][0]), sqrt(buffer_[i][j][1]), sqrt(buffer_[i][j][2]));
+            buffer_[i][j][0] = powf(buffer_[i][j][0], 1.0f / 2.2f);
+            buffer_[i][j][1] = powf(buffer_[i][j][1], 1.0f / 2.2f);
+            buffer_[i][j][2] = powf(buffer_[i][j][2], 1.0f / 2.2f);
+
+            if (buffer_[i][j][0] < 0.0f)
+                buffer_[i][j][0] = 0.0f;
+            if (buffer_[i][j][0] > 1.0f)
+                buffer_[i][j][0] = 1.0f;
+
+            if (buffer_[i][j][1] < 0.0f)
+                buffer_[i][j][1] = 0.0f;
+            if (buffer_[i][j][1] > 1.0f)
+                buffer_[i][j][1] = 1.0f;
+
+            if (buffer_[i][j][2] < 0.0f)
+                buffer_[i][j][2] = 0.0f;
+            if (buffer_[i][j][2] > 1.0f)
+                buffer_[i][j][2] = 1.0f;
 
             // Bring colors from [0, 1] to [0, 255]
             // Watch out for rounding errors
