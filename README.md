@@ -130,7 +130,7 @@ Combine a mesh intersection routine with a arbitrary perspective camera, and we 
 ### Mark IV - Path Tracing
 Now it's time for a really childbirth. Instead of launch a single ray by each pixel, we will launch lots for a more accurate sampling of the scene. Those rays, if hit some object, can be scattered in some direction and with some attenuation (i.e. the surface can absorb part of the energy) until it's hit any surface that emmites energy. If the ray don't hit any emmisive surface, it does'nt carry any energy and does'nt contribuite to the final image (and you had waste computations). 
 
-Every material can scatter rays in a particular way. Diffuse (perfectly matte) materials scatters the energy equally in all 
+Every material can scatter rays in a particular way. Diffuse (perfectly matte) materials scatters the light equally in all directions. Perfect mirros scatters the light only and fully in the reflected direction of the incident ray. Glossy and metals 
 
 The rays scatters from it's origin to a A surface, to a B surface, to a C surface and so on until it reachs the camera plane. We are going to trace back that path (that's where the *path tracing* thing cames from) from the camera to, at least, one light source. That algorithm have a recursive nature (an input ray was a output ray someware). This bring to us the beautiful *Render Equation*:
 
@@ -164,7 +164,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4OTA3NTU3MCw5MzY2NzU0NjQsOTIxMD
+eyJoaXN0b3J5IjpbMTgwMTEyODg5MSw5MzY2NzU0NjQsOTIxMD
 A0NzQ5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0
 NTcsMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLT
 I0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0
