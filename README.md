@@ -129,6 +129,7 @@ Combine a mesh intersection routine with a arbitrary perspective camera, and we 
 
 ### Mark IV - Path Tracing
 Now it's time for a really childbirth. Instead of launch a single ray by each pixel, we will launch lots for a more accurate sampling of the scene. Those rays, if hit some object, can be scattered in some direction and with some attenuation (i.e. the surface can absorb part of the energy) until it's hit any surface that emmites energy. If the ray don't hit any emmisive surface, it does'nt carry any energy and does'nt contribuite to the final image (and you had waste computations). This bring to us the beautiful *Render Equation*:
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{150}&space;$$L_o(\omega_r)&space;=&space;L_e(\omega_r)&space;&plus;&space;\int_\Omega&space;f_r(\omega_i,&space;\omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$$L_o(\omega_r)&space;=&space;L_e(\omega_r)&space;&plus;&space;\int_\Omega&space;f_r(\omega_i,&space;\omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" title="$$L_o(\omega_r) = L_e(\omega_r) + \int_\Omega f_r(\omega_i, \omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" /></a>
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -143,11 +144,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM2Njc1NDY0LDkyMTAwNDc0OSwtMTcwND
-E0Mjg3MSwxMTM1OTIxMTE1LC0xNDQ3Mjk3NDU3LDEwNzgwMzAx
-MTgsMTEwOTI2NTk0NiwtNDk4OTI4NTE1LC0yNDAwNTkyMjUsMT
-A1NTA5OTIzNywxNjE1MDc1MTI1LC0xNjI5NDM0NTY5LC0xMDQ5
-NDAzMzY0LC0yMDg1NjAyMjc3LC0yMDg1NjAyMjc3LDg3ODkzNT
-A0MiwxMzc2NjE2NjQ1LDkzMDU0NTI4NywtMTIxNDY1NzEzMiwx
-ODU5MzE3MTIzXX0=
+eyJoaXN0b3J5IjpbMTkxMzQxMDMzLDkzNjY3NTQ2NCw5MjEwMD
+Q3NDksLTE3MDQxNDI4NzEsMTEzNTkyMTExNSwtMTQ0NzI5NzQ1
+NywxMDc4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODkyODUxNSwtMj
+QwMDU5MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNSwtMTYyOTQz
+NDU2OSwtMTA0OTQwMzM2NCwtMjA4NTYwMjI3NywtMjA4NTYwMj
+I3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEy
+MTQ2NTcxMzJdfQ==
 -->
