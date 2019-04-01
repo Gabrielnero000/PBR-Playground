@@ -134,10 +134,10 @@ Now it's time for a really childbirth. Instead of launch a single ray by each pi
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{150}&space;$$L_o(\omega_r)&space;=&space;L_e(\omega_r)&space;&plus;&space;\int_\Omega&space;f_r(\omega_i,&space;\omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$$L_o(\omega_r)&space;=&space;L_e(\omega_r)&space;&plus;&space;\int_\Omega&space;f_r(\omega_i,&space;\omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" title="$$L_o(\omega_r) = L_e(\omega_r) + \int_\Omega f_r(\omega_i, \omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" /></a>
 </p>
 
-Translating: the output energy of a reflected ray it's the sum of the emissive energy of the hitted surface and the contribuiton of all the rays comming from all directions in the upper hemysphere of the hit point. That contribution is the sum (integration!) of all possibles reflection proportions for every pairs of incident/reflected rays attenuated by the angle of incident. Sounds spooky and really is. That integral is analytically unsolvable, so we need to use numerical methods to solve it. Specifically, Monte Carlo integration.
+Translating: the output energy of a reflected ray it's the sum of the emissive energy of the hitted surface and the contribuiton of all the rays comming from all directions in the upper hemysphere of the hit point. That contribution is the sum (integration!) of all possibles reflection proportions for every pairs of incident/reflected rays attenuated by the angle of incident .The rays scatters from it's origin to a A surface, to a B surface, to a C surface and so on until it reachs the camera plane. We are going to trace back that path (that's where the *path tracing* thing cames from) from the camera to, at least, one light source. That algorithm have a recursive nature. Sounds spooky and really is. That integral is analytically unsolvable, so we need to use numerical methods to solve it. Specifically, Monte Carlo integration.
 
 The idea is SAH (simple as hell): evaluate the integral N times randomically, sum everything and divide by N. So, if the *randomically* occurs with a uniform distribuition, probabilistically we will approximate the integral value. The thing is:
-*	We need a lot (reaaaaaly lot) of samples to reach a reasonable approximation.
+*	We need a lot of samples to reach a reasonable approximation.
 *	Few samples means noise.
 
 So, we have two elements to play now:
@@ -155,11 +155,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjUxNDE0ODYsOTM2Njc1NDY0LDkyMT
-AwNDc0OSwtMTcwNDE0Mjg3MSwxMTM1OTIxMTE1LC0xNDQ3Mjk3
-NDU3LDEwNzgwMzAxMTgsMTEwOTI2NTk0NiwtNDk4OTI4NTE1LC
-0yNDAwNTkyMjUsMTA1NTA5OTIzNywxNjE1MDc1MTI1LC0xNjI5
-NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1NjAyMjc3LC0yMDg1Nj
-AyMjc3LDg3ODkzNTA0MiwxMzc2NjE2NjQ1LDkzMDU0NTI4Nywt
-MTIxNDY1NzEzMl19
+eyJoaXN0b3J5IjpbNzU4NzE2OTA0LDkzNjY3NTQ2NCw5MjEwMD
+Q3NDksLTE3MDQxNDI4NzEsMTEzNTkyMTExNSwtMTQ0NzI5NzQ1
+NywxMDc4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODkyODUxNSwtMj
+QwMDU5MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNSwtMTYyOTQz
+NDU2OSwtMTA0OTQwMzM2NCwtMjA4NTYwMjI3NywtMjA4NTYwMj
+I3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEy
+MTQ2NTcxMzJdfQ==
 -->
