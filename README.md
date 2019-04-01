@@ -150,6 +150,10 @@ Few bounces can make the scence darker (the ray may could reach a emissive surfa
 
 Few samples per pixel generate noise (a bad approximation for the integral). More samples, again, generate a better approximation (again, in the real world occurs infinite sampling) but you'll need infinite time to compute it.
 
+<p align="center">
+    <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/gallery/path_tracing.png?raw=true" alt>
+    <em>My first PBR render. Used Blender Clycles to genereate it.</em>
+</p>
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -164,11 +168,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxNDkwMDEzOSw5MzY2NzU0NjQsOTIxMD
-A0NzQ5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0
-NTcsMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLT
-I0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0
-MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2MDIyNzcsLTIwODU2MD
-IyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1Mjg3LC0x
-MjE0NjU3MTMyXX0=
+eyJoaXN0b3J5IjpbLTE5MDA5NzM5NTgsOTM2Njc1NDY0LDkyMT
+AwNDc0OSwtMTcwNDE0Mjg3MSwxMTM1OTIxMTE1LC0xNDQ3Mjk3
+NDU3LDEwNzgwMzAxMTgsMTEwOTI2NTk0NiwtNDk4OTI4NTE1LC
+0yNDAwNTkyMjUsMTA1NTA5OTIzNywxNjE1MDc1MTI1LC0xNjI5
+NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1NjAyMjc3LC0yMDg1Nj
+AyMjc3LDg3ODkzNTA0MiwxMzc2NjE2NjQ1LDkzMDU0NTI4Nywt
+MTIxNDY1NzEzMl19
 -->
