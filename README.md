@@ -142,8 +142,9 @@ So, we have two elements to play now:
 * Number of bounces that each ray can suffer (our recursion-end condition).
 * Number of samples.
 
-Few bounces can make the scence darker (the ray may could reach a emissive surface if it had suffered more bounces). More bounces generate a more accurate precision (in the real world, the rays suffers infinite bounces) but the computation cost will be higher.
-Few samples per pixel g
+Few bounces can make the scence darker (the ray may could reach a emissive surface if it had suffered more bounces). More bounces generate a more accurate result (in the real world, the rays suffers infinite bounces) but the computational cost will be higher.
+
+Few samples per pixel generate noise (a bad approximation for the integral). More samples, again, generate a better approximation (again, in the real world occurs infinit)
 
 
 ## Gallery: Images of Experiments
@@ -159,11 +160,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4MjkzODM1MSw5MzY2NzU0NjQsOTIxMD
-A0NzQ5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0
-NTcsMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLT
-I0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0
-MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2MDIyNzcsLTIwODU2MD
-IyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1Mjg3LC0x
-MjE0NjU3MTMyXX0=
+eyJoaXN0b3J5IjpbLTExMjYzMzg0MTcsOTM2Njc1NDY0LDkyMT
+AwNDc0OSwtMTcwNDE0Mjg3MSwxMTM1OTIxMTE1LC0xNDQ3Mjk3
+NDU3LDEwNzgwMzAxMTgsMTEwOTI2NTk0NiwtNDk4OTI4NTE1LC
+0yNDAwNTkyMjUsMTA1NTA5OTIzNywxNjE1MDc1MTI1LC0xNjI5
+NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1NjAyMjc3LC0yMDg1Nj
+AyMjc3LDg3ODkzNTA0MiwxMzc2NjE2NjQ1LDkzMDU0NTI4Nywt
+MTIxNDY1NzEzMl19
 -->
