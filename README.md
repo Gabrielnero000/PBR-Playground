@@ -142,7 +142,8 @@ So, we have two elements to play now:
 * Number of bounces that each ray can suffer (our recursion-end condition).
 * Number of samples.
 
-Few bounces can make the scence darker (the ray may could reach a emissive surface if it bounces more)
+Few bounces can make the scence darker (the ray may could reach a emissive surface if it had suffered more bounces). More bounces generate a more accurate precision (in the real world, the rays suffers infinite bounces) but the computation cost will be higher.
+Few samples per pixel g
 
 
 ## Gallery: Images of Experiments
@@ -158,7 +159,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3NzMyNjU1Niw5MzY2NzU0NjQsOTIxMD
+eyJoaXN0b3J5IjpbMTE4MjkzODM1MSw5MzY2NzU0NjQsOTIxMD
 A0NzQ5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0
 NTcsMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLT
 I0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0
