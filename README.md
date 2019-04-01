@@ -128,7 +128,7 @@ Combine a mesh intersection routine with a arbitrary perspective camera, and we 
 </p>
 
 ### Mark IV - Path Tracing
-Now it's time for a really childbirth. Instead of launch a single ray by each pixel, we will launch lots for a more accurate sampling of the scene. Those rays, if hit some object, can be scattered in some direction and with some attenuation (i.e. the surface can absorb part of the energy) until it's hit any surface that emmites energy. If the ray don't hit any emmisive surface, 
+Now it's time for a really childbirth. Instead of launch a single ray by each pixel, we will launch lots for a more accurate sampling of the scene. Those rays, if hit some object, can be scattered in some direction and with some attenuation (i.e. the surface can absorb part of the energy) until it's hit any surface that emmites energy. If the ray don't hit any emmisive surface, it does'nt carry any energy and does'nt contribuite to the final image (and you had waste computations). This bring to us the beautiful 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -143,7 +143,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjYzODk4NjczLDkyMTAwNDc0OSwtMTcwND
+eyJoaXN0b3J5IjpbNzEwNTk0NzAwLDkyMTAwNDc0OSwtMTcwND
 E0Mjg3MSwxMTM1OTIxMTE1LC0xNDQ3Mjk3NDU3LDEwNzgwMzAx
 MTgsMTEwOTI2NTk0NiwtNDk4OTI4NTE1LC0yNDAwNTkyMjUsMT
 A1NTA5OTIzNywxNjE1MDc1MTI1LC0xNjI5NDM0NTY5LC0xMDQ5
