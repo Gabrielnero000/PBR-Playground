@@ -134,7 +134,7 @@ Now it's time for a really childbirth. Instead of launch a single ray by each pi
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{150}&space;$$L_o(\omega_r)&space;=&space;L_e(\omega_r)&space;&plus;&space;\int_\Omega&space;f_r(\omega_i,&space;\omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$$L_o(\omega_r)&space;=&space;L_e(\omega_r)&space;&plus;&space;\int_\Omega&space;f_r(\omega_i,&space;\omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" title="$$L_o(\omega_r) = L_e(\omega_r) + \int_\Omega f_r(\omega_i, \omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" /></a>
 </p>
 
-Translating: the output energy of a reflected ray it's the sum of the emissive energy of the hitted surface and the contribuiton of all the rays comming 
+Translating: the output energy of a reflected ray it's the sum of the emissive energy of the hitted surface and the contribuiton of all the rays comming from all directions in the upper hemysphere of the hit point. 
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -149,7 +149,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkyNjk4MDExMSw5MzY2NzU0NjQsOTIxMD
+eyJoaXN0b3J5IjpbLTM0NDYzMTE5NSw5MzY2NzU0NjQsOTIxMD
 A0NzQ5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0
 NTcsMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLT
 I0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0
