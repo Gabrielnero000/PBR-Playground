@@ -138,7 +138,9 @@ Translating: the output energy of a reflected ray it's the sum of the emissive e
 
 The idea is SAH (simple as hell): evaluate the integral N times randomically, sum everything and divide by N. So, if the *randomically* occurs with a uniform distribuition, probabilistically we will approximate the integral value. The thing is:
 *	We need a lot (reaaaaaly lot) of samples to reach a reasonable approximation.
-*	Fewer samples means noise.
+*	Few samples means noise.
+
+So, we have two elements to play now:
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -153,11 +155,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjEwMTU2ODM3LDkzNjY3NTQ2NCw5MjEwMD
-Q3NDksLTE3MDQxNDI4NzEsMTEzNTkyMTExNSwtMTQ0NzI5NzQ1
-NywxMDc4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODkyODUxNSwtMj
-QwMDU5MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNSwtMTYyOTQz
-NDU2OSwtMTA0OTQwMzM2NCwtMjA4NTYwMjI3NywtMjA4NTYwMj
-I3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEy
-MTQ2NTcxMzJdfQ==
+eyJoaXN0b3J5IjpbLTQzMDIxOTUyOCw5MzY2NzU0NjQsOTIxMD
+A0NzQ5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0
+NTcsMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLT
+I0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0
+MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2MDIyNzcsLTIwODU2MD
+IyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1Mjg3LC0x
+MjE0NjU3MTMyXX0=
 -->
