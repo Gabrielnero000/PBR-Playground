@@ -144,7 +144,7 @@ So, we have two elements to play now:
 
 Few bounces can make the scence darker (the ray may could reach a emissive surface if it had suffered more bounces). More bounces generate a more accurate result (in the real world, the rays suffers infinite bounces) but the computational cost will be higher.
 
-Few samples per pixel generate noise (a bad approximation for the integral). More samples, again, generate a better approximation (again, in the real world occurs infinit)
+Few samples per pixel generate noise (a bad approximation for the integral). More samples, again, generate a better approximation (again, in the real world occurs infinite sampling) but you'll need infinite time to compute it.
 
 
 ## Gallery: Images of Experiments
@@ -160,11 +160,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjYzMzg0MTcsOTM2Njc1NDY0LDkyMT
-AwNDc0OSwtMTcwNDE0Mjg3MSwxMTM1OTIxMTE1LC0xNDQ3Mjk3
-NDU3LDEwNzgwMzAxMTgsMTEwOTI2NTk0NiwtNDk4OTI4NTE1LC
-0yNDAwNTkyMjUsMTA1NTA5OTIzNywxNjE1MDc1MTI1LC0xNjI5
-NDM0NTY5LC0xMDQ5NDAzMzY0LC0yMDg1NjAyMjc3LC0yMDg1Nj
-AyMjc3LDg3ODkzNTA0MiwxMzc2NjE2NjQ1LDkzMDU0NTI4Nywt
-MTIxNDY1NzEzMl19
+eyJoaXN0b3J5IjpbNDIwNDg0MCw5MzY2NzU0NjQsOTIxMDA0Nz
+Q5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0NTcs
+MTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLTI0MD
+A1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0MzQ1
+NjksLTEwNDk0MDMzNjQsLTIwODU2MDIyNzcsLTIwODU2MDIyNz
+csODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1Mjg3LC0xMjE0
+NjU3MTMyXX0=
 -->
