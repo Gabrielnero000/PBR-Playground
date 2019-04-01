@@ -128,7 +128,11 @@ Combine a mesh intersection routine with a arbitrary perspective camera, and we 
 </p>
 
 ### Mark IV - Path Tracing
-Now it's time for a really childbirth. Instead of launch a single ray by each pixel, we will launch lots for a more accurate sampling of the scene. Those rays, if hit some object, can be scattered in some direction and with some attenuation (i.e. the surface can absorb part of the energy) until it's hit any surface that emmites energy. If the ray don't hit any emmisive surface, it does'nt carry any energy and does'nt contribuite to the final image (and you had waste computations). The rays scatters from it's origin to a A surface, to a B surface, to a C surface and so on until it reachs the camera plane. We are going to trace back that path (that's where the *path tracing* thing cames from) from the camera to, at least, one light source. That algorithm have a recursive nature (an input ray was a output ray someware). This bring to us the beautiful *Render Equation*:
+Now it's time for a really childbirth. Instead of launch a single ray by each pixel, we will launch lots for a more accurate sampling of the scene. Those rays, if hit some object, can be scattered in some direction and with some attenuation (i.e. the surface can absorb part of the energy) until it's hit any surface that emmites energy. If the ray don't hit any emmisive surface, it does'nt carry any energy and does'nt contribuite to the final image (and you had waste computations). 
+
+Every material can scatter rays in a particular way. Diffuse (perfectly matte) materials scatters the energy equally in all 
+
+The rays scatters from it's origin to a A surface, to a B surface, to a C surface and so on until it reachs the camera plane. We are going to trace back that path (that's where the *path tracing* thing cames from) from the camera to, at least, one light source. That algorithm have a recursive nature (an input ray was a output ray someware). This bring to us the beautiful *Render Equation*:
 
 <p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{150}&space;$$L_o(\omega_r)&space;=&space;L_e(\omega_r)&space;&plus;&space;\int_\Omega&space;f_r(\omega_i,&space;\omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{150}&space;$$L_o(\omega_r)&space;=&space;L_e(\omega_r)&space;&plus;&space;\int_\Omega&space;f_r(\omega_i,&space;\omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" title="$$L_o(\omega_r) = L_e(\omega_r) + \int_\Omega f_r(\omega_i, \omega_r)L_i(\omega_i)cos(\theta)d\omega_i$$" /></a>
@@ -160,11 +164,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDIwNDg0MCw5MzY2NzU0NjQsOTIxMDA0Nz
-Q5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0NTcs
-MTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLTI0MD
-A1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0MzQ1
-NjksLTEwNDk0MDMzNjQsLTIwODU2MDIyNzcsLTIwODU2MDIyNz
-csODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1Mjg3LC0xMjE0
-NjU3MTMyXX0=
+eyJoaXN0b3J5IjpbLTM4OTA3NTU3MCw5MzY2NzU0NjQsOTIxMD
+A0NzQ5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0
+NTcsMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLT
+I0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0
+MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2MDIyNzcsLTIwODU2MD
+IyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1Mjg3LC0x
+MjE0NjU3MTMyXX0=
 -->
