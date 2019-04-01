@@ -154,7 +154,7 @@ Few samples per pixel generate noise (a bad approximation for the integral). Mor
     <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/gallery/path_tracing.png?raw=true" alt>
 </p>
 <p align="center">
-    <em>My first Path Traced image. A white difuse box with a white emmiter square and a red difuse sphere. 4000 samples, 5 bounces and </em>
+    <em>My first Path Traced image. A white difuse box with a white emmiter square and a red difuse sphere. 4000 samples, 5 bounces and 736 seconds to render using multicore.</em>
 </p>
 
 ## Gallery: Images of Experiments
@@ -170,11 +170,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk4ODI4NjY0LDkzNjY3NTQ2NCw5MjEwMD
-Q3NDksLTE3MDQxNDI4NzEsMTEzNTkyMTExNSwtMTQ0NzI5NzQ1
-NywxMDc4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODkyODUxNSwtMj
-QwMDU5MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNSwtMTYyOTQz
-NDU2OSwtMTA0OTQwMzM2NCwtMjA4NTYwMjI3NywtMjA4NTYwMj
-I3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEy
-MTQ2NTcxMzJdfQ==
+eyJoaXN0b3J5IjpbMTg1NzE5MDIzNCw5MzY2NzU0NjQsOTIxMD
+A0NzQ5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0
+NTcsMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLT
+I0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0
+MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2MDIyNzcsLTIwODU2MD
+IyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1Mjg3LC0x
+MjE0NjU3MTMyXX0=
 -->
