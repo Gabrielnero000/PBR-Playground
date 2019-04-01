@@ -13,9 +13,10 @@ This repository is also for educational purposes in the class "Special Topics in
 
 ## Current Features
 * Render Core
-	* Gradient background
-	* Ray Casting mode
-	
+	* Path Tracing
+* Materials
+	* Diffuse
+
 * Cameras
 	* Orthograpic Camera
 	* Perspective (pinhole) Camera
@@ -126,6 +127,9 @@ Combine a mesh intersection routine with a arbitrary perspective camera, and we 
     <em>Monkey with normals and arbitrary position camera</em>
 </p>
 
+### Mark III - Path Tracing
+
+
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -139,11 +143,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTIxMDA0NzQ5LC0xNzA0MTQyODcxLDExMz
-U5MjExMTUsLTE0NDcyOTc0NTcsMTA3ODAzMDExOCwxMTA5MjY1
-OTQ2LC00OTg5Mjg1MTUsLTI0MDA1OTIyNSwxMDU1MDk5MjM3LD
-E2MTUwNzUxMjUsLTE2Mjk0MzQ1NjksLTEwNDk0MDMzNjQsLTIw
-ODU2MDIyNzcsLTIwODU2MDIyNzcsODc4OTM1MDQyLDEzNzY2MT
-Y2NDUsOTMwNTQ1Mjg3LC0xMjE0NjU3MTMyLDE4NTkzMTcxMjMs
-MTQxMDA1NzQ0N119
+eyJoaXN0b3J5IjpbOTUyMTUwNTU1LDkyMTAwNDc0OSwtMTcwND
+E0Mjg3MSwxMTM1OTIxMTE1LC0xNDQ3Mjk3NDU3LDEwNzgwMzAx
+MTgsMTEwOTI2NTk0NiwtNDk4OTI4NTE1LC0yNDAwNTkyMjUsMT
+A1NTA5OTIzNywxNjE1MDc1MTI1LC0xNjI5NDM0NTY5LC0xMDQ5
+NDAzMzY0LC0yMDg1NjAyMjc3LC0yMDg1NjAyMjc3LDg3ODkzNT
+A0MiwxMzc2NjE2NjQ1LDkzMDU0NTI4NywtMTIxNDY1NzEzMiwx
+ODU5MzE3MTIzXX0=
 -->
