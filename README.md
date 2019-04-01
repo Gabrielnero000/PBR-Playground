@@ -136,7 +136,8 @@ Now it's time for a really childbirth. Instead of launch a single ray by each pi
 
 Translating: the output energy of a reflected ray it's the sum of the emissive energy of the hitted surface and the contribuiton of all the rays comming from all directions in the upper hemysphere of the hit point. That contribution is the sum (integration!) of all possibles reflection proportions for every pairs of incident/reflected rays attenuated by the angle of incident. Sounds spooky and really is. That integral is analytically unsolvable, so we need to use numerical methods to solve it. Specifically, Monte Carlo integration.
 
-The idea is SAH (simple as hell): evaluate the integral N times randomically, sum everything and divide by N. So 
+The idea is SAH (simple as hell): evaluate the integral N times randomically, sum everything and divide by N. So, if the *randomically* occurs with a uniform distribuition, probabilistically we will approximate the integral value. The thing is:
+8	
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -151,7 +152,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyMjAzOTQ1NCw5MzY2NzU0NjQsOTIxMD
+eyJoaXN0b3J5IjpbLTgzMjY0MzI0Niw5MzY2NzU0NjQsOTIxMD
 A0NzQ5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0
 NTcsMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLT
 I0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0
