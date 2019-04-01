@@ -153,6 +153,9 @@ Few samples per pixel generate noise (a bad approximation for the integral). Mor
 <p align="center">
     <img src="https://github.com/Gabrielnero000/PBR-Playground/blob/master/gallery/path_tracing.png?raw=true" alt>
 </p>
+<p align="center">
+    <em>My first Path Traced image. A white diffuse box with a white squa</em>
+</p>
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -167,7 +170,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzc2NjU2MTksOTM2Njc1NDY0LDkyMT
+eyJoaXN0b3J5IjpbLTE4ODA0ODYwNjgsOTM2Njc1NDY0LDkyMT
 AwNDc0OSwtMTcwNDE0Mjg3MSwxMTM1OTIxMTE1LC0xNDQ3Mjk3
 NDU3LDEwNzgwMzAxMTgsMTEwOTI2NTk0NiwtNDk4OTI4NTE1LC
 0yNDAwNTkyMjUsMTA1NTA5OTIzNywxNjE1MDc1MTI1LC0xNjI5
