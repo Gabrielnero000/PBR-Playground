@@ -137,7 +137,8 @@ Now it's time for a really childbirth. Instead of launch a single ray by each pi
 Translating: the output energy of a reflected ray it's the sum of the emissive energy of the hitted surface and the contribuiton of all the rays comming from all directions in the upper hemysphere of the hit point. That contribution is the sum (integration!) of all possibles reflection proportions for every pairs of incident/reflected rays attenuated by the angle of incident. Sounds spooky and really is. That integral is analytically unsolvable, so we need to use numerical methods to solve it. Specifically, Monte Carlo integration.
 
 The idea is SAH (simple as hell): evaluate the integral N times randomically, sum everything and divide by N. So, if the *randomically* occurs with a uniform distribuition, probabilistically we will approximate the integral value. The thing is:
-8	
+*	We need a lot (reaaaaaly lot) of samples to reach a reasonable approximation.
+*	Fewer samples means noise.
 
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
@@ -152,11 +153,11 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMjY0MzI0Niw5MzY2NzU0NjQsOTIxMD
-A0NzQ5LC0xNzA0MTQyODcxLDExMzU5MjExMTUsLTE0NDcyOTc0
-NTcsMTA3ODAzMDExOCwxMTA5MjY1OTQ2LC00OTg5Mjg1MTUsLT
-I0MDA1OTIyNSwxMDU1MDk5MjM3LDE2MTUwNzUxMjUsLTE2Mjk0
-MzQ1NjksLTEwNDk0MDMzNjQsLTIwODU2MDIyNzcsLTIwODU2MD
-IyNzcsODc4OTM1MDQyLDEzNzY2MTY2NDUsOTMwNTQ1Mjg3LC0x
-MjE0NjU3MTMyXX0=
+eyJoaXN0b3J5IjpbNjEwMTU2ODM3LDkzNjY3NTQ2NCw5MjEwMD
+Q3NDksLTE3MDQxNDI4NzEsMTEzNTkyMTExNSwtMTQ0NzI5NzQ1
+NywxMDc4MDMwMTE4LDExMDkyNjU5NDYsLTQ5ODkyODUxNSwtMj
+QwMDU5MjI1LDEwNTUwOTkyMzcsMTYxNTA3NTEyNSwtMTYyOTQz
+NDU2OSwtMTA0OTQwMzM2NCwtMjA4NTYwMjI3NywtMjA4NTYwMj
+I3Nyw4Nzg5MzUwNDIsMTM3NjYxNjY0NSw5MzA1NDUyODcsLTEy
+MTQ2NTcxMzJdfQ==
 -->
