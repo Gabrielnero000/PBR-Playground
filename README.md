@@ -141,7 +141,7 @@ The idea is SAH (simple as hell): evaluate the integral N times randomically, su
 *	Few samples means noise.
 
 So, we have two elements to play now:
-* The rays scatters from it's origin to a A surface, to a B surface, to a C surface and so on until it reachs the camera plane. We are going to
+*  
 ## Gallery: Images of Experiments
 PBR is about genereate beautiful CG images, so here they are! The images in this section was generated using my code or existing PBR softwares. I hope you appreciate it!
 
@@ -155,7 +155,7 @@ PBR is about genereate beautiful CG images, so here they are! The images in this
     <em>The Earth with Blender Clycles.</em>
 </p>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTY0Nzk4OTUsOTM2Njc1NDY0LDkyMT
+eyJoaXN0b3J5IjpbLTE5NjUxNDE0ODYsOTM2Njc1NDY0LDkyMT
 AwNDc0OSwtMTcwNDE0Mjg3MSwxMTM1OTIxMTE1LC0xNDQ3Mjk3
 NDU3LDEwNzgwMzAxMTgsMTEwOTI2NTk0NiwtNDk4OTI4NTE1LC
 0yNDAwNTkyMjUsMTA1NTA5OTIzNywxNjE1MDc1MTI1LC0xNjI5
