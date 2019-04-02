@@ -18,34 +18,21 @@ Render::~Render() {}
 
 glm::vec3 Render::Color(const Ray &ray, Record &record, int depth)
 {
-    glm::vec3 L_o{0.0f, 0.0f, 0.0f};
-
-    if (depth < ray_depth_)
+    if (scene_.intersect(ray, MIN_T, MAX_T, record))
     {
-        if (scene_.intersect(ray, MIN_T, MAX_T, record))
-        {
-            ONB onb;
-            onb.setFromV(record.normal_);
+        Ray w_out;
+        glm::vec3 attenuation;
 
-            glm::vec3 w_in = glm::normalize(ray.direction_);
-            glm::vec3 w_out = glm::normalize(scene_.primitives_[record.index_]->material_->directionGenerator() * onb.inverse_);
-
-            Ray next_ray = Ray(record.point_ + (record.normal_ * 0.001f), w_out);
-
+        if (depth < ray_depth_ && scene_.primitives_[record.index_]->material_->scatter(ray, record, attenuation, w_out))
             return scene_.primitives_[record.index_]->material_->emmiter_ +
-                   2.0f * (float)M_PI *
-                       scene_.primitives_[record.index_]->material_->BRDF(w_in, w_out) *
-                       Color(next_ray, record, depth + 1) *
-                       (float)fabs(glm::dot(next_ray.direction_, record.normal_));
-        }
+                   attenuation * Color(w_out, record, ++depth) * (float)fabs(glm::dot(w_out.direction_, record.normal_));
+
         else
-        {
-            glm::vec3 unit = (glm::normalize(ray.direction_));
-            float t = 0.5 * (unit.y + 1.0f);
-            return (1.0f - t) * background_color_from_ + t * background_color_to_;
-        }
+            return scene_.primitives_[record.index_]->material_->emmiter_;
     }
-    return L_o;
+    glm::vec3 unit = (glm::normalize(ray.direction_));
+    float t = 0.5 * (unit.y + 1.0f);
+    return (1.0f - t) * background_color_from_ + t * background_color_to_;
 }
 
 void Render::integrate()

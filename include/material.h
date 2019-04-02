@@ -8,10 +8,12 @@
 class Material
 {
 public:
-  Material(const glm::vec3 &emmiter);
+  Material(const glm::vec3 &emmiter_);
   ~Material();
-  virtual glm::vec3 directionGenerator() const = 0;
-  virtual glm::vec3 BRDF(const glm::vec3 &w_in, const glm::vec3 &w_out) const = 0;
+  virtual bool scatter(const Ray &w_in,
+                       const Record &record,
+                       glm::vec3 &attenuation,
+                       Ray &w_out) const = 0;
 
   glm::vec3 emmiter_;
 };

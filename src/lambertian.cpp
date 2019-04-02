@@ -2,21 +2,24 @@
 
 Lambertian::Lambertian(glm::vec3 &emmiter,
                        glm::vec3 &albedo) : Material::Material{emmiter},
-                                            albedo_{albedo * (float)(1.0f / M_PI)} {}
+                                            albedo_{albedo} {}
 
 Lambertian::~Lambertian() {}
 
-glm::vec3 Lambertian::directionGenerator() const
+bool Lambertian::scatter(const Ray &w_in,
+                         const Record &record,
+                         glm::vec3 &attenuation,
+                         Ray &w_out) const
 {
-    glm::vec3 p;
+    glm::vec3 random;
     do
     {
-        p = 2.0f * glm::vec3{drand48(), drand48(), drand48()} - glm::vec3{1.0f, 1.0f, 1.0f};
-    } while (p[0] * p[0] + p[1] * p[1] + p[2] * p[2] >= 1.0f);
-    return p;
-}
+        random = 2.0f * glm::vec3{drand48(), drand48(), drand48()} - glm::vec3{1.0f, 1.0f, 1.0f};
+    } while (random[0] * random[0] + random[1] * random[1] + random[2] * random[2] >= 1.0f);
 
-glm::vec3 Lambertian::BRDF(const glm::vec3 &w_in, const glm::vec3 &w_out) const
-{
-    return albedo_;
+    glm::vec3 r_direction = record.point_ + record.normal_ + random;
+    w_out = Ray(record.point_ + (record.normal_ * 0.001f), r_direction - record.point_);
+    attenuation = 2.0f * albedo_;
+
+    return true;
 }

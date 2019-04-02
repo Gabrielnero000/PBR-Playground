@@ -48,13 +48,13 @@ class PinholeCamera : public Camera
 {
 public:
   PinholeCamera(const float min_x,
-              const float max_x,
-              const float min_y,
-              const float max_y,
-              const float focal_distance,
-              const glm::vec3 &up,
-              const glm::vec3 &look_at,
-              const glm::vec3 &position);
+                const float max_x,
+                const float min_y,
+                const float max_y,
+                const float focal_distance,
+                const glm::vec3 &up,
+                const glm::vec3 &look_at,
+                const glm::vec3 &position);
   ~PinholeCamera();
 
   Ray getRay(const glm::vec2 &coordinates) const;
