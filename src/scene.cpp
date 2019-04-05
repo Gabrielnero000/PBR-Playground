@@ -55,59 +55,68 @@ void Scene::load()
     primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{Primitive::MaterialUniquePtr(new Lambertian(emmiter, albedo)), "monkey.obj"}));*/
 
     // Scene 4 - Cornell Box
-    /*glm::vec3 emmiter_1{0.0f, 0.0f, 0.0f};
-    glm::vec3 albedo_1{0.5f, 0.5f, 0.5f};
 
-    glm::vec3 emmiter_2{10.0f, 10.0f, 10.0f};
-    glm::vec3 albedo_2{0.0f, 0.0f, 0.0f};
+    // No emmiter
+    glm::vec3 emmiter_zero{0.0f, 0.0f, 0.0f};
 
-    glm::vec3 emmiter_3{0.0f, 0.0f, 0.0f};
-    glm::vec3 albedo_3{0.85f, 0.05f, 0.05f};
+    // Light emmitter
+    glm::vec3 emmiter_light{2.0f, 2.0f, 2.0f};
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_3, albedo_3)),
-                                                                   glm::vec3{-0.5f, -0.5f, 0.0f},
-                                                                   0.5f}));
+    // Red albedo
+    glm::vec3 albedo_red{1.0f, 0.0f, 0.0f};
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{Primitive::MaterialUniquePtr(new Lambertian(emmiter_2, albedo_2)),
-                                                                     glm::vec3{-0.5f, 0.999f, -0.5f},
-                                                                     glm::vec3{0.5f, 0.999f, 0.5f},
-                                                                     glm::vec3{-0.5f, 0.999f, 0.5f}}));
+    // Green albedo
+    glm::vec3 albedo_green{0.0f, 1.0f, 0.0f};
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{Primitive::MaterialUniquePtr(new Lambertian(emmiter_2, albedo_2)),
-                                                                     glm::vec3{-0.5f, 0.999f, -0.5f},
-                                                                     glm::vec3{0.5f, 0.999f, -0.5f},
-                                                                     glm::vec3{0.5f, 0.999f, 0.5f}}));
+    // Blue albedo
+    glm::vec3 albedo_blue{0.0f, 0.0f, 1.0f};
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{Primitive::MaterialUniquePtr(new Lambertian(emmiter_1, albedo_1)),
-                                                                 "box.obj"}));
+    // White albedo
+    glm::vec3 albedo_white{1.0f, 1.0f, 1.0f};
 
-    // Scene 4 - Sphere in a Plane
+    // Gray albedo
+    glm::vec3 albedo_gray{0.5f, 0.5f, 0.5f};
 
-    /*glm::vec3 emmiter_1{0.0f, 0.0f, 0.0f};
-    glm::vec3 albedo_1 = glm::vec3{1.0f, 0.0f, 0.0f};
+    // Red sphere
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_red)),
+                                                                   glm::vec3{-0.4f, -0.5f, 0.25f}, 0.25f}));
 
-    glm::vec3 emmiter_2{0.0f, 0.0f, 0.0f};
-    glm::vec3 albedo_2 = glm::vec3{1.0f, 1.0f, 1.0f};
+    // Green sphere
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_green)),
+                                                                   glm::vec3{0.0f, -0.5f, 0.5f}, 0.25f}));
 
-    glm::vec3 emmiter_3{1.0f, 1.0f, 1.0f};
-    glm::vec3 albedo_3{0.0f, 0.0f, 0.0f};
+    // Blue sphere
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_blue)),
+                                                                   glm::vec3{0.4f, -0.5f, 0.25f}, 0.25f}));
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_1, albedo_1)),
-                                                                   glm::vec3{0.0f, 0.0f, 0.0f}, 0.5f}));
+    // Floor
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
+                                                                   glm::vec3{0.0f, -100.75f, 0.0f}, 100.0f}));
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_2, albedo_2)),
-                                                                   glm::vec3{0.0f, -100.5f, 0.0f}, 100.0f}));
+    // Right wall
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
+                                                                   glm::vec3{100.75f, 0.0f, 0.0f}, 100.0f}));
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_3, albedo_3)),
-                                                                   glm::vec3{0.0f, 15.0f, 0.0f}, 10.25f}));
+    // Left Wall
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
+                                                                   glm::vec3{-100.75f, 0.0f, 0.0f}, 100.0f}));
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{Primitive::MaterialUniquePtr(new Lambertian(emmiter_3, albedo_3)),
-                                                                     glm::vec3{-0.5f, 0.75f, -0.5f},
-                                                                     glm::vec3{0.5f, 0.75f, 0.5f},
-                                                                     glm::vec3{-0.5f, 0.75f, 0.5f}}));
+    // Roof
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
+                                                                   glm::vec3{0.0f, 100.75f, 0.0f}, 100.0f}));
 
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{Primitive::MaterialUniquePtr(new Lambertian(emmiter_3, albedo_3)),
-                                                                     glm::vec3{-0.5f, 0.75f, -0.5f},
-                                                                     glm::vec3{0.5f, 0.75f, -0.5f},
-                                                                     glm::vec3{0.5f, 0.75f, 0.5f}}));*/
+    // Back wall
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
+                                                                   glm::vec3{0.0f, 0.0f, -100.5f}, 100.0f}));
+                                                                   
+    // Light
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{Primitive::MaterialUniquePtr(new Lambertian(emmiter_light, albedo_white)),
+                                                                     glm::vec3{-0.5f, 0.7f, 0.7f},
+                                                                     glm::vec3{0.5f, 0.7f, 0.7f},
+                                                                     glm::vec3{-0.5f, 0.7f, -0.7f}}));
+
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{Primitive::MaterialUniquePtr(new Lambertian(emmiter_light, albedo_white)),
+                                                                     glm::vec3{0.5f, 0.7f, 0.7f},
+                                                                     glm::vec3{0.5f, 0.7f, -0.7f},
+                                                                     glm::vec3{-0.5f, 0.7f, -0.7f}}));
 }

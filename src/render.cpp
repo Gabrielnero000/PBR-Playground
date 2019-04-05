@@ -25,8 +25,7 @@ glm::vec3 Render::Color(const Ray &ray, Record &record, int depth)
 
         if (depth < ray_depth_ && scene_.primitives_[record.index_]->material_->scatter(ray, record, attenuation, w_out))
             return scene_.primitives_[record.index_]->material_->emmiter_ +
-                   attenuation * Color(w_out, record, ++depth) * (float)fabs(glm::dot(w_out.direction_, record.normal_));
-
+                   attenuation * Color(w_out, record, ++depth);
         else
             return scene_.primitives_[record.index_]->material_->emmiter_;
     }
