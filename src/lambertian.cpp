@@ -11,10 +11,13 @@ bool Lambertian::scatter(const Ray &w_in,
                          glm::vec3 &attenuation,
                          Ray &w_out) const
 {
+
+    std::minstd_rand gen(std::random_device{}());
+    std::uniform_real_distribution<float> dist(0.0f, 1.0f);
     glm::vec3 random;
     do
     {
-        random = 2.0f * glm::vec3{drand48(), drand48(), drand48()} - glm::vec3{1.0f, 1.0f, 1.0f};
+        random = 2.0f * glm::vec3{dist(gen), dist(gen), dist(gen)} - glm::vec3{1.0f, 1.0f, 1.0f};
     } while (random[0] * random[0] + random[1] * random[1] + random[2] * random[2] > 1.0f);
 
     glm::vec3 r_direction = record.point_ + record.normal_ + random;

@@ -1,4 +1,5 @@
 #include "render.h"
+#include <random>
 
 Render::Render(Output &output,
                Scene &scene,
@@ -39,32 +40,35 @@ void Render::integrate()
     const float inv_samples = 1.0f / samples_;
 
     // Measure time
-    auto start = std::chrono::high_resolution_clock::now();
-#pragma omp parallel for
+    auto start = std::chrono::steady_clock().now();
+    int progress = 0;
+#pragma omp parallel for schedule(dynamic, 1)
     for (int y = 0; y < (int)output_.resolution_.y; y++)
     {
+        std::minstd_rand gen(std::random_device{}());
+        std::uniform_real_distribution<float> dist(0.0f, 1.0f);
+
         // Print the render progress
-        /*std::stringstream progress_stream;
+        std::stringstream progress_stream;
         progress_stream << "\r  progress .........................: "
                         << std::fixed << std::setw(6)
                         << std::setprecision(2)
-                        //<< "Thread ID: " << omp_get_thread_num() << " "
-                        << 100.0 * y / (output_.resolution_.y - 1)
+                        << 100.0 * progress / (output_.resolution_.y - 1)
                         << "%";
 
-        std::clog << progress_stream.str();*/
+        std::clog << progress_stream.str();
+
         Record record;
 
         // for each pixel
         for (int x = 0; x < (int)output_.resolution_.x; x++)
         {
-
             // for each sample
             for (int i = 0; i < samples_; i++)
             {
                 // u, v coordinates to the camera
-                float u = (float(x) + (float)drand48()) / (float)(output_.resolution_.x);
-                float v = (float(y) + (float)drand48()) / (float)(output_.resolution_.y);
+                float u = (float(x) + (float)dist(gen)) / (float)(output_.resolution_.x);
+                float v = (float(y) + (float)dist(gen)) / (float)(output_.resolution_.y);
 
                 Ray ray{camera_.getRay(glm::vec2{u, v})};
 
@@ -72,10 +76,12 @@ void Render::integrate()
             }
             output_.buffer_[x][y] *= inv_samples;
         }
+#pragma omp atomic
+        progress++;
     }
     // Print some usefull information
-    //std::clog << std::endl;
-    auto finish = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> elapsed = finish - start;
+    std::clog << std::endl;
+    auto finish = std::chrono::steady_clock().now();
+    std::chrono::duration<float> elapsed = finish - start;
     std::cout << "Elapsed time: " << elapsed.count() << " s" << std::endl;
 }

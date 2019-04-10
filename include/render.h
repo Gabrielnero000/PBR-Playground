@@ -35,6 +35,7 @@
 #include <iomanip>
 #include <chrono>
 #include <omp.h>
+#include <random>
 
 #include "output.h"
 #include "camera.h"
@@ -43,8 +44,8 @@
 #include "lambertian.h"
 #include "onb.h"
 
-#define MIN_T 0.000001f
-#define MAX_T 100000.0f
+#define MIN_T 0.00001f
+#define MAX_T 10000.0f
 class Render
 {
 public:

@@ -63,16 +63,16 @@ void Scene::load()
     glm::vec3 emmiter_light{2.0f, 2.0f, 2.0f};
 
     // Red albedo
-    glm::vec3 albedo_red{1.0f, 0.0f, 0.0f};
+    glm::vec3 albedo_red{0.9f, 0.001f, 0.0f};
 
     // Green albedo
-    glm::vec3 albedo_green{0.0f, 1.0f, 0.0f};
+    glm::vec3 albedo_green{0.001f, 0.9f, 0.001f};
 
     // Blue albedo
-    glm::vec3 albedo_blue{0.0f, 0.0f, 1.0f};
+    glm::vec3 albedo_blue{0.001f, 0.001f, 0.9f};
 
     // White albedo
-    glm::vec3 albedo_white{1.0f, 1.0f, 1.0f};
+    glm::vec3 albedo_white{0.9f, 0.9f, 0.9f};
 
     // Gray albedo
     glm::vec3 albedo_gray{0.5f, 0.5f, 0.5f};
