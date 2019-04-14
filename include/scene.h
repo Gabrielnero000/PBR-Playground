@@ -37,6 +37,7 @@
 #include "mesh.h"
 #include "material.h"
 #include "lambertian.h"
+#include "specular.h"
 
 class Scene
 {

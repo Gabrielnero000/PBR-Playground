@@ -79,15 +79,15 @@ void Scene::load()
 
     // Red sphere
     primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_red)),
-                                                                   glm::vec3{-0.4f, -0.5f, 0.25f}, 0.25f}));
+                                                                   glm::vec3{-0.4f, -0.5f, 0.5f}, 0.25f}));
 
     // Green sphere
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_green)),
-                                                                   glm::vec3{0.0f, -0.5f, 0.5f}, 0.25f}));
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Specular(emmiter_zero, albedo_white)),
+                                                                   glm::vec3{0.0f, -0.5f, 0.25f}, 0.25f}));
 
     // Blue sphere
     primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_blue)),
-                                                                   glm::vec3{0.4f, -0.5f, 0.25f}, 0.25f}));
+                                                                   glm::vec3{0.4f, -0.5f, 0.5f}, 0.25f}));
 
     // Floor
     primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
@@ -108,7 +108,7 @@ void Scene::load()
     // Back wall
     primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
                                                                    glm::vec3{0.0f, 0.0f, -100.5f}, 100.0f}));
-                                                                   
+
     // Light
     primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{Primitive::MaterialUniquePtr(new Lambertian(emmiter_light, albedo_white)),
                                                                      glm::vec3{-0.5f, 0.7f, 0.7f},

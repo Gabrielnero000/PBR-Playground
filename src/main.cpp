@@ -14,7 +14,7 @@ int main()
     glm::vec3 background_color_from = {0.0f, 0.0f, 0.0f};
     glm::vec3 background_color_to = {0.0f, 0.0f, 0.0f};
 
-    int samples = 160;
+    int samples = 16000;
     int depth = 5;
 
     //Camera params - 1:1 presset
