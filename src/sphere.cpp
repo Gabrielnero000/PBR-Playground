@@ -1,7 +1,7 @@
 #include "sphere.h"
 
 Sphere::Sphere(MaterialUniquePtr material,
-               const glm::vec3 &center,
+               const Vec3f &center,
                const float radius) : Primitive::Primitive(std::move(material)),
                                      center_{center},
                                      radius_{radius} {}
@@ -25,11 +25,11 @@ bool Sphere::intersect(const Ray &ray,
     float x1;
     float x2;
 
-    glm::vec3 center_to_origin = ray.origin_ - center_;
+    Vec3f center_to_origin = ray.origin_ - center_;
 
-    float a = glm::dot(ray.direction_, ray.direction_);                         // dot(D, D)
-    float b = glm::dot(center_to_origin, ray.direction_);                       // dot(D, O-C)
-    float c = glm::dot(center_to_origin, center_to_origin) - radius_ * radius_; // dot(O-C, O-C) - R^2
+    float a = ray.direction_.dot(ray.direction_);                         // dot(D, D)
+    float b = center_to_origin.dot(ray.direction_);                       // dot(D, O-C)
+    float c = center_to_origin.dot(center_to_origin) - radius_ * radius_; // dot(O-C, O-C) - R^2
 
     float disc = b * b - a * c; // Bhaskara's method
 
@@ -41,7 +41,7 @@ bool Sphere::intersect(const Ray &ray,
         {
             record.t_ = x1;
             record.point_ = ray.evaluate(x1);
-            record.normal_ = glm::normalize((record.point_ - center_) / radius_);
+            record.normal_ = ((record.point_ - center_) / radius_).as_unit();
             return true;
         }
         // Same as x1
@@ -50,7 +50,7 @@ bool Sphere::intersect(const Ray &ray,
         {
             record.t_ = x2;
             record.point_ = ray.evaluate(x1);
-            record.normal_ = glm::normalize((record.point_ - center_) / radius_);
+            record.normal_ = ((record.point_ - center_) / radius_).as_unit();
             return true;
         }
     }

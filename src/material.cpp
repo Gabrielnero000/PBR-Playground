@@ -1,5 +1,5 @@
 #include "material.h"
 
-Material::Material(const glm::vec3 &emmiter) : emmiter_{emmiter} {}
+Material::Material(const Vec3f &emmiter) : emmiter_{emmiter} {}
 
 Material::~Material() {}

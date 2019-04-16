@@ -8,14 +8,14 @@
 class Material
 {
 public:
-  Material(const glm::vec3 &emmiter_);
+  Material(const Vec3f &emmiter_);
   ~Material();
   virtual bool scatter(const Ray &w_in,
                        const Record &record,
-                       glm::vec3 &attenuation,
+                       Vec3f &attenuation,
                        Ray &w_out) const = 0;
 
-  glm::vec3 emmiter_;
+  Vec3f emmiter_;
 };
 
 #endif

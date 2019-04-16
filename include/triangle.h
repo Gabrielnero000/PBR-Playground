@@ -1,43 +1,6 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
-/*******************************************************************************
-    Class Triangle:
-
-  - Class that inherits the Primitive class. A triangle can be represented in 
-    terms of it's three vertices and it's intersection algorithims are based on
-    baricentric coordinates.
-
---------------------------------------------------------------------------------
-
-  Variables:
-
-  - const glm::vec3 v1_:
-    - Holds the first triangle's vertice.
-
-  - const glm::vec3 v2_:
-    - Holds the first triangle's vertice.
-
-  - const glm::vec3 v3_:
-    - Holds the first triangle's vertice.
-
-
---------------------------------------------------------------------------------
-
-  Methods:
-
-  - Triangle(const glm::vec3 &v1, const glm::vec3 &v2, const glm::vec3 &v3):
-    - Constructor.
-
-  - ~Triangle():
-    - Deconstructor.
-
-  - bool intersect(const Ray &ray, float t_min, float t_max, Record &record) const:
-    - Caluclates ray-triangle intersection using an adapted version presented in 
-      the paper "Fast, Minimum Storage Ray/Triangle Intersection" by Tomas Möller.
-
-********************************************************************************/
-
 #define TRIANGLE_FAST
 
 #include "primitive.h"
@@ -46,9 +9,9 @@ class Triangle : public Primitive
 {
 public:
   Triangle(MaterialUniquePtr material,
-           const glm::vec3 &v1,
-           const glm::vec3 &v2,
-           const glm::vec3 &v3);
+           const Vec3f &v1,
+           const Vec3f &v2,
+           const Vec3f &v3);
   ~Triangle();
 
   bool intersect(const Ray &ray,
@@ -56,10 +19,10 @@ public:
                  float t_max,
                  Record &record) const;
 
-  const glm::vec3 v1_;
-  const glm::vec3 v2_;
-  const glm::vec3 v3_;
-  const glm::vec3 normal_;
+  const Vec3f v1_;
+  const Vec3f v2_;
+  const Vec3f v3_;
+  const Vec3f normal_;
 
 #ifdef TRIANGLE_FAST
   const int modulo[5] = {0, 1, 2, 0, 1};

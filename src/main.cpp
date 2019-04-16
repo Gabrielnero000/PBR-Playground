@@ -6,15 +6,16 @@ int main()
 
     // feenableexcept(FE_INVALID);
     // Output params
-    glm::vec2 resolution = {512, 512};
+    int width = 512;
+    int height = 512;
 
     //Render params
-    //glm::vec3 background_color_from = {1.0f, 1.0f, 1.0f}; // White
-    //glm::vec3 background_color_to = {0.5f, 0.7f, 1.0f};   // Ciano
-    glm::vec3 background_color_from = {0.0f, 0.0f, 0.0f};
-    glm::vec3 background_color_to = {0.0f, 0.0f, 0.0f};
+    //Vec3f background_color_from = {1.0f, 1.0f, 1.0f}; // White
+    //Vec3f background_color_to = {0.5f, 0.7f, 1.0f};   // Ciano
+    Vec3f background_color_from = Vec3f(0.0f, 0.0f, 0.0f);
+    Vec3f background_color_to = Vec3f(0.0f, 0.0f, 0.0f);
 
-    int samples = 16000;
+    int samples = 100;
     int depth = 5;
 
     //Camera params - 1:1 presset
@@ -24,13 +25,13 @@ int main()
     float max_y = 1.0f;
     float focal_distance = 2.0f;
 
-    glm::vec3 up = {0.0f, 1.0f, 0.0f};
-    glm::vec3 look_at = {0.0f, 0.0f, -1.0f};
-    glm::vec3 position = {0.0f, 0.0f, 2.5f};
+    Vec3f up = Vec3f(0.0f, 1.0f, 0.0f);
+    Vec3f look_at = Vec3f(0.0f, 0.0f, -1.0f);
+    Vec3f position = Vec3f(0.0f, 0.0f, 2.5f);
 
     //-----------------------------------------------------------------------------------
 
-    Output output{resolution};
+    Output output = Output(width, height);
 
     PinholeCamera camera{min_x, max_x, min_y, max_y, focal_distance,
                          up, look_at, position};

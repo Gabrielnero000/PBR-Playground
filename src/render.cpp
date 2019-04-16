@@ -4,8 +4,8 @@
 Render::Render(Output &output,
                Scene &scene,
                Camera &camera,
-               glm::vec3 &background_color_from,
-               glm::vec3 &background_color_to,
+               Vec3f &background_color_from,
+               Vec3f &background_color_to,
                const int samples,
                const int ray_depth) : output_{output},
                                       scene_{scene},
@@ -17,12 +17,12 @@ Render::Render(Output &output,
 
 Render::~Render() {}
 
-glm::vec3 Render::Color(const Ray &ray, Record &record, int depth)
+Vec3f Render::Color(const Ray &ray, Record &record, int depth)
 {
     if (scene_.intersect(ray, MIN_T, MAX_T, record))
     {
         Ray w_out;
-        glm::vec3 attenuation;
+        Vec3f attenuation;
 
         if (depth < ray_depth_ && scene_.primitives_[record.index_]->material_->scatter(ray, record, attenuation, w_out))
             return scene_.primitives_[record.index_]->material_->emmiter_ +
@@ -30,8 +30,8 @@ glm::vec3 Render::Color(const Ray &ray, Record &record, int depth)
         else
             return scene_.primitives_[record.index_]->material_->emmiter_;
     }
-    glm::vec3 unit = (glm::normalize(ray.direction_));
-    float t = 0.5 * (unit.y + 1.0f);
+    Vec3f unit = ray.direction_.as_unit();
+    float t = 0.5 * (unit[1] + 1.0f);
     return (1.0f - t) * background_color_from_ + t * background_color_to_;
 }
 
@@ -43,7 +43,7 @@ void Render::integrate()
     auto start = std::chrono::steady_clock().now();
     int progress = 0;
 #pragma omp parallel for schedule(dynamic, 1)
-    for (int y = 0; y < (int)output_.resolution_.y; y++)
+    for (int y = 0; y < output_.height_; y++)
     {
         std::minstd_rand gen(std::random_device{}());
         std::uniform_real_distribution<float> dist(0.0f, 1.0f);
@@ -53,7 +53,7 @@ void Render::integrate()
         progress_stream << "\r  progress .........................: "
                         << std::fixed << std::setw(6)
                         << std::setprecision(2)
-                        << 100.0 * progress / (output_.resolution_.y - 1)
+                        << 100.0 * progress / (output_.height_ - 1)
                         << "%";
 
         std::clog << progress_stream.str();
@@ -61,16 +61,16 @@ void Render::integrate()
         Record record;
 
         // for each pixel
-        for (int x = 0; x < (int)output_.resolution_.x; x++)
+        for (int x = 0; x < output_.width_; x++)
         {
             // for each sample
             for (int i = 0; i < samples_; i++)
             {
                 // u, v coordinates to the camera
-                float u = (float(x) + (float)dist(gen)) / (float)(output_.resolution_.x);
-                float v = (float(y) + (float)dist(gen)) / (float)(output_.resolution_.y);
+                float u = (float(x) + (float)dist(gen)) / (float)(output_.width_);
+                float v = (float(y) + (float)dist(gen)) / (float)(output_.height_);
 
-                Ray ray{camera_.getRay(glm::vec2{u, v})};
+                Ray ray = camera_.getRay(u, v);
 
                 output_.buffer_[x][y] += Color(ray, record, 0);
             }

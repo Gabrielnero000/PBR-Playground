@@ -7,15 +7,15 @@
 class Lambertian : public Material
 {
 public:
-  Lambertian(glm::vec3 &emmiter, glm::vec3 &albedo);
+  Lambertian(Vec3f &emmiter, Vec3f &albedo);
   ~Lambertian();
 
   virtual bool scatter(const Ray &w_in,
                        const Record &record,
-                       glm::vec3 &attenuation,
+                       Vec3f &attenuation,
                        Ray &w_out) const;
 
-  glm::vec3 albedo_;
+  Vec3f albedo_;
 };
 
 #endif

@@ -2,25 +2,25 @@
 #include <iostream>
 
 Triangle::Triangle(MaterialUniquePtr material,
-                   const glm::vec3 &v1,
-                   const glm::vec3 &v2,
-                   const glm::vec3 &v3) : Primitive::Primitive(std::move(material)),
+                   const Vec3f &v1,
+                   const Vec3f &v2,
+                   const Vec3f &v3) : Primitive::Primitive(std::move(material)),
                                           v1_{v1},
                                           v2_{v2},
                                           v3_{v3},
-                                          normal_{glm::normalize(glm::cross(v3 - v1, v2 - v1))}
+                                          normal_{(v3 - v1).cross(v2 - v1).as_unit()}
 {
 #ifdef TRIANGLE_FAST
 
-    const glm::vec3 C = v2_ - v1_;
-    const glm::vec3 B = v3_ - v1_;
+    const Vec3f C = v2_ - v1_;
+    const Vec3f B = v3_ - v1_;
 
-    if (fabs(normal_.x) > fabs(normal_.y))
-        if (fabs(normal_.x) > fabs(normal_.z))
+    if (fabs(normal_[0]) > fabs(normal_[1]))
+        if (fabs(normal_[0]) > fabs(normal_[2]))
             k = 0;
         else
             k = 2;
-    else if (fabs(normal_.y) > fabs(normal_.z))
+    else if (fabs(normal_[1]) > fabs(normal_[2]))
         k = 1;
     else
         k = 2;
@@ -32,7 +32,7 @@ Triangle::Triangle(MaterialUniquePtr material,
 
     normal_u = normal_[u] * normal_k;
     normal_v = normal_[v] * normal_k;
-    normal_d = glm::dot(normal_, v1_) * normal_k;
+    normal_d = normal_.dot(v1_) * normal_k;
 
     const float temp = 1.0f / (B[u] * C[v] - B[v] * C[u]);
 
@@ -68,10 +68,10 @@ bool Triangle::intersect(const Ray &ray,
                          Record &record) const
 {
 #ifdef TRIANGLE_SMALL
-    const glm::vec3 edge_1 = v2_ - v1_;
-    const glm::vec3 edge_2 = v3_ - v1_;
+    const Vec3f edge_1 = v2_ - v1_;
+    const Vec3f edge_2 = v3_ - v1_;
 
-    const glm::vec3 p_vec = glm::cross(ray.direction_, edge_2);
+    const Vec3f p_vec = glm::cross(ray.direction_, edge_2);
     float det = glm::dot(edge_1, p_vec);
 
     if (fabs(det) < t_min || fabs(det) > t_max)
@@ -79,7 +79,7 @@ bool Triangle::intersect(const Ray &ray,
 
     det = 1.0f / det;
 
-    const glm::vec3 t_vec = ray.origin_ - v1_;
+    const Vec3f t_vec = ray.origin_ - v1_;
     float u = glm::dot(t_vec, p_vec) * det;
 
     if (u < 0.0f || u > 1.0f)
@@ -87,7 +87,7 @@ bool Triangle::intersect(const Ray &ray,
         return false;
     }
 
-    const glm::vec3 q_vec = glm::cross(t_vec, edge_1);
+    const Vec3f q_vec = glm::cross(t_vec, edge_1);
     float v = glm::dot(ray.direction_, q_vec) * det;
 
     if (v < 0.0f || (u + v) > 1.0f)

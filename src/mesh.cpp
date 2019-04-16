@@ -4,7 +4,7 @@ Mesh::Mesh(MaterialUniquePtr material,
            const std::string filename) : Primitive::Primitive(std::move(material))
 {
 
-    std::vector<glm::vec3> vertex_temp;
+    std::vector<Vec3f> vertex_temp;
     std::string line;
     std::ifstream mesh;
     mesh.open(filename);
@@ -28,7 +28,7 @@ Mesh::Mesh(MaterialUniquePtr material,
                     }
                 }
 
-                vertex_temp.push_back(glm::vec3{
+                vertex_temp.push_back(Vec3f{
                     std::stof(line.substr(index[0] + 1, index[1] - index[0])),
                     std::stof(line.substr(index[1] + 1, index[2] - index[1])),
                     std::stof(line.substr(index[2] + 1, (line.size() - 1) - index[2]))});
@@ -46,9 +46,9 @@ Mesh::Mesh(MaterialUniquePtr material,
                     }
                 }
 
-                glm::vec3 v_1 = vertex_temp[std::stoi(line.substr(index[0] + 1, index[1] - index[0])) - 1];
-                glm::vec3 v_2 = vertex_temp[std::stoi(line.substr(index[1] + 1, index[2] - index[1])) - 1];
-                glm::vec3 v_3 = vertex_temp[std::stoi(line.substr(index[2] + 1, (line.size() - 1) - index[2])) - 1];
+                Vec3f v_1 = vertex_temp[std::stoi(line.substr(index[0] + 1, index[1] - index[0])) - 1];
+                Vec3f v_2 = vertex_temp[std::stoi(line.substr(index[1] + 1, index[2] - index[1])) - 1];
+                Vec3f v_3 = vertex_temp[std::stoi(line.substr(index[2] + 1, (line.size() - 1) - index[2])) - 1];
 
                 triangles_.push_back(TriangleUniquePtr(new Triangle{NULL, v_1, v_2, v_3}));
             }
