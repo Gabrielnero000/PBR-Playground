@@ -17,6 +17,10 @@ public:
                  float t_max,
                  Record &record) const;
 
+  bool boundingBox(float t0,
+                   float t1,
+                   AABB &box) const;
+
   const Vec3f center_;
   const float radius_;
 };

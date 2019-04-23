@@ -8,15 +8,6 @@ Sphere::Sphere(MaterialUniquePtr material,
 
 Sphere::~Sphere() {}
 
-/*  Solves the equation: 
-
-        t^2 * dot(D, D) + 2*t * dot(D, O-C) + dot(O-C, O-C) - R^2 = 0
-
-    where:  D is the ray direction
-            O is the ray origin
-            C is the sphere center
-            t is the unknow parameter
-*/
 bool Sphere::intersect(const Ray &ray,
                        float t_min,
                        float t_max,
@@ -55,4 +46,12 @@ bool Sphere::intersect(const Ray &ray,
         }
     }
     return false; // No intersection
+}
+
+bool Sphere::boundingBox(float t0,
+                         float t1,
+                         AABB &box) const
+{
+    box = AABB(center_ + radius_, center_ - radius_);
+    return true;
 }
