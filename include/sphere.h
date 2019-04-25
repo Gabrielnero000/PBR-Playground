@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef SPHERE_H
 #define SPHERE_H
 
@@ -6,7 +8,7 @@
 class Sphere : public Primitive
 {
 public:
-  Sphere(MaterialUniquePtr material,
+  Sphere(Material *material,
          const Vec3f &center,
          const float radius);
 

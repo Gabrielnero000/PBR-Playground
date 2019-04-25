@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef AABB_H
 #define AABB_H
 
@@ -12,7 +14,8 @@ class AABB
     Vec3f min() const;
     Vec3f max() const;
 
-    bool hit(const Ray &ray, float t_min, float t_max) const;
+    bool intersect(const Ray &ray, float t_min, float t_max) const;
+    AABB static surroundingBox(const AABB &box_0, const AABB &box_1);
 
   private:
 

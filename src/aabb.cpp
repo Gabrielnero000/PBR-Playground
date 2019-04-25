@@ -8,7 +8,7 @@ Vec3f AABB::min() const { return min_; }
 
 Vec3f AABB::max() const { return max_; }
 
-bool AABB::hit(const Ray &ray, float t_min, float t_max) const
+bool AABB::intersect(const Ray &ray, float t_min, float t_max) const
 {
     for (int i = 0; i < 3; i++)
     {
@@ -27,4 +27,17 @@ bool AABB::hit(const Ray &ray, float t_min, float t_max) const
             return false;
     }
     return true;
+}
+
+AABB AABB::surroundingBox(const AABB &box_0, const AABB &box_1)
+{
+    Vec3f small = Vec3f(fmin(box_0.min()[0], box_1.min()[0]),
+                        fmin(box_0.min()[1], box_1.min()[1]),
+                        fmin(box_0.min()[2], box_1.min()[2]));
+
+    Vec3f big = Vec3f(fmax(box_0.max()[0], box_1.max()[0]),
+                      fmax(box_0.max()[1], box_1.max()[1]),
+                      fmax(box_0.max()[2], box_1.max()[2]));
+
+    return AABB(small, big);
 }

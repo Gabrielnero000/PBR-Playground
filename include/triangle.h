@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
@@ -8,7 +10,7 @@
 class Triangle : public Primitive
 {
 public:
-  Triangle(MaterialUniquePtr material,
+  Triangle(Material *material,
            const Vec3f &v1,
            const Vec3f &v2,
            const Vec3f &v3);
@@ -18,6 +20,10 @@ public:
                  float t_min,
                  float t_max,
                  Record &record) const;
+
+  bool boundingBox(float t0,
+                   float t1,
+                   AABB &box) const;
 
   const Vec3f v1_;
   const Vec3f v2_;

@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef ONB_H_
 #define ONB_H_
 

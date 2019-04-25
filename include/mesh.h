@@ -1,7 +1,8 @@
+#pragma once
+
 #ifndef MESH_H
 #define MESH_H
 
-#include "primitive.h"
 #include "triangle.h"
 #include <fstream>
 #include <iostream>
@@ -10,9 +11,7 @@
 class Mesh : public Primitive
 {
 public:
-  typedef std::unique_ptr<Triangle> TriangleUniquePtr;
-
-  Mesh(MaterialUniquePtr material,
+  Mesh(Material *material,
        const std::string filename);
   ~Mesh();
 
@@ -20,8 +19,12 @@ public:
                  float t_min,
                  float t_max,
                  Record &record) const;
+                 
+  bool boundingBox(float t0,
+                   float t1,
+                   AABB &box) const;
 
-  std::vector<TriangleUniquePtr> triangles_;
+  std::vector<Triangle *> triangles_;
 };
 
 #endif

@@ -1,6 +1,6 @@
 #include "sphere.h"
 
-Sphere::Sphere(MaterialUniquePtr material,
+Sphere::Sphere(Material *material,
                const Vec3f &center,
                const float radius) : Primitive::Primitive(std::move(material)),
                                      center_{center},
@@ -33,6 +33,7 @@ bool Sphere::intersect(const Ray &ray,
             record.t_ = x1;
             record.point_ = ray.evaluate(x1);
             record.normal_ = ((record.point_ - center_) / radius_).as_unit();
+            record.material_ = material_;
             return true;
         }
         // Same as x1
@@ -42,6 +43,7 @@ bool Sphere::intersect(const Ray &ray,
             record.t_ = x2;
             record.point_ = ray.evaluate(x1);
             record.normal_ = ((record.point_ - center_) / radius_).as_unit();
+            record.material_ = material_;
             return true;
         }
     }

@@ -2,6 +2,9 @@
 
 Scene::Scene() {}
 
+Scene::Scene(Primitive **primitives, int size) : primitives_{primitives},
+                                                 size_{size} {}
+
 Scene::~Scene() {}
 
 bool Scene::intersect(const Ray &ray,
@@ -14,7 +17,7 @@ bool Scene::intersect(const Ray &ray,
     float closest_so_far = t_max;
 
     // for each primitive
-    for (std::size_t i = 0; i < primitives_.size(); i++)
+    for (int i = 0; i < size_; i++)
     {
         if (primitives_[i]->intersect(ray, t_min, closest_so_far, tmp_record))
         {
@@ -28,95 +31,27 @@ bool Scene::intersect(const Ray &ray,
     return intersected;
 }
 
-// Just for some tests
-void Scene::load()
+bool Scene::boundingBox(float t0,
+                        float t1,
+                        AABB &box) const
 {
-    // Scene 1 - Spheres
+    if (size_ < 1)
+        return false;
 
-    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Vec3f{0.0f, 0.0f, 0.0f}, 0.2f}));
-    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Vec3f{-0.5f, 0.0f, -1.0f}, 0.2f}));
-    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Vec3f{0.0f, -0.5f, -2.0f}, 0.2f}));
-    //primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Vec3f{0.0f, 0.5f, -3.0f}, 0.2f}));
+    AABB temp_box;
+    bool first_true = primitives_[0]->boundingBox(t0, t1, temp_box);
 
-    // Scene 2 - Triangles
-    /*Vec3f emmiter{0.0f, 0.0f, 0.0f};
-    Vec3f albedo{0.8f, 0.8f, 0.8f};
-    for (int i = 1; i <= 2; i++)
+    if (!first_true)
+        return false;
+    else
+        box = temp_box;
+
+    for (int i = 1; i < size_; i++)
     {
-        primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{Primitive::MaterialUniquePtr(new Lambertian(emmiter, albedo)),
-                                                                         Vec3f{0.0f, 0.0f, -1.0f},
-                                                                         Vec3f{1.0f, 0.0f, -1.0f},
-                                                                         Vec3f{0.0f, 1.0f, -1.0f}}));
-    }*/
-
-    // Scene 3 - Suzzy
-    /*Vec3f emmiter{0.0f, 0.0f, 0.0f};
-    Vec3f albedo{0.8f, 0.8f, 0.8f};
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Mesh{Primitive::MaterialUniquePtr(new Lambertian(emmiter, albedo)), "monkey.obj"}));*/
-
-    // Scene 4 - Cornell Box
-
-    // No emmiter
-    Vec3f emmiter_zero{0.0f, 0.0f, 0.0f};
-
-    // Light emmitter
-    Vec3f emmiter_light{2.0f, 2.0f, 2.0f};
-
-    // Red albedo
-    Vec3f albedo_red{0.9f, 0.001f, 0.0f};
-
-    // Green albedo
-    Vec3f albedo_green{0.001f, 0.9f, 0.001f};
-
-    // Blue albedo
-    Vec3f albedo_blue{0.001f, 0.001f, 0.9f};
-
-    // White albedo
-    Vec3f albedo_white{0.9f, 0.9f, 0.9f};
-
-    // Gray albedo
-    Vec3f albedo_gray{0.5f, 0.5f, 0.5f};
-
-    // Red sphere
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_red)),
-                                                                   Vec3f{-0.4f, -0.5f, 0.5f}, 0.25f}));
-
-    // Green sphere
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Specular(emmiter_zero, albedo_white)),
-                                                                   Vec3f{0.0f, -0.5f, 0.25f}, 0.25f}));
-
-    // Blue sphere
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_blue)),
-                                                                   Vec3f{0.4f, -0.5f, 0.5f}, 0.25f}));
-
-    // Floor
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
-                                                                   Vec3f{0.0f, -100.75f, 0.0f}, 100.0f}));
-
-    // Right wall
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
-                                                                   Vec3f{100.75f, 0.0f, 0.0f}, 100.0f}));
-
-    // Left Wall
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
-                                                                   Vec3f{-100.75f, 0.0f, 0.0f}, 100.0f}));
-
-    // Roof
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
-                                                                   Vec3f{0.0f, 100.75f, 0.0f}, 100.0f}));
-
-    // Back wall
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{Primitive::MaterialUniquePtr(new Lambertian(emmiter_zero, albedo_gray)),
-                                                                   Vec3f{0.0f, 0.0f, -100.5f}, 100.0f}));
-
-    // Light
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{Primitive::MaterialUniquePtr(new Lambertian(emmiter_light, albedo_white)),
-                                                                     Vec3f{-0.5f, 0.7f, 0.7f},
-                                                                     Vec3f{0.5f, 0.7f, 0.7f},
-                                                                     Vec3f{-0.5f, 0.7f, -0.7f}}));
-
-    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Triangle{Primitive::MaterialUniquePtr(new Lambertian(emmiter_light, albedo_white)),
-                                                                     Vec3f{0.5f, 0.7f, 0.7f},
-                                                                     Vec3f{0.5f, 0.7f, -0.7f},
-                                                                     Vec3f{-0.5f, 0.7f, -0.7f}}));
+        if (primitives_[0]->boundingBox(t0, t1, temp_box))
+            box = AABB::surroundingBox(box, temp_box);
+        else
+            return false;
+    }
+    return true;
 }

@@ -1,14 +1,14 @@
 #include "triangle.h"
 #include <iostream>
 
-Triangle::Triangle(MaterialUniquePtr material,
+Triangle::Triangle(Material *material,
                    const Vec3f &v1,
                    const Vec3f &v2,
                    const Vec3f &v3) : Primitive::Primitive(std::move(material)),
-                                          v1_{v1},
-                                          v2_{v2},
-                                          v3_{v3},
-                                          normal_{(v3 - v1).cross(v2 - v1).as_unit()}
+                                      v1_{v1},
+                                      v2_{v2},
+                                      v3_{v3},
+                                      normal_{(v3 - v1).cross(v2 - v1).as_unit()}
 {
 #ifdef TRIANGLE_FAST
 
@@ -139,8 +139,17 @@ bool Triangle::intersect(const Ray &ray,
     record.t_ = f;
     record.point_ = ray.evaluate(record.t_);
     record.normal_ = normal_;
+    record.material_ = material_;
 
     return true;
 #endif
 #endif
+}
+
+// TODO
+bool Triangle::boundingBox(float t0,
+                           float t1,
+                           AABB &box) const
+{
+    return true;
 }

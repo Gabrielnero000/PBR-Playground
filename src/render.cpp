@@ -2,7 +2,7 @@
 #include <random>
 
 Render::Render(Output &output,
-               Scene &scene,
+               Primitive *scene,
                Camera &camera,
                Vec3f &background_color_from,
                Vec3f &background_color_to,
@@ -19,16 +19,16 @@ Render::~Render() {}
 
 Vec3f Render::Color(const Ray &ray, Record &record, int depth)
 {
-    if (scene_.intersect(ray, MIN_T, MAX_T, record))
+    if (scene_->intersect(ray, MIN_T, MAX_T, record))
     {
         Ray w_out;
         Vec3f attenuation;
 
-        if (depth < ray_depth_ && scene_.primitives_[record.index_]->material_->scatter(ray, record, attenuation, w_out))
-            return scene_.primitives_[record.index_]->material_->emmiter_ +
+        if (depth < ray_depth_ && record.material_->scatter(ray, record, attenuation, w_out))
+            return record.material_->emmiter_ +
                    attenuation * Color(w_out, record, ++depth);
         else
-            return scene_.primitives_[record.index_]->material_->emmiter_;
+            return record.material_->emmiter_;
     }
     Vec3f unit = ray.direction_.as_unit();
     float t = 0.5 * (unit[1] + 1.0f);

@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef PINHOLE_CAMERA_H
 #define PINHOLE_CAMERA_H
 

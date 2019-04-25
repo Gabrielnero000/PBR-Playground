@@ -1,28 +1,31 @@
+#pragma once
+
 #ifndef SCENE_H
 #define SCENE_H
 
-#include <vector>
 #include "primitive.h"
-#include "sphere.h"
-#include "triangle.h"
-#include "mesh.h"
-#include "material.h"
-#include "lambertian.h"
-#include "specular.h"
 
-class Scene
+class Scene : public Primitive
 {
 public:
   Scene();
+
+  Scene(Primitive** primitives, int size);
+
   ~Scene();
 
   bool intersect(const Ray &ray,
                  float t_min,
                  float t_max,
                  Record &record) const;
-  void load();
 
-  std::vector<Primitive::PrimitiveUniquePtr> primitives_;
+  bool boundingBox(float t0,
+                   float t1,
+                   AABB &box) const;
+  Primitive load();
+
+  Primitive **primitives_;
+  int size_;
 };
 
 #endif

@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef ORTHO_CAMERA_H
 #define ORTHO_CAMERA_H
 

@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef PRIMITIVE_H
 #define PRIMITIVE_H
 
@@ -10,12 +12,11 @@
 class Primitive
 {
 public:
-  typedef std::unique_ptr<Primitive> PrimitiveUniquePtr;
-  typedef std::unique_ptr<Material> MaterialUniquePtr;
 
-  MaterialUniquePtr material_;
+  Material* material_;
 
-  Primitive(MaterialUniquePtr material);
+  Primitive();
+  Primitive(Material* material);
   virtual ~Primitive();
   virtual bool intersect(const Ray &ray,
                          float t_min,

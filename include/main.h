@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef MAIN_H
 #define MAIN_H
 
@@ -8,5 +10,8 @@
 #include "sphere.h"
 #include "triangle.h"
 #include "scene.h"
+#include "material.h"
+#include "lambertian.h"
+#include "specular.h"
 
 #endif

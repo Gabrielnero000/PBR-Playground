@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef RENDER_H
 #define RENDER_H
 
@@ -20,7 +22,7 @@ class Render
 {
 public:
   Render(Output &output,
-         Scene &scene,
+         Primitive *scene,
          Camera &camera,
          Vec3f &background_color_from,
          Vec3f &background_color_to,
@@ -34,7 +36,7 @@ private:
   Vec3f Color(const Ray &ray, Record &record, int depth);
 
   Output &output_;
-  Scene &scene_;
+  Primitive *scene_;
   Camera &camera_;
   Vec3f background_color_from_;
   Vec3f background_color_to_;

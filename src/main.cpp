@@ -1,6 +1,90 @@
 #include "main.h"
 #include <fenv.h>
 
+// Just for some tests
+Primitive *load()
+{
+    // Scene 1 - Cornell Box
+
+    // No emmiter
+    Vec3f emmiter_zero = Vec3f(0.0f, 0.0f, 0.0f);
+
+    // Light emmitter
+    Vec3f emmiter_light = Vec3f(2.0f, 2.0f, 2.0f);
+
+    // Red albedo
+    Vec3f albedo_red = Vec3f(0.9f, 0.001f, 0.0f);
+
+    // Green albedo
+    Vec3f albedo_green = Vec3f(0.001f, 0.9f, 0.001f);
+
+    // Blue albedo
+    Vec3f albedo_blue = Vec3f(0.001f, 0.001f, 0.9f);
+
+    // White albedo
+    Vec3f albedo_white = Vec3f(0.9f, 0.9f, 0.9f);
+
+    // Gray albedo
+    Vec3f albedo_gray = Vec3f(0.5f, 0.5f, 0.5f);
+
+    const int n = 10;
+    Primitive **list = new Primitive *[n];
+    int i = 0;
+
+    // Red sphere
+    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_red),
+                           Vec3f(-0.4f, -0.5f, 0.5f),
+                           0.25f);
+
+    // Green sphere
+    list[i++] = new Sphere(new Specular(emmiter_zero, albedo_white),
+                           Vec3f(0.0f, -0.5f, 0.25f),
+                           0.25f);
+
+    // Blue sphere
+    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_blue),
+                           Vec3f(0.4f, -0.5f, 0.5f),
+                           0.25f);
+
+    // Floor
+    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_gray),
+                           Vec3f(0.0f, -100.75f, 0.0f),
+                           100.0f);
+
+    // Right wall
+    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_gray),
+                           Vec3f(100.75f, 0.0f, 0.0f),
+                           100.0f);
+
+    // Left Wall
+    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_gray),
+                           Vec3f(-100.75f, 0.0f, 0.0f),
+                           100.0f);
+
+    // Roof
+    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_gray),
+                           Vec3f(0.0f, 100.75f, 0.0f),
+                           100.0f);
+
+    // Back wall
+    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_gray),
+                           Vec3f(0.0f, 0.0f, -100.5f),
+                           100.0f);
+
+    // Light
+    list[i++] = new Triangle(new Lambertian(emmiter_light, albedo_white),
+                             Vec3f(-0.5f, 0.7f, 0.7f),
+                             Vec3f(0.5f, 0.7f, 0.7f),
+                             Vec3f(-0.5f, 0.7f, -0.7f));
+
+    list[i++] = new Triangle(new Lambertian(emmiter_light, albedo_white),
+                             Vec3f(0.5f, 0.7f, 0.7f),
+                             Vec3f(0.5f, 0.7f, -0.7f),
+                             Vec3f(-0.5f, 0.7f, -0.7f));
+
+    return new Scene(list, i);
+}
+
 int main()
 {
 
@@ -36,9 +120,7 @@ int main()
     PinholeCamera camera{min_x, max_x, min_y, max_y, focal_distance,
                          up, look_at, position};
 
-    Scene scene;
-    Render render{output, scene, camera, background_color_from, background_color_to, samples, depth};
-    scene.load();
+    Render render{output, load(), camera, background_color_from, background_color_to, samples, depth};
 
     render.integrate();
     output.save("output");
