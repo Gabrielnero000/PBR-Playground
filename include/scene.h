@@ -7,25 +7,24 @@
 
 class Scene : public Primitive
 {
-public:
-  Scene();
+  public:
+	Scene();
 
-  Scene(Primitive** primitives, int size);
+	Scene(Primitive **primitives, int size);
 
-  ~Scene();
+	~Scene();
 
-  bool intersect(const Ray &ray,
-                 float t_min,
-                 float t_max,
-                 Record &record) const;
+	bool intersect(const Ray &ray,
+				   float t_min,
+				   float t_max,
+				   Record &record) const;
 
-  bool boundingBox(float t0,
-                   float t1,
-                   AABB &box) const;
-  Primitive load();
+	bool boundingBox(float t0,
+					 float t1,
+					 AABB &box) const;
 
-  Primitive **primitives_;
-  int size_;
+	Primitive **primitives_;
+	int size_;
 };
 
 #endif

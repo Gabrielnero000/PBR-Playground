@@ -7,24 +7,24 @@
 
 class Sphere : public Primitive
 {
-public:
-  Sphere(Material *material,
-         const Vec3f &center,
-         const float radius);
+  public:
+	Sphere(Material *material,
+		   const Vec3f &center,
+		   const float radius);
 
-  ~Sphere();
+	~Sphere();
 
-  bool intersect(const Ray &ray,
-                 float t_min,
-                 float t_max,
-                 Record &record) const;
+	bool intersect(const Ray &ray,
+				   float t_min,
+				   float t_max,
+				   Record &record) const;
 
-  bool boundingBox(float t0,
-                   float t1,
-                   AABB &box) const;
+	bool boundingBox(float t0,
+					 float t1,
+					 AABB &box) const;
 
-  const Vec3f center_;
-  const float radius_;
+	Vec3f center_;
+	float radius_;
 };
 
 #endif

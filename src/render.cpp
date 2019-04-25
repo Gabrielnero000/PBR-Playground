@@ -2,7 +2,7 @@
 #include <random>
 
 Render::Render(Output &output,
-               Primitive *scene,
+               Primitive* scene,
                Camera &camera,
                Vec3f &background_color_from,
                Vec3f &background_color_to,

@@ -12,7 +12,7 @@ bool AABB::intersect(const Ray &ray, float t_min, float t_max) const
 {
     for (int i = 0; i < 3; i++)
     {
-        const float inv_dir = -1.0f / ray.direction_[i];
+        const float inv_dir = 1.0f / ray.direction_[i];
 
         float t0 = (min()[i] - ray.origin_[i]) * inv_dir;
         float t1 = (max()[i] - ray.origin_[i]) * inv_dir;

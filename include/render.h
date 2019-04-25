@@ -20,28 +20,28 @@
 #define MAX_T 10000.0f
 class Render
 {
-public:
-  Render(Output &output,
-         Primitive *scene,
-         Camera &camera,
-         Vec3f &background_color_from,
-         Vec3f &background_color_to,
-         const int samples,
-         const int ray_depth);
-  ~Render();
-  void integrate();
-  void test();
+  public:
+	Render(Output &output,
+		   Primitive *scene,
+		   Camera &camera,
+		   Vec3f &background_color_from,
+		   Vec3f &background_color_to,
+		   const int samples,
+		   const int ray_depth);
+	~Render();
+	void integrate();
+	void test();
 
-private:
-  Vec3f Color(const Ray &ray, Record &record, int depth);
+  private:
+	Vec3f Color(const Ray &ray, Record &record, int depth);
 
-  Output &output_;
-  Primitive *scene_;
-  Camera &camera_;
-  Vec3f background_color_from_;
-  Vec3f background_color_to_;
-  int samples_;
-  int ray_depth_;
+	Output &output_;
+	Primitive *scene_;
+	Camera &camera_;
+	Vec3f background_color_from_;
+	Vec3f background_color_to_;
+	int samples_;
+	int ray_depth_;
 };
 
 #endif

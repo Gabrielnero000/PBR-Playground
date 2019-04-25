@@ -12,8 +12,8 @@ SOURCES = $(shell find $(SRC_PATH) -name '*.$(SRC_EXT)' | sort -k 1nr | cut -f2-
 OBJECTS = $(SOURCES:$(SRC_PATH)/%.$(SRC_EXT)=$(BUILD_PATH)/%.o)
 DEPS = $(OBJECTS:.o=.d)
 
-COMPILE_FLAGS = -std=c++11 -Wall -Wextra -fopenmp -O3
-LINK_FLAGS = -fopenmp
+COMPILE_FLAGS = -std=c++11 -Wall -Wextra -g
+LINK_FLAGS =
 
 INCLUDES = -I include/ -I /usr/local/include
 

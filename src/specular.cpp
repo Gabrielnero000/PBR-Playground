@@ -1,8 +1,8 @@
 #include "specular.h"
 
-Specular::Specular(Vec3f &emmiter,
-                   Vec3f &albedo) : Material::Material{emmiter},
-                                        albedo_{albedo} {}
+Specular::Specular(const Vec3f &emmiter,
+                   const Vec3f &albedo) : Material::Material{emmiter},
+                                          albedo_{albedo} {}
 
 Specular::~Specular() {}
 

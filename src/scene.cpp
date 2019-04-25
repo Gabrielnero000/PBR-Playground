@@ -24,7 +24,6 @@ bool Scene::intersect(const Ray &ray,
             intersected = true;             // has intersection
             record = tmp_record;            // update intersection's record
             closest_so_far = tmp_record.t_; // update t_max
-            record.index_ = i;              // the primitive index
         }
     }
 

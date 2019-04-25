@@ -13,5 +13,6 @@
 #include "material.h"
 #include "lambertian.h"
 #include "specular.h"
+#include "bvh.h"
 
 #endif

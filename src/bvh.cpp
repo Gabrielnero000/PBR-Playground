@@ -1,6 +1,5 @@
 #include "bvh.h"
 
-
 // Util for x-axis comparation
 int box_x_compare(const void *a, const void *b)
 {
@@ -94,6 +93,8 @@ bool BVH::intersect(const Ray &ray,
                 record = left_rec;
             else
                 record = right_rec;
+
+            return true;
         }
         else if (hit_left)
         {

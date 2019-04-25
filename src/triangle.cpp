@@ -4,7 +4,7 @@
 Triangle::Triangle(Material *material,
                    const Vec3f &v1,
                    const Vec3f &v2,
-                   const Vec3f &v3) : Primitive::Primitive(std::move(material)),
+                   const Vec3f &v3) : Primitive::Primitive(material),
                                       v1_{v1},
                                       v2_{v2},
                                       v3_{v3},

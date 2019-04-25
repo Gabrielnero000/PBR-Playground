@@ -1,8 +1,8 @@
 #include "lambertian.h"
 
-Lambertian::Lambertian(Vec3f &emmiter,
-                       Vec3f &albedo) : Material::Material{emmiter},
-                                        albedo_{albedo} {}
+Lambertian::Lambertian(const Vec3f &emmiter,
+                       const Vec3f &albedo) : Material::Material{emmiter},
+                                              albedo_{albedo} {}
 
 Lambertian::~Lambertian() {}
 

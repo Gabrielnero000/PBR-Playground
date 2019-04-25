@@ -2,7 +2,7 @@
 
 Sphere::Sphere(Material *material,
                const Vec3f &center,
-               const float radius) : Primitive::Primitive(std::move(material)),
+               const float radius) : Primitive::Primitive(material),
                                      center_{center},
                                      radius_{radius} {}
 
