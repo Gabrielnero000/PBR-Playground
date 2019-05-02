@@ -1,120 +1,118 @@
 #include "bvh.h"
 
-// Util for x-axis comparation
-int box_x_compare(const void *a, const void *b)
+BVH::BVH(std::vector<Primitive::PrimitivePtr> &primitives) : Accelerator::Accelerator(primitives)
 {
-    AABB box_left, box_right;
-    Primitive *a_h = *(Primitive **)a;
-    Primitive *b_h = *(Primitive **)b;
-
-    if (!a_h->boundingBox(0, 0, box_left) || !b_h->boundingBox(0, 0, box_right))
-        std::cerr << "No bounding box in BVH constructor" << std::endl;
-
-    if (box_left.min()[0] - box_right.min()[0] < 0.0f)
-        return -1;
-    else
-        return 1;
-}
-
-// Util for y-axis comparation
-int box_y_compare(const void *a, const void *b)
-{
-    AABB box_left, box_right;
-    Primitive *a_h = *(Primitive **)a;
-    Primitive *b_h = *(Primitive **)b;
-
-    if (!a_h->boundingBox(0, 0, box_left) || !b_h->boundingBox(0, 0, box_right))
-        std::cerr << "No bounding box in BVH constructor" << std::endl;
-
-    if (box_left.min()[0] - box_right.min()[0] < 0.0f)
-        return -1;
-    else
-        return 1;
-}
-
-// Util for z-axis comparation
-int box_z_compare(const void *a, const void *b)
-{
-    AABB box_left, box_right;
-    Primitive *a_h = *(Primitive **)a;
-    Primitive *b_h = *(Primitive **)b;
-
-    if (!a_h->boundingBox(0, 0, box_left) || !b_h->boundingBox(0, 0, box_right))
-        std::cerr << "No bounding box in BVH constructor" << std::endl;
-
-    if (box_left.min()[0] - box_right.min()[0] < 0.0f)
-        return -1;
-    else
-        return 1;
-}
-
-BVH::BVH() : Primitive::Primitive(nullptr) {}
-
-BVH::BVH(Primitive **list, int n, float t0, float t1) : Primitive::Primitive(nullptr)
-{
-    const int axis = int(3 * drand48());
-    if (axis == 0)
-        qsort(list, n, sizeof(Primitive *), box_x_compare);
-    else if (axis == 1)
-        qsort(list, n, sizeof(Primitive *), box_y_compare);
-    else
-        qsort(list, n, sizeof(Primitive *), box_z_compare);
-
-    if (n == 1)
-        left_ = right_ = list[0];
-    else
-    {
-        left_ = new BVH(list, n / 2, t0, t1);
-        right_ = new BVH(list + n / 2, n - n / 2, t0, t1);
-    }
-    AABB box_left, box_right;
-    if (!left_->boundingBox(t0, t1, box_left) || !right_->boundingBox(t0, t1, box_right))
-        std::cerr << "No bounding box in BVH constructor" << std::endl;
-    box_ = AABB::surroundingBox(box_left, box_right);
+    for (std::size_t i = 0; i < primitives_.size(); i++)
+        primitive_indexes_.push_back(i);
 }
 
 BVH::~BVH() {}
 
-bool BVH::intersect(const Ray &ray,
-                    float t_min,
-                    float t_max,
-                    Record &record) const
+void BVH::build()
 {
-    if (box_.intersect(ray, t_min, t_max))
+    int axis = 0;
+    bool ordered = false;
+    AABB box, box_left, box_right;
+
+    while (!ordered)
     {
-        Record left_rec, right_rec;
-
-        bool hit_left = left_->intersect(ray, t_min, t_max, left_rec);
-        bool hit_right = right_->intersect(ray, t_min, t_max, right_rec);
-
-        if (hit_left && hit_right)
+        ordered = true;
+        for (std::size_t i = 0; i < primitives_.size() - 1; i++)
         {
-            if (left_rec.t_ < right_rec.t_)
-                record = left_rec;
-            else
-                record = right_rec;
+            primitives_[primitive_indexes_[i]]->boundingBox(box_left);
+            primitives_[primitive_indexes_[i + 1]]->boundingBox(box_right);
 
-            return true;
+            if (box_left.centroid_[axis] > box_right.centroid_[axis])
+            {
+                int aux = primitive_indexes_[i];
+                primitive_indexes_[i] = primitive_indexes_[i + 1];
+                primitive_indexes_[i + 1] = aux;
+                ordered = false;
+            }
         }
-        else if (hit_left)
+    }
+
+    root_ = buildRecursive(primitive_indexes_);
+}
+
+BVH::BVHNode *BVH::buildRecursive(const std::vector<int> primitive_indexes)
+{
+    BVHNode *node;
+    AABB box, box_left, box_right;
+
+    if (primitive_indexes.size() < 2) // Only one primitive
+    {
+        primitives_[primitive_indexes[0]]->boundingBox(box);
+        node = new BVHNode(primitive_indexes, box);
+        node->left_ = nullptr;
+        node->right_ = nullptr;
+
+        return node;
+    }
+
+    primitives_[primitive_indexes[0]]->boundingBox(box_left);
+    primitives_[primitive_indexes[primitive_indexes.size() - 1]]->boundingBox(box_right);
+    box = AABB::surroundingBox(box_left, box_right);
+
+    const int half = primitive_indexes.size() / 2;
+
+    const std::vector<int> left_split = std::vector<int>(primitive_indexes.begin(), primitive_indexes.begin() + half);
+    const std::vector<int> right_split = std::vector<int>(primitive_indexes.begin() + half, primitive_indexes.end());
+
+    node = new BVHNode(primitive_indexes, box);
+    node->left_ = buildRecursive(left_split);
+    node->right_ = buildRecursive(right_split);
+
+    return node;
+}
+
+bool BVH::trace(const Ray &ray,
+                float t_min,
+                float t_max,
+                Record &record) const
+{
+    float t_temp = t_max;
+    return traceRecursive(ray, t_min, &t_temp, record, root_);
+}
+
+bool BVH::traceRecursive(const Ray &ray,
+                         float t_min,
+                         float *t_max,
+                         Record &record,
+                         BVHNode *node) const
+{
+    bool intersected = false;
+    float *closest_so_far = t_max;
+    if (node != nullptr && node->box_.intersect(ray, t_min, *t_max))
+    {
+        Record tmp_record;
+
+        if (node->left_ == nullptr && node->right_ == nullptr) // Is a leaf
         {
-            record = left_rec;
-            return true;
-        }
-        else if (hit_right)
-        {
-            record = right_rec;
-            return true;
+            for (std::size_t i = 0; i < node->primitive_indexes_.size(); i++)
+            {
+                if (primitives_[node->primitive_indexes_[i]]->intersect(ray, t_min, *t_max, tmp_record))
+                {
+                    intersected = true;                          // has intersection
+                    record = tmp_record;                         // update intersection's record
+                    *closest_so_far = tmp_record.t_;             // update t_max
+                    record.index_ = node->primitive_indexes_[i]; // the primitive index
+                }
+            }
         }
         else
-            return false;
+        {
+            if (traceRecursive(ray, t_min, t_max, record, node->left_))
+                intersected = true;
+            if (traceRecursive(ray, t_min, t_max, record, node->right_))
+                intersected = true;
+        }
     }
-    else
-        return false;
+
+    return intersected;
 }
 
-bool BVH::boundingBox(float t0, float t1, AABB &box) const
-{
-    box = box_;
-    return true;
-}
+BVH::BVHNode::BVHNode(const std::vector<int> primitive_indexes, const AABB box) : primitive_indexes_{primitive_indexes},
+                                                                                  box_{box} {}
+
+BVH::BVHNode::~BVHNode() {}

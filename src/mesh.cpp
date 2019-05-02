@@ -1,7 +1,7 @@
 #include "mesh.h"
 
-Mesh::Mesh(Material *material,
-           const std::string filename) : Primitive::Primitive(material)
+Mesh::Mesh(Material::MaterialPtr material,
+           const std::string filename) : Primitive::Primitive(std::move(material))
 {
 
     std::vector<Vec3f> vertex_temp;
@@ -50,7 +50,7 @@ Mesh::Mesh(Material *material,
                 Vec3f v_2 = vertex_temp[std::stoi(line.substr(index[1] + 1, index[2] - index[1])) - 1];
                 Vec3f v_3 = vertex_temp[std::stoi(line.substr(index[2] + 1, (line.size() - 1) - index[2])) - 1];
 
-                triangles_.push_back(new Triangle(nullptr, v_1, v_2, v_3));
+                triangles_.push_back(TrianglePtr(new Triangle{NULL, v_1, v_2, v_3}));
             }
             break;
 
@@ -78,8 +78,8 @@ bool Mesh::intersect(const Ray &ray,
         {
             record = tmp_record;
             closest_so_far = tmp_record.t_;
+            record.index_ = i;
             intersect = true;
-            record.material_ = material_;
         }
     }
 
@@ -87,9 +87,7 @@ bool Mesh::intersect(const Ray &ray,
 }
 
 // TODO
-bool Mesh::boundingBox(float t0,
-                       float t1,
-                       AABB &box) const
+bool Mesh::boundingBox(AABB &box) const
 {
     return true;
 }

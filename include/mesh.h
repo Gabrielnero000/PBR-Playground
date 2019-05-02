@@ -1,8 +1,7 @@
-#pragma once
-
 #ifndef MESH_H
 #define MESH_H
 
+#include "primitive.h"
 #include "triangle.h"
 #include <fstream>
 #include <iostream>
@@ -10,21 +9,21 @@
 
 class Mesh : public Primitive
 {
-  public:
-	Mesh(Material *material,
-		 const std::string filename);
-	~Mesh();
+public:
+  typedef std::unique_ptr<Triangle> TrianglePtr;
 
-	bool intersect(const Ray &ray,
-				   float t_min,
-				   float t_max,
-				   Record &record) const;
+  Mesh(Material::MaterialPtr material,
+       const std::string filename);
+  ~Mesh();
 
-	bool boundingBox(float t0,
-					 float t1,
-					 AABB &box) const;
+  bool intersect(const Ray &ray,
+                 float t_min,
+                 float t_max,
+                 Record &record) const;
 
-	std::vector<Triangle *> triangles_;
+  bool boundingBox(AABB &box) const;
+
+  std::vector<TrianglePtr> triangles_;
 };
 
 #endif

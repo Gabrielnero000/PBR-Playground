@@ -3,28 +3,44 @@
 #ifndef BVH_H
 #define BVH_H
 
-#include "primitive.h"
+#include "accelerator.h"
 
-class BVH : public Primitive
+class BVH : public Accelerator
 {
+public:
+  class BVHNode
+  {
   public:
-	BVH();
-	BVH(Primitive **list, int n, float t0, float t1);
+    BVHNode(const std::vector<int> primitive_indexes, const AABB box);
+    ~BVHNode();
 
-	~BVH();
+    BVHNode *left_;
+    BVHNode *right_;
 
-	bool intersect(const Ray &ray,
-				   float t_min,
-				   float t_max,
-				   Record &record) const;
+    const std::vector<int> primitive_indexes_;
+    AABB box_;
+  };
 
-	bool boundingBox(float t0,
-					 float t1,
-					 AABB &box) const;
+  BVH(std::vector<Primitive::PrimitivePtr> &primitives);
+  ~BVH();
 
-	Primitive *left_;
-	Primitive *right_;
-	AABB box_;
+  void build();
+
+  BVHNode *buildRecursive(const std::vector<int> primitive_indexes);
+
+  bool trace(const Ray &ray,
+             float t_min,
+             float t_max,
+             Record &record) const;
+
+  bool traceRecursive(const Ray &ray,
+                      float t_min,
+                      float *t_max,
+                      Record &record,
+                      BVHNode *node) const;
+
+  std::vector<int> primitive_indexes_;
+  BVHNode *root_;
 };
 
 #endif

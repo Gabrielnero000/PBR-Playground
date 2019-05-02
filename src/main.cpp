@@ -1,16 +1,18 @@
 #include "main.h"
 #include <fenv.h>
 
-// Just for some tests
-Primitive *load()
+typedef std::vector<Primitive::PrimitivePtr> Scene;
+
+// Scene 1 - Cornell Box
+Scene cornellBox()
 {
-    // Scene 1 - Cornell Box
+    Scene primitives;
 
     // No emmiter
     Vec3f emmiter_zero = Vec3f(0.0f, 0.0f, 0.0f);
 
     // Light emmitter
-    Vec3f emmiter_light = Vec3f(2.0f, 2.0f, 2.0f);
+    Vec3f emmiter_light = Vec3f(4.0f, 4.0f, 4.0f);
 
     // Red albedo
     Vec3f albedo_red = Vec3f(0.9f, 0.001f, 0.0f);
@@ -27,58 +29,62 @@ Primitive *load()
     // Gray albedo
     Vec3f albedo_gray = Vec3f(0.5f, 0.5f, 0.5f);
 
-    const int n = 10;
-    Primitive *list[n];
-    int i = 0;
-
-    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_red),
-                           Vec3f(-0.4f, -0.5f, 0.5f), 0.25f);
+    // Red sphere
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_red)),
+                                                            Vec3f(-0.4f, -0.5f, 0.5f),
+                                                            0.25f)));
 
     // Green sphere
-    list[i++] = new Sphere(new Specular(emmiter_zero, albedo_white),
-                           Vec3f(0.0f, -0.5f, 0.25f), 0.25f);
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Specular(emmiter_zero, albedo_white, 0.5f)),
+                                                            Vec3f(0.0f, -0.5f, 0.25f),
+                                                            0.25f)));
 
     // Blue sphere
-    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_blue),
-                           Vec3f(0.4f, -0.5f, 0.5f), 0.25f);
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_blue)),
+                                                            Vec3f(0.4f, -0.5f, 0.5f),
+                                                            0.25f)));
 
     // Floor
-    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_gray),
-                           Vec3f(0.0f, -100.75f, 0.0f), 100.0f);
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
+                                                            Vec3f(0.0f, -100.75f, 0.0f),
+                                                            100.0f)));
 
     // Right wall
-    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_gray),
-                           Vec3f(100.75f, 0.0f, 0.0f), 100.0f);
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
+                                                            Vec3f(100.75f, 0.0f, 0.0f),
+                                                            100.0f)));
 
     // Left Wall
-    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_gray),
-                           Vec3f(-100.75f, 0.0f, 0.0f), 100.0f);
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
+                                                            Vec3f(-100.75f, 0.0f, 0.0f),
+                                                            100.0f)));
 
     // Roof
-    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_gray),
-                           Vec3f(0.0f, 100.75f, 0.0f), 100.0f);
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
+                                                            Vec3f(0.0f, 100.75f, 0.0f),
+                                                            100.0f)));
 
     // Back wall
-    list[i++] = new Sphere(new Lambertian(emmiter_zero, albedo_gray),
-                           Vec3f(0.0f, 0.0f, -100.5f), 100.0f);
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
+                                                            Vec3f(0.0f, 0.0f, -100.5f),
+                                                            100.0f)));
 
     // Light
-    list[i++] = new Triangle(new Lambertian(emmiter_light, albedo_white),
-                             Vec3f(-0.5f, 0.7f, 0.7f),
-                             Vec3f(0.5f, 0.7f, 0.7f),
-                             Vec3f(-0.5f, 0.7f, -0.7f));
+    primitives.push_back(Primitive::PrimitivePtr(new Triangle(Material::MaterialPtr(new Lambertian(emmiter_light, albedo_white)),
+                                                              Vec3f(-0.5f, 0.7f, 0.7f),
+                                                              Vec3f(0.5f, 0.7f, 0.7f),
+                                                              Vec3f(-0.5f, 0.7f, -0.7f))));
 
-    list[i++] = new Triangle(new Lambertian(emmiter_light, albedo_white),
-                             Vec3f(0.5f, 0.7f, 0.7f),
-                             Vec3f(0.5f, 0.7f, -0.7f),
-                             Vec3f(-0.5f, 0.7f, -0.7f));
+    primitives.push_back(Primitive::PrimitivePtr(new Triangle(Material::MaterialPtr(new Lambertian(emmiter_light, albedo_white)),
+                                                              Vec3f(0.5f, 0.7f, 0.7f),
+                                                              Vec3f(0.5f, 0.7f, -0.7f),
+                                                              Vec3f(-0.5f, 0.7f, -0.7f))));
 
-    return new BVH(list, i, 0.0f, 1.0f);
+    return primitives;
 }
 
 int main()
 {
-
     // feenableexcept(FE_INVALID);
     // Output params
     int width = 512;
@@ -87,8 +93,8 @@ int main()
     //Render params
     //Vec3f background_color_from = {1.0f, 1.0f, 1.0f}; // White
     //Vec3f background_color_to = {0.5f, 0.7f, 1.0f};   // Ciano
-    Vec3f background_color_from = Vec3f(0.0f, 0.0f, 0.0f);
-    Vec3f background_color_to = Vec3f(0.0f, 0.0f, 0.0f);
+    Vec3f background_color_from = Vec3f(1.0f, 1.0f, 1.0f);
+    Vec3f background_color_to = Vec3f(1.0f, 1.0f, 1.0f);
 
     int samples = 100;
     int depth = 5;
@@ -111,9 +117,11 @@ int main()
     PinholeCamera camera{min_x, max_x, min_y, max_y, focal_distance,
                          up, look_at, position};
 
-    Primitive *scene = load();
+    Scene scene = cornellBox();
 
-    Render render{output, scene, camera, background_color_from, background_color_to, samples, depth};
+    BVH acc = BVH(scene);
+
+    PathTracer render = PathTracer(output, camera, acc, scene, background_color_from, background_color_to, samples, depth);
 
     render.integrate();
     output.save("output");

@@ -23,9 +23,6 @@ void Output::save(const std::string filename)
     for (int j = height_ - 1; j >= 0; j--)
         for (int i = 0; i < width_; i++)
         {
-            buffer_[i][j][0] = powf(buffer_[i][j][0], 1.0f / 2.2f);
-            buffer_[i][j][1] = powf(buffer_[i][j][1], 1.0f / 2.2f);
-            buffer_[i][j][2] = powf(buffer_[i][j][2], 1.0f / 2.2f);
 
             if (buffer_[i][j][0] < 0.0f)
                 buffer_[i][j][0] = 0.0f;
@@ -41,6 +38,10 @@ void Output::save(const std::string filename)
                 buffer_[i][j][2] = 0.0f;
             if (buffer_[i][j][2] > 1.0f)
                 buffer_[i][j][2] = 1.0f;
+
+            buffer_[i][j][0] = powf(buffer_[i][j][0], 1.0f / 2.2f);
+            buffer_[i][j][1] = powf(buffer_[i][j][1], 1.0f / 2.2f);
+            buffer_[i][j][2] = powf(buffer_[i][j][2], 1.0f / 2.2f);
 
             // Bring colors from [0, 1] to [0, 255]
             // Watch out for rounding errors

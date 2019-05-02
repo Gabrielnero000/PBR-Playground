@@ -1,8 +1,8 @@
 #include "sphere.h"
 
-Sphere::Sphere(Material *material,
+Sphere::Sphere(Material::MaterialPtr material,
                const Vec3f &center,
-               const float radius) : Primitive::Primitive(material),
+               const float radius) : Primitive::Primitive(std::move(material)),
                                      center_{center},
                                      radius_{radius} {}
 
@@ -33,7 +33,6 @@ bool Sphere::intersect(const Ray &ray,
             record.t_ = x1;
             record.point_ = ray.evaluate(x1);
             record.normal_ = ((record.point_ - center_) / radius_).as_unit();
-            record.material_ = material_;
             return true;
         }
         // Same as x1
@@ -43,17 +42,17 @@ bool Sphere::intersect(const Ray &ray,
             record.t_ = x2;
             record.point_ = ray.evaluate(x1);
             record.normal_ = ((record.point_ - center_) / radius_).as_unit();
-            record.material_ = material_;
             return true;
         }
     }
     return false; // No intersection
 }
 
-bool Sphere::boundingBox(float t0,
-                         float t1,
-                         AABB &box) const
+bool Sphere::boundingBox(AABB &box) const
 {
-    box = AABB(center_ + radius_, center_ - radius_);
+    box = AABB();
+    box.min_ = center_ - radius_;
+    box.max_ = center_ + radius_;
+    box.centroid_ = center_;
     return true;
 }

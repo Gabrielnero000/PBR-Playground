@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
@@ -9,40 +7,38 @@
 
 class Triangle : public Primitive
 {
-  public:
-	Triangle(Material *material,
-			 const Vec3f &v1,
-			 const Vec3f &v2,
-			 const Vec3f &v3);
-	~Triangle();
+public:
+  Triangle(Material::MaterialPtr material,
+           const Vec3f &v1,
+           const Vec3f &v2,
+           const Vec3f &v3);
+  ~Triangle();
 
-	bool intersect(const Ray &ray,
-				   float t_min,
-				   float t_max,
-				   Record &record) const;
+  bool intersect(const Ray &ray,
+                 float t_min,
+                 float t_max,
+                 Record &record) const;
 
-	bool boundingBox(float t0,
-					 float t1,
-					 AABB &box) const;
+  bool boundingBox(AABB &box) const;
 
-	Vec3f v1_;
-	Vec3f v2_;
-	Vec3f v3_;
-	Vec3f normal_;
+  const Vec3f v1_;
+  const Vec3f v2_;
+  const Vec3f v3_;
+  const Vec3f normal_;
 
 #ifdef TRIANGLE_FAST
-	const int modulo[5] = {0, 1, 2, 0, 1};
+  const int modulo[5] = {0, 1, 2, 0, 1};
 
-	float normal_u;
-	float normal_v;
-	float normal_d;
-	int k;
+  float normal_u;
+  float normal_v;
+  float normal_d;
+  int k;
 
-	float B_nu;
-	float B_nv;
+  float B_nu;
+  float B_nv;
 
-	float C_nu;
-	float C_nv;
+  float C_nu;
+  float C_nv;
 
 #endif
 };

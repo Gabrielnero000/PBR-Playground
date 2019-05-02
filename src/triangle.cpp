@@ -1,10 +1,10 @@
 #include "triangle.h"
 #include <iostream>
 
-Triangle::Triangle(Material *material,
+Triangle::Triangle(Material::MaterialPtr material,
                    const Vec3f &v1,
                    const Vec3f &v2,
-                   const Vec3f &v3) : Primitive::Primitive(material),
+                   const Vec3f &v3) : Primitive::Primitive(std::move(material)),
                                       v1_{v1},
                                       v2_{v2},
                                       v3_{v3},
@@ -139,7 +139,6 @@ bool Triangle::intersect(const Ray &ray,
     record.t_ = f;
     record.point_ = ray.evaluate(record.t_);
     record.normal_ = normal_;
-    record.material_ = material_;
 
     return true;
 #endif
@@ -147,9 +146,20 @@ bool Triangle::intersect(const Ray &ray,
 }
 
 // TODO
-bool Triangle::boundingBox(float t0,
-                           float t1,
-                           AABB &box) const
+bool Triangle::boundingBox(AABB &box) const
 {
+    box = AABB();
+
+    float x_min = v1_[0] < v2_[0] ? (v1_[0] < v3_[0] ? v1_[0] : v3_[0]) : (v2_[0] > v3_[0] ? v2_[0] : v3_[0]);
+    float y_min = v1_[1] < v2_[1] ? (v1_[1] < v3_[1] ? v1_[1] : v3_[1]) : (v2_[1] > v3_[1] ? v2_[1] : v3_[1]);
+    float z_min = v1_[2] < v2_[2] ? (v1_[2] < v3_[2] ? v1_[2] : v3_[2]) : (v2_[2] > v3_[2] ? v2_[2] : v3_[2]);
+
+    float x_max = v1_[0] > v2_[0] ? (v1_[0] > v3_[0] ? v1_[0] : v3_[0]) : (v2_[0] < v3_[0] ? v2_[0] : v3_[0]);
+    float y_max = v1_[1] > v2_[1] ? (v1_[1] > v3_[1] ? v1_[1] : v3_[1]) : (v2_[1] < v3_[1] ? v2_[1] : v3_[1]);
+    float z_max = v1_[2] > v2_[2] ? (v1_[2] > v3_[2] ? v1_[2] : v3_[2]) : (v2_[2] < v3_[2] ? v2_[2] : v3_[2]);
+
+    box.min_ = Vec3f(x_min, y_min, z_min);
+    box.max_ = Vec3f(x_max, y_max, z_max);
+    box.centroid_ = (1.0f / 3.0f) * (v1_ + v2_ + v3_);
     return true;
 }
