@@ -13,6 +13,7 @@ public:
   typedef std::unique_ptr<Triangle> TrianglePtr;
 
   Mesh(Material::MaterialPtr material,
+       const std::string &id,
        const std::string filename);
   ~Mesh();
 

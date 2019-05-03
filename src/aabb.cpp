@@ -26,7 +26,7 @@ bool AABB::intersect(const Ray &ray, float t_min, float t_max) const
         t_min = t0 > t_min ? t0 : t_min;
         t_max = t1 < t_max ? t1 : t_max;
 
-        if (t_max <= t_min)
+        if (t_max < t_min)
             return false;
     }
 
@@ -107,5 +107,5 @@ AABB AABB::surroundingBox(const AABB &box_0, const AABB &box_1)
                       fmax(box_0.max()[1], box_1.max()[1]),
                       fmax(box_0.max()[2], box_1.max()[2]));
 
-    return AABB(small, big);
+    return AABB(small - 0.001, big + 0.001);
 }

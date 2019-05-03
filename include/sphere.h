@@ -7,6 +7,7 @@ class Sphere : public Primitive
 {
 public:
   Sphere(Material::MaterialPtr material,
+         const std::string &id,
          const Vec3f &center,
          const float radius);
 

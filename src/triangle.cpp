@@ -2,9 +2,10 @@
 #include <iostream>
 
 Triangle::Triangle(Material::MaterialPtr material,
+                   const std::string &id,
                    const Vec3f &v1,
                    const Vec3f &v2,
-                   const Vec3f &v3) : Primitive::Primitive(std::move(material)),
+                   const Vec3f &v3) : Primitive::Primitive(std::move(material), id),
                                       v1_{v1},
                                       v2_{v2},
                                       v3_{v3},
@@ -150,13 +151,13 @@ bool Triangle::boundingBox(AABB &box) const
 {
     box = AABB();
 
-    float x_min = v1_[0] < v2_[0] ? (v1_[0] < v3_[0] ? v1_[0] : v3_[0]) : (v2_[0] > v3_[0] ? v2_[0] : v3_[0]);
-    float y_min = v1_[1] < v2_[1] ? (v1_[1] < v3_[1] ? v1_[1] : v3_[1]) : (v2_[1] > v3_[1] ? v2_[1] : v3_[1]);
-    float z_min = v1_[2] < v2_[2] ? (v1_[2] < v3_[2] ? v1_[2] : v3_[2]) : (v2_[2] > v3_[2] ? v2_[2] : v3_[2]);
+    float x_min = v1_[0] < v2_[0] ? (v1_[0] < v3_[0] ? v1_[0] : v3_[0]) : (v2_[0] < v3_[0] ? v2_[0] : v3_[0]);
+    float y_min = v1_[1] < v2_[1] ? (v1_[1] < v3_[1] ? v1_[1] : v3_[1]) : (v2_[1] < v3_[1] ? v2_[1] : v3_[1]);
+    float z_min = v1_[2] < v2_[2] ? (v1_[2] < v3_[2] ? v1_[2] : v3_[2]) : (v2_[2] < v3_[2] ? v2_[2] : v3_[2]);
 
-    float x_max = v1_[0] > v2_[0] ? (v1_[0] > v3_[0] ? v1_[0] : v3_[0]) : (v2_[0] < v3_[0] ? v2_[0] : v3_[0]);
-    float y_max = v1_[1] > v2_[1] ? (v1_[1] > v3_[1] ? v1_[1] : v3_[1]) : (v2_[1] < v3_[1] ? v2_[1] : v3_[1]);
-    float z_max = v1_[2] > v2_[2] ? (v1_[2] > v3_[2] ? v1_[2] : v3_[2]) : (v2_[2] < v3_[2] ? v2_[2] : v3_[2]);
+    float x_max = v1_[0] > v2_[0] ? (v1_[0] > v3_[0] ? v1_[0] : v3_[0]) : (v2_[0] > v3_[0] ? v2_[0] : v3_[0]);
+    float y_max = v1_[1] > v2_[1] ? (v1_[1] > v3_[1] ? v1_[1] : v3_[1]) : (v2_[1] > v3_[1] ? v2_[1] : v3_[1]);
+    float z_max = v1_[2] > v2_[2] ? (v1_[2] > v3_[2] ? v1_[2] : v3_[2]) : (v2_[2] > v3_[2] ? v2_[2] : v3_[2]);
 
     box.min_ = Vec3f(x_min, y_min, z_min);
     box.max_ = Vec3f(x_max, y_max, z_max);

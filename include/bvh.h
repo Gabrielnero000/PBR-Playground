@@ -26,7 +26,7 @@ public:
 
   void build();
 
-  BVHNode *buildRecursive(const std::vector<int> primitive_indexes);
+  BVHNode *buildRecursive(std::vector<int> primitive_indexes);
 
   bool trace(const Ray &ray,
              float t_min,
@@ -35,7 +35,7 @@ public:
 
   bool traceRecursive(const Ray &ray,
                       float t_min,
-                      float *t_max,
+                      float &t_max,
                       Record &record,
                       BVHNode *node) const;
 

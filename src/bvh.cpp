@@ -10,34 +10,19 @@ BVH::~BVH() {}
 
 void BVH::build()
 {
-    int axis = 0;
-    bool ordered = false;
-    AABB box, box_left, box_right;
-
-    while (!ordered)
-    {
-        ordered = true;
-        for (std::size_t i = 0; i < primitives_.size() - 1; i++)
-        {
-            primitives_[primitive_indexes_[i]]->boundingBox(box_left);
-            primitives_[primitive_indexes_[i + 1]]->boundingBox(box_right);
-
-            if (box_left.centroid_[axis] > box_right.centroid_[axis])
-            {
-                int aux = primitive_indexes_[i];
-                primitive_indexes_[i] = primitive_indexes_[i + 1];
-                primitive_indexes_[i + 1] = aux;
-                ordered = false;
-            }
-        }
-    }
-
     root_ = buildRecursive(primitive_indexes_);
 }
 
-BVH::BVHNode *BVH::buildRecursive(const std::vector<int> primitive_indexes)
+BVH::BVHNode *BVH::buildRecursive(std::vector<int> primitive_indexes)
 {
+    // for (std::size_t i = 0; i < primitive_indexes.size(); i++)
+    //     std::cout << primitives_[primitive_indexes[i]]->id_ << ", ";
+
+    //std::cout << primitive_indexes.size() << std::endl;
+
     BVHNode *node;
+    int axis = 0;
+    bool ordered = false;
     AABB box, box_left, box_right;
 
     if (primitive_indexes.size() < 2) // Only one primitive
@@ -50,9 +35,36 @@ BVH::BVHNode *BVH::buildRecursive(const std::vector<int> primitive_indexes)
         return node;
     }
 
-    primitives_[primitive_indexes[0]]->boundingBox(box_left);
-    primitives_[primitive_indexes[primitive_indexes.size() - 1]]->boundingBox(box_right);
-    box = AABB::surroundingBox(box_left, box_right);
+    ordered = false;
+    while (!ordered)
+    {
+        ordered = true;
+        for (std::size_t i = 0; i < primitive_indexes.size() - 1; i++)
+        {
+            primitives_[primitive_indexes[i]]->boundingBox(box_left);
+            primitives_[primitive_indexes[i + 1]]->boundingBox(box_right);
+
+            if (box_left.min_[axis] > box_right.min_[axis])
+            {
+                int aux = primitive_indexes[i];
+                primitive_indexes[i] = primitive_indexes[i + 1];
+                primitive_indexes[i + 1] = aux;
+                ordered = false;
+            }
+        }
+    }
+
+    primitives_[primitive_indexes[0]]->boundingBox(box);
+
+    for (std::size_t i = 1; i < primitive_indexes.size(); i++)
+    {
+        primitives_[primitive_indexes[i]]->boundingBox(box_right);
+        box = AABB::surroundingBox(box, box_right);
+    }
+
+    // std::cout << box.min_[0] << ", " << box.min_[1] << ", " << box.min_[2] << std::endl;
+    // std::cout << box.max_[0] << ", " << box.max_[1] << ", " << box.max_[2] << "\n"
+    //           << std::endl;
 
     const int half = primitive_indexes.size() / 2;
 
@@ -71,19 +83,17 @@ bool BVH::trace(const Ray &ray,
                 float t_max,
                 Record &record) const
 {
-    float t_temp = t_max;
-    return traceRecursive(ray, t_min, &t_temp, record, root_);
+    return traceRecursive(ray, t_min, t_max, record, root_);
 }
 
 bool BVH::traceRecursive(const Ray &ray,
                          float t_min,
-                         float *t_max,
+                         float &t_max,
                          Record &record,
                          BVHNode *node) const
 {
     bool intersected = false;
-    float *closest_so_far = t_max;
-    if (node != nullptr && node->box_.intersect(ray, t_min, *t_max))
+    if (node != nullptr && node->box_.intersect(ray, t_min, t_max))
     {
         Record tmp_record;
 
@@ -91,11 +101,11 @@ bool BVH::traceRecursive(const Ray &ray,
         {
             for (std::size_t i = 0; i < node->primitive_indexes_.size(); i++)
             {
-                if (primitives_[node->primitive_indexes_[i]]->intersect(ray, t_min, *t_max, tmp_record))
+                if (primitives_[node->primitive_indexes_[i]]->intersect(ray, t_min, t_max, tmp_record))
                 {
                     intersected = true;                          // has intersection
                     record = tmp_record;                         // update intersection's record
-                    *closest_so_far = tmp_record.t_;             // update t_max
+                    t_max = tmp_record.t_;                       // update t_max
                     record.index_ = node->primitive_indexes_[i]; // the primitive index
                 }
             }

@@ -9,6 +9,7 @@ class Triangle : public Primitive
 {
 public:
   Triangle(Material::MaterialPtr material,
+           const std::string &id,
            const Vec3f &v1,
            const Vec3f &v2,
            const Vec3f &v3);

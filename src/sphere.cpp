@@ -1,8 +1,9 @@
 #include "sphere.h"
 
 Sphere::Sphere(Material::MaterialPtr material,
+               const std::string &id,
                const Vec3f &center,
-               const float radius) : Primitive::Primitive(std::move(material)),
+               const float radius) : Primitive::Primitive(std::move(material), id),
                                      center_{center},
                                      radius_{radius} {}
 

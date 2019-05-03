@@ -1,7 +1,8 @@
 #include "mesh.h"
 
 Mesh::Mesh(Material::MaterialPtr material,
-           const std::string filename) : Primitive::Primitive(std::move(material))
+           const std::string &id,
+           const std::string filename) : Primitive::Primitive(std::move(material), id)
 {
 
     std::vector<Vec3f> vertex_temp;
@@ -50,7 +51,7 @@ Mesh::Mesh(Material::MaterialPtr material,
                 Vec3f v_2 = vertex_temp[std::stoi(line.substr(index[1] + 1, index[2] - index[1])) - 1];
                 Vec3f v_3 = vertex_temp[std::stoi(line.substr(index[2] + 1, (line.size() - 1) - index[2])) - 1];
 
-                triangles_.push_back(TrianglePtr(new Triangle{NULL, v_1, v_2, v_3}));
+                triangles_.push_back(TrianglePtr(new Triangle{NULL, NULL, v_1, v_2, v_3}));
             }
             break;
 
