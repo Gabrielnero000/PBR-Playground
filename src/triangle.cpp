@@ -9,7 +9,7 @@ Triangle::Triangle(Material::MaterialPtr material,
                                       v1_{v1},
                                       v2_{v2},
                                       v3_{v3},
-                                      normal_{(v3 - v1).cross(v2 - v1).as_unit()}
+                                      normal_{(v2 - v1).cross(v3 - v1).as_unit()}
 {
 #ifdef TRIANGLE_FAST
 

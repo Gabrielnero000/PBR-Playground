@@ -9,8 +9,8 @@ void read(const std::string &filename, Scene &triangles)
     std::string line;
     std::ifstream mesh;
     mesh.open(filename);
-    Vec3f emmiter_zero = Vec3f(0.0f, 0.0f, 0.0f);
-    Vec3f albedo_green = Vec3f(0.001f, 0.9f, 0.001f);
+    Vec3f emmiter_zero(0.0f, 0.0f, 0.0f);
+    Vec3f albedo_green(0.001f, 0.9f, 0.001f);
 
     int index[3];
 
@@ -74,7 +74,7 @@ Scene cornellBox()
     Vec3f emmiter_zero = Vec3f(0.0f, 0.0f, 0.0f);
 
     // Light emmitter
-    Vec3f emmiter_light = Vec3f(40.0f, 40.0f, 40.0f);
+    Vec3f emmiter_light = Vec3f(5.0f, 5.0f, 5.0f);
 
     // Red albedo
     Vec3f albedo_red = Vec3f(0.9f, 0.001f, 0.0f);
@@ -129,26 +129,28 @@ Scene cornellBox()
 
     // // Roof
     // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
+    //                                                         "roof",
     //                                                         Vec3f(0.0f, 100.75f, 0.0f),
     //                                                         100.0f)));
 
     // // Back wall
     // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
+    //                                                         "back_wall",
     //                                                         Vec3f(0.0f, 0.0f, -100.5f),
     //                                                         100.0f)));
 
     // Light
-    primitives.push_back(Primitive::PrimitivePtr(new Triangle(Material::MaterialPtr(new Lambertian(emmiter_light, albedo_white)),
-                                                              "triangle_1",
-                                                              Vec3f(-0.5f, 0.7f, 0.7f),
-                                                              Vec3f(0.5f, 0.7f, 0.7f),
-                                                              Vec3f(-0.5f, 0.7f, -0.7f))));
+    // primitives.push_back(Primitive::PrimitivePtr(new Triangle(Material::MaterialPtr(new Lambertian(emmiter_light, albedo_white)),
+    //                                                           "triangle_1",
+    //                                                           Vec3f(-0.5f, 0.7f, 0.7f),
+    //                                                           Vec3f(0.5f, 0.7f, 0.7f),
+    //                                                           Vec3f(-0.5f, 0.7f, -0.5f))));
 
-    primitives.push_back(Primitive::PrimitivePtr(new Triangle(Material::MaterialPtr(new Lambertian(emmiter_light, albedo_white)),
-                                                              "triangle_2",
-                                                              Vec3f(0.5f, 0.7f, 0.7f),
-                                                              Vec3f(0.5f, 0.7f, -0.7f),
-                                                              Vec3f(-0.5f, 0.7f, -0.7f))));
+    // primitives.push_back(Primitive::PrimitivePtr(new Triangle(Material::MaterialPtr(new Lambertian(emmiter_light, albedo_white)),
+    //                                                           "triangle_2",
+    //                                                           Vec3f(0.5f, 0.7f, 0.7f),
+    //                                                           Vec3f(0.5f, 0.7f, -0.5f),
+    //                                                           Vec3f(-0.5f, 0.7f, -0.5f))));
 
     read("monkey.obj", primitives);
 
@@ -157,19 +159,19 @@ Scene cornellBox()
 
 int main()
 {
-    // feenableexcept(FE_INVALID);
+    //feenableexcept(FE_INVALID | FE_DIVBYZERO);
     // Output params
     int width = 512;
     int height = 512;
 
     //Render params
-    //Vec3f background_color_from = {1.0f, 1.0f, 1.0f}; // White
-    //Vec3f background_color_to = {0.5f, 0.7f, 1.0f};   // Ciano
-    Vec3f background_color_from = Vec3f(0.0f, 0.0f, 0.0f);
-    Vec3f background_color_to = Vec3f(0.0f, 0.0f, 0.0f);
+    Vec3f background_color_from(1.0f, 1.0f, 1.0f); // White
+    Vec3f background_color_to(0.5f, 0.7f, 1.0f);   // Ciano
+    //Vec3f background_color_from = Vec3f(0.0f, 0.0f, 0.0f);
+    //Vec3f background_color_to = Vec3f(0.0f, 0.0f, 0.0f);
 
     int samples = 100;
-    int depth = 5;
+    int depth = 10;
 
     //Camera params - 1:1 presset
     float min_x = -1.0f;
@@ -184,16 +186,16 @@ int main()
 
     //-----------------------------------------------------------------------------------
 
-    Output output = Output(width, height);
+    Output output(width, height);
 
-    PinholeCamera camera{min_x, max_x, min_y, max_y, focal_distance,
-                         up, look_at, position};
+    PinholeCamera camera(min_x, max_x, min_y, max_y, focal_distance,
+                         up, look_at, position);
 
     Scene scene = cornellBox();
 
     BVH acc(scene);
 
-    PathTracer render = PathTracer(output, camera, acc, scene, background_color_from, background_color_to, samples, depth);
+    PathTracer render(output, camera, acc, scene, background_color_from, background_color_to, samples, depth);
 
     render.integrate();
     output.save("output");

@@ -13,6 +13,8 @@ Vec3f AABB::centroid() const { return centroid_; }
 
 bool AABB::intersect(const Ray &ray, float t_min, float t_max) const
 {
+    //fedisableexcept(FE_INVALID | FE_DIVBYZERO);
+
     for (int i = 0; i < 3; i++)
     {
         float invD = 1.0f / ray.direction_[i];
@@ -27,73 +29,12 @@ bool AABB::intersect(const Ray &ray, float t_min, float t_max) const
         t_max = t1 < t_max ? t1 : t_max;
 
         if (t_max < t_min)
+        {
+            //feenableexcept(FE_INVALID | FE_DIVBYZERO);
             return false;
+        }
     }
-
-    // float tmin;
-    // float tmax;
-    // float tymin;
-    // float tymax;
-    // float tzmin;
-    // float tzmax;
-    // float divx;
-    // float divy;
-    // float divz;
-
-    // divx = 1.0f / ray.direction_[0];
-    // if (divx >= 0.0f)
-    // {
-    //     tmin = (min_[0] - ray.origin_[0]) * divx;
-    //     tmax = (max_[0] - ray.origin_[0]) * divx;
-    // }
-    // else
-    // {
-    //     tmin = (max_[0] - ray.origin_[0]) * divx;
-    //     tmax = (min_[0] - ray.origin_[0]) * divx;
-    // }
-
-    // divy = 1.0f / ray.direction_[1];
-    // if (divy >= 0.0f)
-    // {
-    //     tymin = (min_[1] - ray.origin_[1]) * divy;
-    //     tymax = (max_[1] - ray.origin_[1]) * divy;
-    // }
-    // else
-    // {
-    //     tymin = (max_[1] - ray.origin_[1]) * divy;
-    //     tymax = (min_[1] - ray.origin_[1]) * divy;
-    // }
-
-    // if ((tmin > tymax) || (tymin > tmax))
-    //     return false;
-
-    // if (tymin > tmin)
-    //     tmin = tymin;
-
-    // if (tymax < tmax)
-    //     tmax = tymax;
-
-    // divz = 1.0f / ray.direction_[2];
-    // if (divz >= 0.0f)
-    // {
-    //     tzmin = (min_[2] - ray.origin_[2]) * divz;
-    //     tzmax = (max_[2] - ray.origin_[2]) * divz;
-    // }
-    // else
-    // {
-    //     tzmin = (max_[2] - ray.origin_[2]) * divz;
-    //     tzmax = (min_[2] - ray.origin_[2]) * divz;
-    // }
-
-    // if ((tmin > tzmax) || (tzmin > tmax))
-    //     return false;
-
-    // if (tzmin > tmin)
-    //     tmin = tzmin;
-
-    // if (tzmax < tmax)
-    //     tmax = tzmax;
-
+    //feenableexcept(FE_INVALID | FE_DIVBYZERO);
     return true;
 }
 
