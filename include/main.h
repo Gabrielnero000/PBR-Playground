@@ -1,18 +1,21 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include "output.h"
-#include "render.h"
-#include "ortho_camera.h"
-#include "pinhole_camera.h"
-#include "sphere.h"
-#include "triangle.h"
-#include "path_tracer.h"
-#include "accelerator.h"
-#include "no_accel.h"
-#include "bvh.h"
-#include "material.h"
-#include "lambertian.h"
-#include "specular.h"
+#include "Utils/utils.h"
+
+#include "Cameras/ortho_camera.h"
+#include "Cameras/pinhole_camera.h"
+
+#include "Primitives/sphere.h"
+#include "Primitives/triangle.h"
+
+#include "Renders/path_tracer.h"
+
+#include "Accelerators/no_accel.h"
+#include "Accelerators/bvh.h"
+
+#include "Materials/lambertian.h"
+#include "Materials/specular.h"
+#include "Materials/dieletric.h"
 
 #endif
