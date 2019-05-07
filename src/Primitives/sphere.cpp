@@ -27,13 +27,13 @@ bool Sphere::intersect(const Ray &ray,
 
     if (disc > 0.0f) // Has inteserction
     {
-        float temp = sqrt(disc);
+        float temp = sqrtf(disc);
         x1 = (-b - temp) / a;         // First zero
         if (x1 < t_max && x1 > t_min) // x1 is in [x_min, x_max]
         {
             record.t_ = x1;
             record.point_ = ray.evaluate(x1);
-            record.normal_ = ((record.point_ - center_) / radius_).as_unit();
+            record.normal_ = (record.point_ - center_).as_unit();
             return true;
         }
         // Same as x1
@@ -42,7 +42,7 @@ bool Sphere::intersect(const Ray &ray,
         {
             record.t_ = x2;
             record.point_ = ray.evaluate(x2);
-            record.normal_ = ((record.point_ - center_) / radius_).as_unit();
+            record.normal_ = (record.point_ - center_).as_unit();
             return true;
         }
     }
@@ -52,8 +52,8 @@ bool Sphere::intersect(const Ray &ray,
 bool Sphere::boundingBox(AABB &box) const
 {
     box = AABB();
-    box.min_ = center_ - (radius_ * 1.001f);
-    box.max_ = center_ + (radius_ * 1.001f);
+    box.min_ = center_ - radius_;
+    box.max_ = center_ + radius_;
     box.centroid_ = center_;
     return true;
 }

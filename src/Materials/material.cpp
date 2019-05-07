@@ -13,7 +13,7 @@ Vec3f Material::random_in_sphere() const
     do
     {
         random = 2.0f * Vec3f(dist(gen), dist(gen), dist(gen)) - 1.0f;
-    } while (random.squared_lenght() > 1.0f);
+    } while (random.squared_lenght() >= 1.0f);
 
     return random;
 }

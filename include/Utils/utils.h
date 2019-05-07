@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include "vec.h"
+#include "OBJ_Loader.h"
 
 void saveToFile(const std::string &filename, std::vector<std::vector<Vec3f>> &buffer)
 {
@@ -31,9 +32,9 @@ void saveToFile(const std::string &filename, std::vector<std::vector<Vec3f>> &bu
             if (buffer[i][j][2] > 1.0f)
                 buffer[i][j][2] = 1.0f;
 
-            buffer[i][j][0] = powf(buffer[i][j][0], 1.0f / 2.2f);
-            buffer[i][j][1] = powf(buffer[i][j][1], 1.0f / 2.2f);
-            buffer[i][j][2] = powf(buffer[i][j][2], 1.0f / 2.2f);
+            // buffer[i][j][0] = powf(buffer[i][j][0], 1.0f / 2.2f);
+            // buffer[i][j][1] = powf(buffer[i][j][1], 1.0f / 2.2f);
+            // buffer[i][j][2] = powf(buffer[i][j][2], 1.0f / 2.2f);
 
             // Bring colors from [0, 1] to [0, 255]
             // Watch out for rounding errors

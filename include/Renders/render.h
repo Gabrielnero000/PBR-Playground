@@ -4,9 +4,6 @@
 #include "Accelerators/accelerator.h"
 #include "Cameras/camera.h"
 
-#define MIN_T 0.0001f
-#define MAX_T 10000.0f
-
 class Render
 {
 public:
@@ -25,6 +22,9 @@ public:
   std::vector<std::vector<Vec3f>> buffer_;
   const int width_;
   const int height_;
+
+  float MIN_T = 0.001f;
+  float MAX_T = 1000.0f;
 };
 
 #endif

@@ -17,5 +17,6 @@
 #include "Materials/lambertian.h"
 #include "Materials/specular.h"
 #include "Materials/dieletric.h"
+#include "Materials/emmiter.h"
 
 #endif

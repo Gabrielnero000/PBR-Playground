@@ -18,7 +18,7 @@ bool refract(const Vec3f &v,
 
     if (disc > 0.0f) // Refract, else TIR
     {
-        refracted = ni_over_nt * (v - n * dt) - n * sqrt(disc);
+        refracted = ni_over_nt * (v - n * dt) - n * sqrtf(disc);
         return true;
     }
 
@@ -29,7 +29,7 @@ float schlick(float cosine, float ref_idx)
 {
     float r0 = (1.0f - ref_idx) / (1.0f + ref_idx);
     r0 = r0 * r0;
-    return r0 + (1.0f - r0) * pow((1.0f - cosine), 5);
+    return r0 + (1.0f - r0) * powf((1.0f - cosine), 5);
 }
 
 bool Dieletric::scatter(const Ray &w_in,
@@ -51,25 +51,25 @@ bool Dieletric::scatter(const Ray &w_in,
     {
         outward_normal = -record.normal_;
         ni_over_nt = ref_idx_;
-        cosine = ref_idx_ * w_in.direction_.dot(record.normal_) / w_in.direction_.length();
+        cosine = ref_idx_ * w_in.direction_.dot(record.normal_);
     }
     else
     {
         outward_normal = record.normal_;
         ni_over_nt = 1.0f / ref_idx_;
-        cosine = -(w_in.direction_.dot(record.normal_)) / w_in.direction_.length();
+        cosine = -(w_in.direction_.dot(record.normal_));
     }
     if (refract(w_in.direction_, outward_normal, ni_over_nt, refracted))
         reflect_prob = schlick(cosine, ref_idx_);
     else
         reflect_prob = 1.0f;
 
-    //std::minstd_rand gen(std::random_device{}());
-    //std::uniform_real_distribution<float> dist(0.0f, 1.0f);
-    if (drand48() < reflect_prob)
-        w_out = Ray(record.point_, reflected.as_unit());
+    std::minstd_rand gen(std::random_device{}());
+    std::uniform_real_distribution<float> dist(0.0f, 1.0f);
+    if (dist(gen) < reflect_prob)
+        w_out = Ray(record.point_ + (reflected * 0.001f), reflected.as_unit());
     else
-        w_out = Ray(record.point_, refracted.as_unit());
+        w_out = Ray(record.point_ + (refracted * 0.001f), refracted.as_unit());
 
     return true;
 }

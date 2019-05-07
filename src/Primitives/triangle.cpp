@@ -4,14 +4,19 @@ Triangle::Triangle(Material::MaterialPtr material,
                    const std::string &id,
                    const Vec3f &v1,
                    const Vec3f &v2,
-                   const Vec3f &v3) : Primitive::Primitive(std::move(material), id),
-                                      v1_{v1},
-                                      v2_{v2},
-                                      v3_{v3},
-                                      normal_{(v2 - v1).cross(v3 - v1).as_unit()}
+                   const Vec3f &v3,
+                   const Vec3f &n1,
+                   const Vec3f &n2,
+                   const Vec3f &n3,
+                   const bool smooth) : Primitive::Primitive(std::move(material), id),
+                                        v1_(v1),
+                                        v2_(v2),
+                                        v3_(v3),
+                                        n1_(n1),
+                                        n2_(n2),
+                                        n3_(n3),
+                                        normal_(((v2 - v1).cross(v3 - v1)).as_unit())
 {
-#ifdef TRIANGLE_FAST
-
     const Vec3f C = v2_ - v1_;
     const Vec3f B = v3_ - v1_;
 
@@ -41,68 +46,15 @@ Triangle::Triangle(Material::MaterialPtr material,
 
     C_nu = C[v] * temp;
     C_nv = -C[u] * temp;
-
-#endif
 }
 
-/*  Solves the linear system: 
-
-                                  [t]
-        [- D, v2 - v1, v3 - v1] * [u] = O - v1
-                                  [v]
-
-    where:  v1, v2, v3 are the triangle's vertices
-            D is the ray direction
-            O is the ray origin
-            t is the unknow parameter
-            u, v are baricentric coordinates
-*/
-
-Triangle::~Triangle()
-{
-}
+Triangle::~Triangle() {}
 
 bool Triangle::intersect(const Ray &ray,
                          float t_min,
                          float t_max,
                          Record &record) const
 {
-#ifdef TRIANGLE_SMALL
-    const Vec3f edge_1 = v2_ - v1_;
-    const Vec3f edge_2 = v3_ - v1_;
-
-    const Vec3f p_vec = glm::cross(ray.direction_, edge_2);
-    float det = glm::dot(edge_1, p_vec);
-
-    if (fabs(det) < t_min || fabs(det) > t_max)
-        return false;
-
-    det = 1.0f / det;
-
-    const Vec3f t_vec = ray.origin_ - v1_;
-    float u = glm::dot(t_vec, p_vec) * det;
-
-    if (u < 0.0f || u > 1.0f)
-    {
-        return false;
-    }
-
-    const Vec3f q_vec = glm::cross(t_vec, edge_1);
-    float v = glm::dot(ray.direction_, q_vec) * det;
-
-    if (v < 0.0f || (u + v) > 1.0f)
-    {
-        return false;
-    }
-
-    record.t_ = glm::dot(edge_2, q_vec) * det;
-    record.point_ = ray.evaluate(record.t_);
-    record.normal_ = normal_;
-
-    return true;
-
-#else
-#ifdef TRIANGLE_FAST
 
 #define ku modulo[k + 1]
 #define kv modulo[k + 2]
@@ -117,7 +69,7 @@ bool Triangle::intersect(const Ray &ray,
                      normal_v * ray.origin_[kv]) *
                     nd;
 
-    if (f < t_min || f > t_max)
+    if (f <= t_min || f >= t_max)
         return false;
 
     const float hu = (ray.origin_[ku] + f * ray.direction_[ku] - v1_[ku]);
@@ -137,12 +89,22 @@ bool Triangle::intersect(const Ray &ray,
         return false;
 
     record.t_ = f;
-    record.point_ = ray.evaluate(record.t_);
-    record.normal_ = normal_;
+    record.point_ = ray.evaluate(f);
+
+    if (smooth_)
+    {
+        // record.normal_ = (n1_ * (1.0f - beta - gamma) + n2_ * gamma + n3_ * beta).as_unit();
+        // record.normal_ = (n1_ * (1.0f - beta - gamma) + n2_ * beta + n3_ * gamma).as_unit();
+        // record.normal_ = (n1_ * gamma + n2_ * (1.0f - beta - gamma) + n3_ * beta).as_unit();
+        // record.normal_ = (n1_ * beta + n2_ * (1.0f - beta - gamma) + n3_ * gamma).as_unit();
+        // record.normal_ = (n1_ * gamma + n2_ * beta + n3_ * (1.0f - beta - gamma)).as_unit();
+        // record.normal_ = (n1_ * beta + n2_ * gamma + n3_ * (1.0f - beta - gamma)).as_unit();
+    }
+
+    else
+        record.normal_ = normal_;
 
     return true;
-#endif
-#endif
 }
 
 bool Triangle::boundingBox(AABB &box) const
@@ -157,8 +119,8 @@ bool Triangle::boundingBox(AABB &box) const
     float y_max = v1_[1] > v2_[1] ? (v1_[1] > v3_[1] ? v1_[1] : v3_[1]) : (v2_[1] > v3_[1] ? v2_[1] : v3_[1]);
     float z_max = v1_[2] > v2_[2] ? (v1_[2] > v3_[2] ? v1_[2] : v3_[2]) : (v2_[2] > v3_[2] ? v2_[2] : v3_[2]);
 
-    box.min_ = Vec3f(x_min, y_min, z_min);
-    box.max_ = Vec3f(x_max, y_max, z_max);
+    box.min_ = Vec3f(x_min - 0.005f, y_min - 0.005f, z_min - 0.005f);
+    box.max_ = Vec3f(x_max + 0.005f, y_max + 0.005f, z_max + 0.005f);
     box.centroid_ = (1.0f / 3.0f) * (v1_ + v2_ + v3_);
     return true;
 }
