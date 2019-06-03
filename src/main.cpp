@@ -3,201 +3,257 @@
 
 typedef std::vector<Primitive::PrimitivePtr> Scene;
 
-// void read(const std::string &filename, Scene &triangles)
+// Scene 1 - Cornell Box
+// Scene cornellBox()
 // {
-//     std::vector<Vec3f> vertex_temp;
-//     std::string line;
-//     std::ifstream mesh;
-//     mesh.open(filename);
-//     Vec3f emmiter(0.0f, 0.0f, 0.0f);
-//     Vec3f albedo(0.01f, 0.9f, 0.01f);
+//     Scene primitives;
 
-//     int index[3];
+//     // No emmiter
+//     Vec3f emmiter_zero = Vec3f(0.0f, 0.0f, 0.0f);
 
-//     if (mesh.is_open())
-//     {
-//         while (getline(mesh, line))
-//         {
-//             switch (line[0])
-//             {
-//             case 'v':
-//             {
-//                 for (size_t i = 0, j = 0; i < line.size(); i++)
-//                 {
-//                     if (line[i] == ' ')
-//                     {
-//                         index[j] = i;
-//                         j++;
-//                     }
-//                 }
+//     // Light emmitter
+//     Vec3f emmiter_light = Vec3f(2.0f, 2.0f, 2.0f);
 
-//                 vertex_temp.push_back(Vec3f{
-//                     std::stof(line.substr(index[0] + 1, index[1] - index[0])),
-//                     std::stof(line.substr(index[1] + 1, index[2] - index[1])),
-//                     std::stof(line.substr(index[2] + 1, (line.size() - 1) - index[2]))});
-//             }
-//             break;
+//     // Red albedo
+//     Vec3f albedo_red = Vec3f(0.75f, 0.25f, 0.25f);
 
-//             case 'f':
-//             {
-//                 for (size_t i = 0, j = 0; i < line.size(); i++)
-//                 {
-//                     if (line[i] == ' ')
-//                     {
-//                         index[j] = i;
-//                         j++;
-//                     }
-//                 }
+//     // Green albedo
+//     //Vec3f albedo_green = Vec3f(0.25f, 0.75f, 0.25f);
 
-//                 Vec3f v_1 = vertex_temp[std::stoi(line.substr(index[0] + 1, index[1] - index[0])) - 1];
-//                 Vec3f v_2 = vertex_temp[std::stoi(line.substr(index[1] + 1, index[2] - index[1])) - 1];
-//                 Vec3f v_3 = vertex_temp[std::stoi(line.substr(index[2] + 1, (line.size() - 1) - index[2])) - 1];
+//     // Blue albedo
+//     Vec3f albedo_blue = Vec3f(0.25f, 0.25f, 0.75f);
 
-//                 triangles.push_back(Primitive::PrimitivePtr(new Triangle(Material::MaterialPtr(new Lambertian(emmiter, albedo)),
-//                                                                          "mesh_triangle", v_1, v_2, v_3, false)));
-//             }
-//             break;
+//     // White albedo
+//     Vec3f albedo_white = Vec3f(0.999f, 0.999f, 0.999f);
 
-//             default:
-//                 break;
-//             }
-//         }
-//     }
+//     // Gray albedo
+//     Vec3f albedo_gray = Vec3f(0.999f, 0.999f, 0.999f);
+
+//     //Left sphere
+//     primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+//         Material::MaterialPtr(new Specular(
+//             Texture::TexturePtr(new Color(albedo_white)),
+//             0.0f)),
+//         "Left_sphere",
+//         Vec3f(-0.75f, -0.999f, -0.1f),
+//         0.5f)));
+
+//     // Center sphere
+
+//     primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+//         Material::MaterialPtr(new Emmiter(
+//             Texture::TexturePtr(new Color(emmiter_light)))),
+//         "Center_sphere",
+//         Vec3f(0.0f, 2.0f, 0.0f),
+//         0.5f)));
+
+//     // Right sphere
+//     // primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+//     //     Material::MaterialPtr(new Dieletric(
+//     //         Texture::TexturePtr(new Color(albedo_white)),
+//     //         1.45f)),
+//     //     "Right_sphere",
+//     //     Vec3f(0.75f, -0.999f, 0.3f),
+//     //     0.5f)));
+
+//     primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+//         Material::MaterialPtr(new Mix(
+//             Material::MaterialPtr(new Diffuse(Texture::TexturePtr(new Color(albedo_white)))),
+//             Material::MaterialPtr(new Specular(Texture::TexturePtr(new Color(albedo_white)), 0.0f)),
+//             0.05f)),
+//         "Right_sphere",
+//         Vec3f(0.75f, -0.999f, 0.3f),
+//         0.5f)));
+
+//     // Floor
+//     primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+//         Material::MaterialPtr(new Diffuse(
+//             Texture::TexturePtr(new Perlin(1.0f)))),
+//         "floor",
+//         Vec3f(0.0f, -101.5f, 0.0f),
+//         100.0f)));
+
+//     // Right wall
+//     primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+//         Material::MaterialPtr(new Diffuse(
+//             Texture::TexturePtr(new Color(albedo_blue)))),
+//         "right_wall",
+//         Vec3f(101.75f, 0.0f, 0.0f),
+//         100.0f)));
+
+//     // Left Wall
+//     primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+//         Material::MaterialPtr(new Diffuse(
+//             Texture::TexturePtr(new Color(albedo_red)))),
+//         "left_wall",
+//         Vec3f(-101.75f, 0.0f, 0.0f),
+//         100.0f)));
+
+//     // Roof
+//     primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+//         Material::MaterialPtr(new Diffuse(
+//             Texture::TexturePtr(new Color(albedo_white)))),
+//         "roof",
+//         Vec3f(0.0f, 101.75f, 0.0f),
+//         100.0f)));
+
+//     // Back wall
+//     primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+//         Material::MaterialPtr(new Diffuse(
+//             Texture::TexturePtr(new Color(albedo_white)))),
+//         "back_wall",
+//         Vec3f(0.0f, 0.0f, -102.5f),
+//         100.0f)));
+
+//     // Front wall
+//     primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+//         Material::MaterialPtr(new Diffuse(
+//             Texture::TexturePtr(new Color(albedo_white)))),
+//         "back_wall",
+//         Vec3f(0.0f, 0.0f, 102.5f),
+//         100.0f)));
+
+//     // int nx, ny, nn;
+//     // unsigned char *tex_data = stbi_load("earth.jpg", &nx, &ny, &nn, 0);
+
+//     // Material *world = new Diffuse(Texture::TexturePtr(new Image(tex_data, nx, ny)));
+
+//     // read("world.obj", primitives, world);
+
+//     return primitives;
 // }
 
-void read(const std::string &filename, Scene &triangles)
-{
-    objl::Loader loader;
-
-    Vec3f emmiter(0.0f, 0.0f, 0.0f);
-    Vec3f albedo(0.01f, 0.9f, 0.01f);
-    bool loadout = loader.LoadFile(filename);
-
-    if (loadout)
-    {
-        for (int i = 0; i < loader.LoadedMeshes.size(); i++)
-        {
-            objl::Mesh curMesh = loader.LoadedMeshes[i];
-            for (int j = 0; j < curMesh.Vertices.size(); j += 3)
-            {
-                Vec3f v_1(curMesh.Vertices[j].Position.X,
-                          curMesh.Vertices[j].Position.Y,
-                          curMesh.Vertices[j].Position.Z);
-
-                Vec3f v_2(curMesh.Vertices[j + 1].Position.X,
-                          curMesh.Vertices[j + 1].Position.Y,
-                          curMesh.Vertices[j + 1].Position.Z);
-
-                Vec3f v_3(curMesh.Vertices[j + 2].Position.X,
-                          curMesh.Vertices[j + 2].Position.Y,
-                          curMesh.Vertices[j + 2].Position.Z);
-
-                Vec3f n_1(curMesh.Vertices[j].Normal.X,
-                          curMesh.Vertices[j].Normal.Y,
-                          curMesh.Vertices[j].Normal.Z);
-
-                Vec3f n_2(curMesh.Vertices[j + 1].Normal.X,
-                          curMesh.Vertices[j + 1].Normal.Y,
-                          curMesh.Vertices[j + 1].Normal.Z);
-
-                Vec3f n_3(curMesh.Vertices[j + 2].Normal.X,
-                          curMesh.Vertices[j + 2].Normal.Y,
-                          curMesh.Vertices[j + 2].Normal.Z);
-
-                triangles.push_back(Primitive::PrimitivePtr(new Triangle(Material::MaterialPtr(new Lambertian(emmiter, albedo)),
-                                                                         "mesh_triangle",
-                                                                         v_1, v_2, v_3,
-                                                                         n_1, n_2, n_3,
-                                                                         false)));
-            }
-        }
-    }
-}
-
-// Scene 1 - Cornell Box
-Scene cornellBox()
+Scene makeScene()
 {
     Scene primitives;
 
-    // No emmiter
-    Vec3f emmiter_zero = Vec3f(0.0f, 0.0f, 0.0f);
+    Vec3f walls_albedo(0.8f);
+    Vec3f light_emmiter(1.0f);
 
-    // Light emmitter
-    Vec3f emmiter_light = Vec3f(3.0f, 3.0f, 3.0f);
+    int background_x, background_y, background_n;
+    unsigned char *background_img = stbi_load("scene/background.png", &background_x, &background_y, &background_n, 0);
 
-    // Red albedo
-    Vec3f albedo_red = Vec3f(0.75f, 0.25f, 0.25f);
+    int floor_x, floor_y, floor_n;
+    unsigned char *floor_img = stbi_load("scene/floor.jpg", &floor_x, &floor_y, &floor_n, 0);
 
-    // Green albedo
-    //Vec3f albedo_green = Vec3f(0.25f, 0.75f, 0.25f);
+    int chair_x, chair_y, chair_n;
+    unsigned char *chair_img = stbi_load("scene/chair.png", &chair_x, &chair_y, &chair_n, 0);
 
-    // Blue albedo
-    Vec3f albedo_blue = Vec3f(0.25f, 0.25f, 0.75f);
+    int carpet_x, carpet_y, carpet_n;
+    unsigned char *carpet_img = stbi_load("scene/carpet.jpg", &carpet_x, &carpet_y, &carpet_n, 0);
 
-    // White albedo
-    Vec3f albedo_white = Vec3f(0.999f, 0.999f, 0.999f);
+    int picture_x, picture_y, picture_n;
+    unsigned char *picture_img = stbi_load("scene/picture.jpg", &picture_x, &picture_y, &picture_n, 0);
 
-    // Gray albedo
-    Vec3f albedo_gray = Vec3f(0.75f, 0.75f, 0.75f);
+    int curtain_x, curtain_y, curtain_n;
+    unsigned char *curtain_img = stbi_load("scene/curtain.jpg", &curtain_x, &curtain_y, &curtain_n, 0);
 
-    // // Left sphere
-    // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Specular(emmiter_zero, albedo_white, 0.0f)),
-    //                                                         "Left_sphere",
-    //                                                         Vec3f(-0.75f, -0.999f, -0.1f),
-    //                                                         0.5f)));
+    Material *background_ = new Emmiter(Texture::TexturePtr(new Image(background_img, background_x, background_y)), 3.0f);
 
-    // // Center sphere
-    // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Emmiter(emmiter_light, emmiter_zero)),
-    //                                                         "Center_sphere",
-    //                                                         Vec3f(0.0f, 1.8f, 0.0f),
-    //                                                         0.5f)));
-    // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Dieletric(emmiter_zero, albedo_white, 1.6f)),
-    //                                                         "Center_sphere",
-    //                                                         Vec3f(0.0f, -0.25f, 0.7f),
-    //                                                         -0.475f)));
+    Material *carpet_ = new Diffuse(Texture::TexturePtr(new Image(carpet_img, carpet_x, carpet_y)));
 
-    // // Right sphere
-    // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Dieletric(emmiter_zero, albedo_white, 1.5f)),
-    //                                                         "Right_sphere",
-    //                                                         Vec3f(0.75f, -0.999f, 0.3f),
-    //                                                         0.5f)));
+    Material *walls_ = new Diffuse(Texture::TexturePtr(new Color(walls_albedo)));
 
-    // Floor
-    primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
-                                                            "floor",
-                                                            Vec3f(0.0f, -101.5f, 0.0f),
-                                                            100.0f)));
+    Material *picture_ = new Mix(
+        Material::MaterialPtr(new Diffuse(Texture::TexturePtr(new Image(picture_img, picture_x, picture_y)))),
+        Material::MaterialPtr(new Specular(Texture::TexturePtr(new Color(Vec3f(1.0f))), 0.05f)),
+        0.01f);
 
-    // // Right wall
-    // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_blue)),
-    //                                                         "right_wall",
-    //                                                         Vec3f(101.75f, 0.0f, 0.0f),
-    //                                                         100.0f)));
+    Material *table_ = new Mix(
+        Material::MaterialPtr(new Diffuse(Texture::TexturePtr(new Color(Vec3f(0.0f))))),
+        Material::MaterialPtr(new Specular(Texture::TexturePtr(new Color(Vec3f(1.0f))), 0.0f)),
+        0.1f);
 
-    // // Left Wall
-    // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_red)),
-    //                                                         "left_wall",
-    //                                                         Vec3f(-101.75f, 0.0f, 0.0f),
-    //                                                         100.0f)));
+    Material *table_marm_ = new Mix(
+        Material::MaterialPtr(new Diffuse(Texture::TexturePtr(new Perlin(3.0f)))),
+        Material::MaterialPtr(new Specular(Texture::TexturePtr(new Color(Vec3f(1.0f))), 0.0f)),
+        0.075f);
 
-    // // Roof
-    // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
-    //                                                         "roof",
-    //                                                         Vec3f(0.0f, 101.75f, 0.0f),
-    //                                                         100.0f)));
+    Material *curtains_ = new Diffuse(Texture::TexturePtr(new Image(curtain_img, curtain_x, curtain_y)));
 
-    // // Back wall
-    // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
-    //                                                         "back_wall",
-    //                                                         Vec3f(0.0f, 0.0f, -102.5f),
-    //                                                         100.0f)));
-    // // Front wall
-    // primitives.push_back(Primitive::PrimitivePtr(new Sphere(Material::MaterialPtr(new Lambertian(emmiter_zero, albedo_gray)),
-    //                                                         "back_wall",
-    //                                                         Vec3f(0.0f, 0.0f, 102.5f),
-    //                                                         100.0f)));
+    Material *curtain_pipe_ = new Specular(Texture::TexturePtr(new Color(Vec3f(1.0f))), 0.0f);
 
-    read("sphere.obj", primitives);
+    Material *radiator_ = new Specular(Texture::TexturePtr(new Color(Vec3f(0.831f, 0.686f, 0.216f))), 0.05f);
+
+    Material *floor_ = new Mix(
+        Material::MaterialPtr(new Diffuse(Texture::TexturePtr(new Image(floor_img, floor_x, floor_y)))),
+        Material::MaterialPtr(new Specular(Texture::TexturePtr(new Color(Vec3f(1.0f))), 0.15f)),
+        0.1f);
+
+    Material *chairs_ = new Mix(
+        Material::MaterialPtr(new Diffuse(Texture::TexturePtr(new Image(chair_img, chair_x, chair_y)))),
+        Material::MaterialPtr(new Specular(Texture::TexturePtr(new Color(Vec3f(1.0f))), 0.2f)),
+        0.05f);
+
+    Material *window_1_ = new Dieletric(Texture::TexturePtr(new Color(Vec3f(0.5f))), 1.45f);
+    Material *window_2_ = new Dieletric(Texture::TexturePtr(new Color(Vec3f(0.6f))), 1.45f);
+
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+        Material::MaterialPtr(new Emmiter(
+            Texture::TexturePtr(new Color(light_emmiter)),
+            3.0f)),
+        "light",
+        Vec3f(0.0f, 5.25f, -1.25f),
+        1.0f)));
+
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+        Material::MaterialPtr(new Mix(
+            Material::MaterialPtr(new Diffuse(Texture::TexturePtr(new Color(Vec3f(1.0f))))),
+            Material::MaterialPtr(new Specular(Texture::TexturePtr(new Color(Vec3f(1.0f))), 0.0f)),
+            0.1f)),
+        "sphere_1",
+        Vec3f(-0.6f, 0.7f, 0.7f),
+        0.2f)));
+
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+        Material::MaterialPtr(
+            new Dieletric(Texture::TexturePtr(new Color(Vec3f(1.0f))), 1.5f)),
+        "sphere_2",
+        Vec3f(-0.1f, 0.7f, 0.7f),
+        0.2f)));
+
+    primitives.push_back(Primitive::PrimitivePtr(new Sphere(
+        Material::MaterialPtr(
+            new Specular(Texture::TexturePtr(new Color(Vec3f(1.0f))), 0.0f)),
+        "sphere_3",
+        Vec3f(0.4f, 0.7f, 0.7f),
+        0.2f)));
+
+    read("scene/chair_left.obj", primitives, chairs_);
+    read("scene/chair_right.obj", primitives, chairs_);
+
+    read("scene/table.obj", primitives, table_);
+    read("scene/table_marm.obj", primitives, table_marm_);
+
+    read("scene/curtain_left.obj", primitives, curtains_);
+    read("scene/curtain_right.obj", primitives, curtains_);
+
+    read("scene/background.obj", primitives, background_);
+
+    read("scene/back_wall.obj", primitives, walls_);
+    read("scene/front_wall.obj", primitives, walls_);
+    read("scene/left_wall.obj", primitives, walls_);
+    read("scene/right_wall.obj", primitives, walls_);
+    read("scene/roof.obj", primitives, walls_);
+
+    read("scene/floor.obj", primitives, floor_);
+
+    read("scene/carpet.obj", primitives, carpet_);
+    read("scene/curtain_pipe.obj", primitives, curtain_pipe_);
+
+    read("scene/mold.obj", primitives, walls_);
+
+    read("scene/picture.obj", primitives, picture_);
+
+    read("scene/pilar_1.obj", primitives, walls_);
+    read("scene/pilar_2.obj", primitives, walls_);
+
+    read("scene/window_1.obj", primitives, window_1_);
+    read("scene/window_2.obj", primitives, window_2_);
+
+    read("scene/window_mold.obj", primitives, walls_);
+
+    read("scene/radiator.obj", primitives, radiator_);
 
     return primitives;
 }
@@ -206,35 +262,35 @@ int main()
 {
     //feenableexcept(FE_INVALID | FE_DIVBYZERO);
     // Output params
-    int width = 512;
-    int height = 512;
+    int width = 1280;
+    int height = 720;
 
     //Render params
-    Vec3f background_color_from(1.0f, 1.0f, 1.0f); // White
-    Vec3f background_color_to(0.5f, 0.7f, 1.0f);   // Ciano
-    //Vec3f background_color_from = Vec3f(0.0f, 0.0f, 0.0f);
-    //Vec3f background_color_to = Vec3f(0.0f, 0.0f, 0.0f);
+    //Vec3f background_color_from(1.0f, 1.0f, 1.0f); // White
+    //Vec3f background_color_to(0.5f, 0.7f, 1.0f);   // Ciano
+    Vec3f background_color_from = Vec3f(0.0f, 0.0f, 0.0f);
+    Vec3f background_color_to = Vec3f(0.0f, 0.0f, 0.0f);
 
-    int samples = 100;
-    int depth = 5;
+    int samples = 10000;
+    int depth = 7;
 
     //Camera params - 1:1 presset
-    float min_x = -1.0f;
-    float max_x = 1.0f;
-    float min_y = -1.0f;
-    float max_y = 1.0f;
-    float focal_distance = 1.0f;
+    float min_x = -2.0f;
+    float max_x = 2.0f;
+    float min_y = -1.125f;
+    float max_y = 1.125f;
+    float focal_distance = 2.0f;
 
     Vec3f up = Vec3f(0.0f, 1.0f, 0.0f);
-    Vec3f look_at = Vec3f(0.0f, 0.0f, -1.0f);
-    Vec3f position = Vec3f(0.0f, 0.0f, 2.5f);
+    Vec3f look_at = Vec3f(0.0f, 2.5f, -1.0f).as_unit();
+    Vec3f position = Vec3f(-0.25f, 1.5f, 4.75f);
 
     //-----------------------------------------------------------------------------------
 
     PinholeCamera camera(min_x, max_x, min_y, max_y, focal_distance,
                          up, look_at, position);
 
-    Scene scene = cornellBox();
+    Scene scene = makeScene();
 
     BVH acc(scene);
 

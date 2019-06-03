@@ -1,8 +1,7 @@
 #include "Materials/specular.h"
 
-Specular::Specular(const Vec3f &emmiter,
-                   const Vec3f &albedo,
-                   float fuzz_factor) : Material::Material(emmiter, albedo)
+Specular::Specular(Texture::TexturePtr texture,
+                   float fuzz_factor) : Material::Material(std::move(texture))
 {
     fuzz_factor_ = fuzz_factor < 1.0f ? fuzz_factor : 1.0f;
 }
@@ -16,6 +15,6 @@ bool Specular::scatter(const Ray &w_in,
 {
     Vec3f r_direction = reflect(w_in.direction_, record.normal_);
     w_out = Ray(record.point_ + (record.normal_ * 0.001f), (r_direction + fuzz_factor_ * Material::random_in_sphere()).as_unit());
-    attenuation = albedo_;
+    attenuation = texture_->value(record.u_, record.v_, record.point_);
     return w_out.direction_.dot(record.normal_) > 0.0f;
 }

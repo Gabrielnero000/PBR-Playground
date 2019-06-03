@@ -14,6 +14,12 @@ public:
            const Vec3f &normal_v1,
            const Vec3f &normal_v2,
            const Vec3f &normal_v3,
+           const float tx_1,
+           const float ty_1,
+           const float tx_2,
+           const float ty_2,
+           const float tx_3,
+           const float ty_3,
            const bool smooth);
   ~Triangle();
 
@@ -32,6 +38,13 @@ public:
   const Vec3f n1_;
   const Vec3f n2_;
   const Vec3f n3_;
+
+  const float tx_1_;
+  const float ty_1_;
+  const float tx_2_;
+  const float ty_2_;
+  const float tx_3_;
+  const float ty_3_;
 
   bool smooth_;
 

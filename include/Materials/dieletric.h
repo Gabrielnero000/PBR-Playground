@@ -13,17 +13,18 @@ float schlick(float cosine, float ref_idx);
 class Dieletric : public Material
 {
 public:
-  Dieletric(const Vec3f &emmiter,
-            const Vec3f &albedo,
+  Dieletric(Texture::TexturePtr texture,
             const float ref_idx);
   ~Dieletric();
 
-  virtual bool scatter(const Ray &w_in,
-                       const Record &record,
-                       Vec3f &attenuation,
-                       Ray &w_out) const;
-  ;
-
+  bool scatter(const Ray &w_in,
+               const Record &record,
+               Vec3f &attenuation,
+               Ray &w_out) const;
+  Material *duplicate() const override
+  {
+    return new Dieletric(Texture::TexturePtr(texture_->duplicate()), ref_idx_);
+  }
   float ref_idx_;
 };
 

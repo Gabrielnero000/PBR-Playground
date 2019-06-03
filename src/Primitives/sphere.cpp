@@ -9,6 +9,15 @@ Sphere::Sphere(Material::MaterialPtr material,
 
 Sphere::~Sphere() {}
 
+void Sphere::sphereUV(const Vec3f &p, float &u, float &v) const
+{
+    float phi = atan2f(p[2], p[0]);
+    float theta = asinf(p[1]);
+
+    u = 1.0f - (phi + M_PI) / (2.0f * M_PI);
+    v = (theta + M_PI / 2.0f) / M_PI;
+}
+
 bool Sphere::intersect(const Ray &ray,
                        float t_min,
                        float t_max,
@@ -34,6 +43,7 @@ bool Sphere::intersect(const Ray &ray,
             record.t_ = x1;
             record.point_ = ray.evaluate(x1);
             record.normal_ = (record.point_ - center_).as_unit();
+            sphereUV(record.normal_, record.u_, record.v_);
             return true;
         }
         // Same as x1
@@ -43,6 +53,7 @@ bool Sphere::intersect(const Ray &ray,
             record.t_ = x2;
             record.point_ = ray.evaluate(x2);
             record.normal_ = (record.point_ - center_).as_unit();
+            sphereUV(record.normal_, record.u_, record.v_);
             return true;
         }
     }
@@ -52,8 +63,8 @@ bool Sphere::intersect(const Ray &ray,
 bool Sphere::boundingBox(AABB &box) const
 {
     box = AABB();
-    box.min_ = center_ - radius_;
-    box.max_ = center_ + radius_;
+    box.min_ = center_ - (radius_ + 0.0001f);
+    box.max_ = center_ + (radius_ + 0.0001f);
     box.centroid_ = center_;
     return true;
 }

@@ -24,10 +24,10 @@ Vec3f PathTracer::Color(const Ray &ray, Record &record, int depth)
         Vec3f attenuation;
 
         if (depth < ray_depth_ && primitives_[record.index_]->material_->scatter(ray, record, attenuation, w_out))
-            return primitives_[record.index_]->material_->emmiter_ +
-                   attenuation * Color(w_out, record, ++depth);
+            return primitives_[record.index_]->material_->emmiter(record.u_, record.v_, record.point_) +
+                   attenuation * Color(w_out, record, ++depth); // w_out.direction_.dot(record.normal_);
         else
-            return primitives_[record.index_]->material_->emmiter_;
+            return primitives_[record.index_]->material_->emmiter(record.u_, record.v_, record.point_);
     }
     Vec3f unit = ray.direction_.as_unit();
     float t = 0.5 * (unit[1] + 1.0f);

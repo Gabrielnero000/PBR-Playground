@@ -1,8 +1,7 @@
 #include "Materials/dieletric.h"
 
-Dieletric::Dieletric(const Vec3f &emmiter,
-                     const Vec3f &albedo,
-                     float ref_idx) : Material::Material(emmiter, albedo),
+Dieletric::Dieletric(Texture::TexturePtr texture,
+                     float ref_idx) : Material::Material(std::move(texture)),
                                       ref_idx_{ref_idx} {}
 
 Dieletric::~Dieletric() {}
@@ -37,7 +36,7 @@ bool Dieletric::scatter(const Ray &w_in,
                         Vec3f &attenuation,
                         Ray &w_out) const
 {
-    attenuation = albedo_;
+    attenuation = texture_->value(record.u_, record.v_, record.point_);
 
     Vec3f outward_normal;
     Vec3f reflected = reflect(w_in.direction_, record.normal_);
@@ -67,9 +66,9 @@ bool Dieletric::scatter(const Ray &w_in,
     std::minstd_rand gen(std::random_device{}());
     std::uniform_real_distribution<float> dist(0.0f, 1.0f);
     if (dist(gen) < reflect_prob)
-        w_out = Ray(record.point_ + (reflected * 0.001f), reflected.as_unit());
+        w_out = Ray(record.point_ + (reflected * 0.0001f), reflected.as_unit());
     else
-        w_out = Ray(record.point_ + (refracted * 0.001f), refracted.as_unit());
+        w_out = Ray(record.point_ + (refracted * 0.0001f), refracted.as_unit());
 
     return true;
 }

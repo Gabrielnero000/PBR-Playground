@@ -1,7 +1,6 @@
 #include "Materials/material.h"
 
-Material::Material(const Vec3f &emmiter, const Vec3f &albedo) : emmiter_{emmiter},
-                                                                albedo_{albedo}{}
+Material::Material(Texture::TexturePtr texture) : texture_{std::move(texture)} {}
 
 Material::~Material() {}
 
@@ -22,3 +21,8 @@ Vec3f Material::reflect(const Vec3f &v, const Vec3f &n) const
 {
     return v - 2.0f * n * v.dot(n);
 }
+
+Vec3f Material::emmiter(const float u, const float v, Vec3f &p) const
+{
+    return Vec3f(0.0f);
+};

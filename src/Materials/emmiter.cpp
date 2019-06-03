@@ -1,7 +1,8 @@
 #include "Materials/emmiter.h"
 
-Emmiter::Emmiter(const Vec3f &emmiter,
-                 const Vec3f &albedo) : Material::Material(emmiter, albedo) {}
+Emmiter::Emmiter(Texture::TexturePtr texture,
+                 const float strength) : Material::Material(std::move(texture)),
+                                         strength_(strength) {}
 
 Emmiter::~Emmiter() {}
 
@@ -11,4 +12,9 @@ bool Emmiter::scatter(const Ray &w_in,
                       Ray &w_out) const
 {
     return false;
+}
+
+Vec3f Emmiter::emmiter(const float u, const float v, Vec3f &p) const
+{
+    return texture_->value(u, v, p) * strength_;
 }

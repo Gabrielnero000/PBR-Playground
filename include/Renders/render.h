@@ -23,7 +23,7 @@ public:
   const int width_;
   const int height_;
 
-  float MIN_T = 0.001f;
+  float MIN_T = 0.0001f;
   float MAX_T = 1000.0f;
 };
 

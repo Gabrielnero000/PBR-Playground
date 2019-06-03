@@ -18,6 +18,8 @@ public:
                  float t_max,
                  Record &record) const;
 
+  void sphereUV(const Vec3f &p, float &u, float &v) const;
+
   bool boundingBox(AABB &box) const;
 
   const Vec3f center_;

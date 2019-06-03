@@ -9,6 +9,9 @@ struct Record
   Vec3f point_;
   Vec3f normal_;
   size_t index_;
+
+  float u_;
+  float v_;
 };
 
 #endif
